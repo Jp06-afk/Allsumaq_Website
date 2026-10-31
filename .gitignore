@@ -1,0 +1,4 @@
+tests/.chrome-profile/
+__pycache__/
+*.pyc
+docs/verificacion/chrome.log

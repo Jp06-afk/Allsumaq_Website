@@ -1,0 +1,522 @@
+# PROMPT MAESTRO: DESARROLLO DE LA PÁGINA WEB ALLSUMAQ
+
+## 1. Rol y objetivo del proyecto
+
+Actúa como un **desarrollador Frontend Senior especializado en HTML5, CSS3, JavaScript nativo, UX/UI, HCI, diseño responsive, accesibilidad e implementación de interfaces a partir de Figma**.
+
+Tu objetivo es desarrollar la página web funcional de **Allsumaq**, una plataforma de alimentación inteligente creada por el equipo TikrAI, como parte del curso HCI for UX Design de la Universidad Peruana de Ciencias Aplicadas (UPC).
+
+Allsumaq está dirigida a estudiantes universitarios de toda Lima Metropolitana, tanto de universidades públicas como privadas. Busca facilitar el acceso a alimentos ricos en hierro, opciones económicas, establecimientos cercanos, recetas nutritivas, orientación alimentaria y seguimiento voluntario de hábitos.
+
+La página web debe construirse respetando los mockups existentes, las 30 Historias de Usuario core y la arquitectura de navegación ya definida.
+
+**No debes inventar un diseño nuevo ni sustituir las referencias visuales proporcionadas. Debes convertir los mockups en interfaces funcionales manteniendo su identidad visual.**
+
+## 2. Restricción tecnológica obligatoria
+
+El desarrollo debe realizarse exclusivamente con:
+
+- **HTML5:** estructura semántica y organización de contenidos.
+- **CSS3:** estilos visuales, diseño responsive, transiciones y animaciones.
+- **JavaScript nativo (Vanilla JS):** navegación, estados, formularios, filtros, comparaciones, registros e interacciones.
+
+**Está prohibido utilizar frameworks o bibliotecas de desarrollo**, como React, Angular, Vue, Next.js, Bootstrap, Tailwind CSS, jQuery, TypeScript, Sass y tecnologías similares.
+
+Tampoco se deben incorporar gestores de paquetes, compiladores ni herramientas que exijan un proceso de construcción para ejecutar el proyecto.
+
+Se permite utilizar fotografías, archivos SVG, iconos y fuentes tipográficas como recursos estáticos locales. Las funcionalidades deben implementarse mediante las APIs estándar del navegador.
+
+La entrega debe poder ejecutarse como una web estática, sin dependencias de compilación.
+
+Si una funcionalidad requiere necesariamente un backend o un proveedor externo, debes explicarlo y distinguir una demostración frontend de una implementación real.
+
+## 3. Referencias visuales y prioridad del diseño
+
+Se proporcionarán los 20 mockups Desktop/Web de Allsumaq:
+
+- MK-01 hasta MK-14: pantallas base.
+- MK-A01 hasta MK-A06: estados adicionales.
+
+También se proporcionará el archivo original del logotipo, fotografías de alimentos, catálogo de recetas, documento de HU y guía de navegación.
+
+**La prioridad es reproducir fielmente las versiones más recientes que fueron aceptadas y las correcciones posteriores.**
+
+No debes basarte en versiones antiguas descartadas cuando existan diseños corregidos.
+
+Si existe una discrepancia entre un wireframe y un mockup aprobado, conserva las funcionalidades de la HU y utiliza la distribución del mockup aprobado como referencia visual.
+
+No afirmes haber revisado archivos que no hayan sido adjuntados o que no puedas abrir.
+
+## 4. Guía de estilos de Allsumaq
+
+### 4.1. Identidad visual
+
+El diseño debe transmitir una estética:
+
+- Editorial, orgánica y contemporánea.
+- Profesional y visualmente refinada.
+- Cercana a una plataforma gastronómica moderna.
+- Minimalista, equilibrada y fácil de utilizar.
+- Con fotografías realistas de alimentos.
+- Con amplios espacios libres y jerarquía visual clara.
+
+Evita que la web tenga apariencia de plantilla genérica o de interfaz creada automáticamente por IA.
+
+**No satures el fondo con hojas, ingredientes, formas decorativas, iconos o tarjetas.**
+
+Los elementos orgánicos deben utilizarse de forma sutil y principalmente en áreas importantes, como los hero sections.
+
+### 4.2. Paleta cromática
+
+Emplea como punto de partida la siguiente guía:
+
+| Uso | Color |
+|---|---|
+| Verde principal | `#0F7A55` |
+| Verde oscuro | `#0B5C43` |
+| Texto bosque | `#14382D` |
+| Verde salvia medio aproximado | `#4B9484` |
+| Verde salvia claro | `#E6EEDF` |
+| Fondo blanco suave | `#F7FBF8` |
+| Fondo crema aproximado | `#FBF8F1` |
+| Texto secundario | `#5C6F66` |
+| Acento cálido | `#F4B860` |
+| Acento naranja aproximado | `#F28C38` |
+| Blanco | `#FFFFFF` |
+| Error | `#B85C38` |
+| Advertencia | `#9A6700` |
+
+Los colores aproximados deben calibrarse visualmente utilizando las capturas finales proporcionadas. No cambies la combinación cromática sin justificación.
+
+Utiliza variables CSS para mantener consistencia en toda la web.
+
+### 4.3. Tipografía
+
+La tipografía principal será **Inter**, con fuentes del sistema como respaldo.
+
+Respeta:
+
+- Títulos grandes y expresivos, especialmente en el hero.
+- Diferenciación entre títulos, subtítulos y párrafos.
+- Interlineado cómodo y suficiente separación.
+- Pesos tipográficos equilibrados.
+- Texto legible sobre fondos claros y oscuros.
+- Adaptación proporcional según el dispositivo.
+
+No utilices tipografías futuristas ni pesos excesivamente gruesos en todos los elementos.
+
+Las frases manuscritas que aparecen en algunos mockups serán un detalle editorial ocasional, no el estilo principal de la aplicación.
+
+### 4.4. Iconografía
+
+La iconografía debe ser consistente:
+
+- Iconos outline, lineales y minimalistas.
+- Bordes y terminaciones redondeadas.
+- Grosor aproximado de 2 px.
+- Tamaños de 16 a 24 px, según la función.
+- Colores verde oscuro, salvia y naranja cuando corresponda.
+- Recursos SVG individuales o SVG inline.
+
+No mezclar estilos incompatibles de iconos ni utilizar emojis como sustitutos de controles.
+
+### 4.5. Componentes de interfaz
+
+Los botones primarios utilizarán verde profundo con texto blanco. Los secundarios tendrán fondo claro y borde discreto.
+
+Los contenedores tendrán esquinas redondeadas, sombras suaves y suficiente separación.
+
+Los campos de entrada deberán mostrar etiquetas, valores seleccionados, estado de foco y errores comprensibles.
+
+Los filtros se presentarán como selectores o chips discretos, conservando los estilos de los mockups.
+
+**No agregar barras inferiores con tres tarjetas informativas que repitan contenido ya mostrado.** Esta corrección es especialmente importante en MK-A05 y MK-A06.
+
+## 5. Fotografía y elementos con profundidad
+
+Utiliza las fotografías reales y referenciales entregadas para alimentos, platos y recetas.
+
+La composición de los hero sections debe conservar:
+
+- Un titular protagonista.
+- Una imagen culinaria amplia.
+- Espacios de lectura claros.
+- Formas orgánicas suaves.
+- Elementos decorativos limitados.
+- Sensación de profundidad visual.
+
+Cuando corresponda, simula efectos 2.5D mediante imágenes recortadas, sombras realistas, superposición y transformaciones CSS.
+
+No se deben introducir motores 3D externos.
+
+El movimiento de los alimentos y las animaciones se implementará con CSS y JavaScript, sin modificar la identidad visual aprobada.
+
+## 6. Arquitectura de navegación obligatoria
+
+La barra de navegación principal de Allsumaq tendrá **exactamente cinco opciones**, en este orden:
+
+**Inicio / Mapa / Registrar / Progreso / Perfil**
+
+No agregar nuevas opciones principales como Recetas, Comparador u Orientador.
+
+Estas funcionalidades estarán disponibles mediante secciones, tarjetas, botones y vistas internas.
+
+La barra de navegación debe permanecer visible durante el desplazamiento mediante un encabezado sticky.
+
+La opción activa tendrá un subrayado verde discreto.
+
+### Distribución de los 14 mockups
+
+| Mockup | Pantalla | Hotbar activa |
+|---|---|---|
+| MK-01 | Inicio | Inicio |
+| MK-02 | Mapa interactivo | Mapa |
+| MK-03 | Búsqueda y filtros | Mapa |
+| MK-04 | Comparador | Mapa |
+| MK-05 | Detalle de establecimiento | Mapa |
+| MK-06 | Detalle de alimento | Mapa |
+| MK-07 | Catálogo de recetas | Inicio |
+| MK-08 | Detalle de receta | Inicio |
+| MK-09 | Combinaciones económicas | Inicio |
+| MK-10 | Orientador nutricional | Inicio |
+| MK-11 | Advertencias y alternativas | Inicio |
+| MK-12 | Registrar consumo | Registrar |
+| MK-13 | Progreso | Progreso |
+| MK-14 | Perfil | Perfil |
+
+Las vistas internas conservarán la pestaña activa de su módulo principal.
+
+Por ejemplo, MK-06 seguirá mostrando Mapa activo y MK-08 seguirá mostrando Inicio activo.
+
+## 7. Navegación híbrida: scroll y clics
+
+La navegación de Allsumaq debe ser **híbrida e interactiva**.
+
+### 7.1. Navegación mediante scroll
+
+El usuario podrá desplazarse manualmente por las secciones principales de la página.
+
+La estructura general utilizará las anclas:
+
+- `#inicio`
+- `#mapa`
+- `#registrar`
+- `#progreso`
+- `#perfil`
+
+La hotbar permitirá desplazarse directamente a cada sección.
+
+Utiliza CSS `scroll-behavior` e `IntersectionObserver` para conseguir desplazamiento suave y actualización automática de la opción activa (*scrollspy*).
+
+El scroll debe funcionar también sin animaciones para quienes prefieran movimiento reducido.
+
+### 7.2. Navegación mediante clics
+
+Los botones, tarjetas e iconos permitirán abrir funcionalidades específicas.
+
+Ejemplos:
+
+- «Explorar alimentos» abre la búsqueda.
+- «Ver mapa cercano» lleva a Mapa.
+- «Ver receta» abre el detalle correspondiente.
+- «Comparar seleccionados» abre el comparador.
+- «Ver establecimiento» abre su ficha.
+- «Revisar combinación» evalúa una selección educativa.
+- «Guardar registro» valida y guarda el consumo.
+- «Ver mi progreso» muestra el resumen de registros.
+
+Cada botón debe ejecutar una acción real.
+
+No crear botones decorativos sin funcionamiento.
+
+### 7.3. Diferencia entre secciones y vistas internas
+
+No coloques los 14 mockups completos uno debajo del otro.
+
+Las cinco secciones principales forman la estructura de la página. Las demás pantallas son módulos, detalles o vistas internas que se abren cuando el usuario los necesita.
+
+Por ejemplo:
+
+**Inicio → Recetas → Detalle de receta → Combinaciones → Orientador**
+
+Otro recorrido:
+
+**Inicio → Mapa → Búsqueda → Comparador → Detalle de alimento**
+
+El usuario también debe poder volver desde una vista interna sin perder la búsqueda, filtros, selección o posición de scroll anterior.
+
+Utiliza History API del navegador cuando corresponda, sin incorporar un sistema de rutas externo.
+
+## 8. Funcionamiento por módulos
+
+### Módulo Inicio
+
+Incluye MK-01, MK-07, MK-08, MK-09, MK-10 y MK-11.
+
+MK-01 es la portada principal. Presenta el hero, accesos rápidos y explicación de Allsumaq.
+
+MK-07 contiene el catálogo de recetas. MK-08 presenta ingredientes y preparación.
+
+MK-09 permite consultar combinaciones económicas y sugerencias según tiempo y presupuesto.
+
+MK-10 permite elegir alimento y bebida para consultar reglas educativas sobre hierro.
+
+MK-11 presenta advertencias, alternativas y consejos con fuentes.
+
+Se puede descubrir parte del contenido mediante scroll y abrir vistas completas con clics.
+
+### Módulo Mapa
+
+Incluye MK-02, MK-03, MK-04, MK-05 y MK-06.
+
+Debe permitir elegir manualmente zona o distrito de Lima, explorar resultados, buscar platos, aplicar filtros, ordenar, comparar y abrir fichas.
+
+Los filtros deben funcionar conjuntamente, no solo cambiar su apariencia.
+
+Conserva filtros al alternar entre mapa, resultados y detalles.
+
+**No inventar ubicaciones, distancias, disponibilidad ni rutas reales.** Si el equipo no dispone de datos geográficos verificados ni servicios de mapas autorizados, utiliza una representación demostrativa claramente identificada y una lista funcional basada en datos locales.
+
+### Módulo Registrar
+
+Incluye MK-12 y los estados de validación y confirmación.
+
+Permite elegir comida o bebida, fecha o momento de consumo y registrar voluntariamente esa información.
+
+Los campos obligatorios se validan antes de guardar.
+
+Los registros demostrativos pueden persistir en el navegador con `localStorage`, sin incluir contraseñas ni información sensible.
+
+### Módulo Progreso
+
+Incluye MK-13.
+
+Presenta datos derivados de los registros realmente guardados.
+
+El usuario puede consultar periodos y regresar a Registrar.
+
+No mostrar porcentajes de salud, diagnósticos, déficit de hierro ni metas médicas inventadas.
+
+Si no existen registros, mostrar un estado vacío comprensible.
+
+### Módulo Perfil
+
+Incluye MK-14 y el estado de inicio de sesión.
+
+Debe mostrar zona de referencia, favoritos cuando estén implementados, accesos a registros, progreso y preferencias de cuenta.
+
+**Si el usuario ya está en una sesión demostrativa, no mostrar de forma redundante una tarjeta de «Inicio de sesión».** Utiliza ese espacio para información útil, como favoritos, zona o privacidad.
+
+Si el usuario no ha iniciado sesión, debe aparecer un acceso adecuado al formulario.
+
+Con HTML/CSS/JavaScript sin backend no se puede implementar autenticación multiusuario segura real. Si se requiere demostrar este flujo, debe quedar claramente etiquetado como modo demostración.
+
+## 9. Los seis estados adicionales
+
+Implementa los siguientes estados respetando los diseños proporcionados:
+
+| Estado | Función | Hotbar |
+|---|---|---|
+| MK-A01 | Mapa sin resultados | Mapa |
+| MK-A02 | Búsqueda sin coincidencias | Mapa |
+| MK-A03 | Advertencia nutricional | Inicio |
+| MK-A04 | Error de validación del registro | Registrar |
+| MK-A05 | Registro guardado correctamente | Registrar |
+| MK-A06 | Inicio de sesión / validación | Perfil |
+
+MK-A01 debe ofrecer cambiar zona, revisar filtros o ampliar la búsqueda cuando exista lógica válida.
+
+MK-A02 debe permitir limpiar filtros, modificar términos y regresar al mapa.
+
+MK-A03 debe mostrar una advertencia educativa contextual, consultar su fundamento y ofrecer alternativas sin bloquear al usuario.
+
+MK-A04 debe indicar exactamente qué campos obligatorios están incompletos, manteniendo los datos válidos.
+
+MK-A05 debe confirmar el registro y ofrecer únicamente las acciones necesarias: «Ver mi progreso» y «Registrar otro consumo».
+
+MK-A06 debe mostrar correo, contraseña, mensajes de validación y acciones de acceso coherentes con el alcance técnico.
+
+No incorporar en MK-A05 ni MK-A06 franjas inferiores redundantes.
+
+## 10. Implementación de las 30 Historias de Usuario core
+
+Las 30 HU core se distribuyen así:
+
+**Épica 1: Exploración y comparación, 9 HU.** HU-001, HU-002, HU-003, HU-004, HU-005, HU-006, HU-007, HU-008 y HU-010.
+
+**Épica 2: Catálogo de alimentos y establecimientos, 6 HU.** HU-012, HU-013, HU-014, HU-015, HU-017 y HU-020.
+
+**Épica 3: Recetas, 8 HU.** HU-021, HU-023, HU-024, HU-025, HU-026, HU-027, HU-028 y HU-029.
+
+**Épica 4: Orientación nutricional, 5 HU.** HU-031, HU-032, HU-034, HU-035 y HU-037.
+
+**Épica 5: Registro y seguimiento, 2 HU.** HU-040 y HU-048.
+
+Utiliza el documento original de las 48 HU para verificar las descripciones, criterios de aceptación y escenarios Gherkin.
+
+Cada HU debe contar con:
+
+- Pantalla o componente que la implementa.
+- Acción o interacción del usuario.
+- Resultado esperado.
+- Criterio de aceptación relacionado.
+- Prueba funcional correspondiente.
+- Estado de implementación.
+
+No declares implementada una HU únicamente porque aparece en un mockup.
+
+Las funcionalidades complementarias, como cambios decorativos, no deben contarse como HU core.
+
+## 11. Contenido real y datos referenciales
+
+Utiliza las fotografías, el catálogo inicial de diez alimentos y las diez recetas del proyecto.
+
+El catálogo debe incluir opciones de Lima Norte, Centro, Este, Sur y Moderna, sin favorecer a una universidad determinada.
+
+Los precios de los mercados son referenciales. No se puede afirmar que un establecimiento vende un plato concreto sin haberlo confirmado.
+
+Si una dirección, disponibilidad, horario o precio no ha sido verificado, utiliza una etiqueta visible como «Pendiente de confirmar» o «Precio referencial».
+
+Para las recetas, muestra ingredientes, preparación, tiempo y datos documentados.
+
+No inventes cantidades de hierro, proteínas, calorías o porcentajes de absorción.
+
+Cuando falten datos para un cálculo exigido por una HU, muestra «Dato no disponible» o «Pendiente de cálculo» y registra el requisito pendiente.
+
+La información educativa debe estar respaldada por fuentes y no presentarse como diagnóstico o prescripción médica.
+
+## 12. Diseño responsive
+
+La web debe utilizar una **única base HTML, CSS y JavaScript**, adaptable a Desktop, Tablet y Mobile.
+
+Utiliza CSS Grid, Flexbox y media queries.
+
+Referencias de comprobación:
+
+- Desktop: 1440 a 1600 px.
+- Tablet: alrededor de 768 px.
+- Mobile: alrededor de 390 px.
+
+En móviles, los diseños de varias columnas deben convertirse en una columna o distribución compacta.
+
+Los controles deberán ser táctiles, las imágenes no deben desbordarse y la navegación principal debe conservar las cinco opciones en su orden original.
+
+No crear una web distinta para cada dispositivo.
+
+## 13. Accesibilidad y experiencia de usuario
+
+La página debe cumplir buenas prácticas de HCI y tener como objetivo WCAG AA.
+
+Implementa navegación por teclado, foco visible, contraste adecuado, textos alternativos en fotografías, formularios etiquetados, errores comprensibles y controles fáciles de utilizar.
+
+Usa etiquetas HTML semánticas y mensajes accesibles para estados de error o confirmación.
+
+Respeta `prefers-reduced-motion`.
+
+No dependas únicamente de animaciones o colores para comunicar información.
+
+## 14. Animaciones y efectos interactivos
+
+Una vez que la estructura estática sea fiel a los mockups, incorpora animaciones discretas con CSS y JavaScript.
+
+Se permiten transiciones suaves, aparición gradual de contenidos, ligeros cambios de escala y profundidad en fotografías de platos, efectos hover y desplazamiento entre secciones.
+
+Evita animaciones exageradas, scroll bloqueado, movimientos obligatorios o efectos que dificulten la lectura.
+
+Las animaciones no deben sustituir ni alterar las funcionalidades.
+
+## 15. Organización del proyecto
+
+Organiza el código en archivos claros, por ejemplo:
+
+```text
+allsumaq/
+│
+├── index.html
+│
+├── css/
+│   ├── variables.css
+│   ├── base.css
+│   ├── layout.css
+│   ├── componentes.css
+│   └── responsive.css
+│
+├── js/
+│   ├── app.js
+│   ├── navegacion.js
+│   ├── datos.js
+│   ├── catalogo.js
+│   ├── recetas.js
+│   ├── orientador.js
+│   ├── registro.js
+│   └── progreso.js
+│
+├── assets/
+│   ├── logo/
+│   ├── alimentos/
+│   ├── recetas/
+│   └── icons/
+│
+└── README.md
+```
+
+Esta es una estructura orientativa. Puedes simplificarla si mejora el mantenimiento.
+
+No introducir herramientas adicionales.
+
+## 16. Orden de desarrollo obligatorio
+
+Trabaja por grupos pequeños y verifica el diseño antes de continuar.
+
+**Fase 1:** organizar recursos, crear variables CSS, tipografía, iconos, botones, tarjetas, encabezado y navegación híbrida.
+
+**Fase 2:** implementar MK-01 Inicio y comprobar su fidelidad visual.
+
+**Fase 3:** MK-02, MK-03 y MK-04.
+
+**Fase 4:** MK-05 y MK-06.
+
+**Fase 5:** MK-07 y MK-08.
+
+**Fase 6:** MK-09 y MK-10.
+
+**Fase 7:** MK-11.
+
+**Fase 8:** MK-12, MK-13 y MK-14.
+
+**Fase 9:** implementar los seis estados adicionales, en grupos de dos.
+
+**Fase 10:** comprobar responsive, accesibilidad, navegación y criterios de aceptación.
+
+No construyas todas las interfaces en una sola entrega sin revisión visual y funcional intermedia.
+
+## 17. Entregables de cada grupo
+
+Después de cada grupo de implementación, explica:
+
+1. Qué mockups se desarrollaron.
+2. Qué HU core están representadas.
+3. Qué criterios de aceptación están implementados.
+4. Desde qué pantalla se accede.
+5. Qué botones tiene que pulsar el usuario.
+6. A qué pantalla dirige cada acción.
+7. Qué secciones se recorren mediante scroll.
+8. Qué estados vacíos o errores pueden aparecer.
+9. Cómo se conserva el contexto al regresar.
+10. Qué falta implementar o verificar.
+
+Incluye instrucciones para ejecutar el código, archivos completos y pruebas realizadas.
+
+## 18. Resultado final esperado
+
+El resultado debe ser **una sola página web responsive e interactiva de Allsumaq, programada únicamente con HTML, CSS y JavaScript nativo**, manteniendo los diseños visuales aprobados.
+
+Debe contar con cinco opciones principales de navegación, scroll interactivo, navegación por clics, fichas, recetas, filtros, comparación, orientador, registro, progreso y estados adicionales.
+
+Las funcionalidades deben estar conectadas a las HU core y sus criterios de aceptación.
+
+No inventes información nutricional, establecimientos, precios confirmados ni capacidades de autenticación.
+
+**Prioriza siempre tres objetivos: fidelidad a los mockups, funcionalidad real y coherencia de navegación.**
+
+Antes de comenzar la programación, revisa los archivos adjuntos, identifica las pantallas, confirma las dependencias de datos y presenta el plan de implementación por grupos. Después inicia con la estructura visual y la navegación base, sin rediseñar Allsumaq.

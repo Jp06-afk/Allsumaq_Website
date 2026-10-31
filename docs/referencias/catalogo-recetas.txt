@@ -1,0 +1,545 @@
+Allsumaq | Catálogo de 10 recetas saludables ricas en hierro y vitamina C
+Proyecto TikrAI · Punto 5: Contenido nutricional · HCI for UX Design
+
+Para este apartado he seleccionado 10 recetas que existen en recetarios o publicaciones de instituciones peruanas, principalmente del Ministerio de Salud (MINSA), el Instituto Nacional de Salud (INS) y el Ministerio del Ambiente (MINAM).
+
+El objetivo es que cada receta pueda convertirse en una pantalla o tarjeta informativa de Allsumaq y que los estudiantes encuentren opciones accesibles, nutritivas y realizables en casa.
+1. Criterio de selección y clasificación
+A diferencia del punto 4, no conviene ordenarlas únicamente por el hierro de un ingrediente. Para estas recetas consideraremos también:
+- Fuente de hierro: priorizar hierro de origen animal, cuya absorción suele ser mayor, y complementarlo con fuentes vegetales.
+- Vitamina C: incluir frutas o verduras que favorezcan especialmente la absorción del hierro no hemo.
+- Equilibrio nutricional: incorporar verduras, legumbres, cereales andinos y preparaciones con cantidades moderadas de aceite y sal.
+- Accesibilidad: ingredientes que puedan conseguirse en mercados peruanos y preparación doméstica razonable.
+La vitamina C mejora la absorción del hierro no hemo, pero no convierte automáticamente una receta con menos hierro en otra con mayor aporte total. Por eso, el ranking siguiente es una priorización cualitativa para Allsumaq y no una clasificación clínica por miligramos de hierro absorbido. 
+Health Professional Fact Sheet+1
+
+Ranking propuesto
+01
+
+Picante de sangrecita y tarwi
+
+Muy alta prioridad
+
+
+02
+
+Croquetas de sangrecita y kiwicha
+
+Muy alta prioridad
+
+
+03
+
+Puré de oca y sangrecita
+
+Muy alta prioridad
+
+
+04
+
+Espesito de bazo con camote
+
+Alta prioridad
+
+
+05
+
+Caigua rellena con higadito y cañihua
+
+Alta prioridad
+
+
+06
+
+Pepián de quinua con hígado de pollo
+
+Alta prioridad
+
+
+07
+
+Seco de hígado de res con kiwicha
+
+Alta prioridad
+
+
+08
+
+Matasquita de quinua y bofe
+
+Alta prioridad
+
+
+09
+
+Anchoveta dorada con ensalada de tarwi
+
+Buena alternativa
+
+
+10
+
+Guiso de quinua con jurel
+
+Buena alternativa
+
+
+
+Las recetas 1 a 3 destacan por utilizar sangrecita; las siguientes incluyen vísceras de res o pollo, mientras que las últimas aportan variedad mediante pescado y alimentos andinos. No significa que una receta situada al final sea menos saludable.
+2. Fichas completas de recetas
+Los nombres de las diez preparaciones proceden de recetarios y publicaciones oficiales. Para que el equipo disponga de fichas prácticas homogéneas, las cantidades y los pasos siguientes son adaptaciones domésticas orientativas, no transcripciones literales de las recetas originales. Los acompañamientos con vitamina C también se proponen para Allsumaq cuando corresponde.
+
+Cada ficha incluye descripción, ingredientes con cantidades, preparación, porciones, tiempo estimado, aporte nutricional cualitativo, recomendación y fuente.
+1. Picante de sangrecita y tarwi
+
+
+
+
+
+
+
+
+
+Fuente muy rica en hierro
+Guiso peruano que combina sangrecita de pollo y tarwi, una leguminosa andina. Se propone acompañarlo con ensalada de tomate y limón para incorporar vitamina C.
+
+Tiempo estimado: 35 minutos · Dificultad: media · Porciones: 4
+
+
+Ingredientes para 4 porciones
+- 300 g de sangrecita de pollo previamente cocida.
+- 200 g de tarwi desamargado y cocido.
+- 1 cebolla roja mediana.
+- 2 dientes de ajo.
+- 2 cucharadas de ají amarillo molido.
+- 1 cucharada de aceite vegetal.
+- 2 papas medianas.
+- 2 tomates y 2 limones para acompañar.
+- Sal, comino y pimienta en cantidades moderadas.
+Preparación
+1. Sancochar las papas y reservar. Desmenuzar la sangrecita cocida.
+2. En una olla, calentar el aceite y preparar un aderezo con cebolla, ajo y ají amarillo.
+3. Incorporar el tarwi cocido y la sangrecita. Añadir un poco de agua y cocinar hasta integrar los sabores.
+4. Servir con las papas sancochadas y ensalada fresca de tomate aliñada con limón.
+Aporte nutricional: hierro de origen animal, proteína y nutrientes de la leguminosa. El tomate y el limón aportan vitamina C.
+
+Consejo Allsumaq: utilizar tarwi correctamente desamargado y sangrecita de procedencia segura, completamente cocida.
+
+Fuente de la receta existente: Recetario culinario de biodiversidad andina del MINAM. 
+catalogobiam.minam.gob.pe
+
+
+
+2. Croquetas de sangrecita y kiwicha
+
+
+
+
+
+
+
+
+
+Fuente muy rica en hierro
+Croquetas preparadas con sangrecita, kiwicha y verduras. Son una alternativa práctica para incorporar alimentos ricos en hierro en una presentación diferente.
+
+Tiempo estimado: 40 minutos · Dificultad: media · Porciones: 4 (8 croquetas)
+
+
+Ingredientes para 4 porciones
+- 250 g de sangrecita de pollo cocida.
+- 150 g de kiwicha cocida.
+- 1 huevo.
+- 1 zanahoria pequeña rallada.
+- ½ cebolla roja picada.
+- 2 cucharadas de avena molida.
+- 1 cucharada de aceite.
+- 1 pimiento rojo pequeño y 1 limón.
+- Ajo, perejil y sal moderada.
+Preparación
+1. Desmenuzar finamente la sangrecita cocida y mezclar con la kiwicha.
+2. Agregar huevo, zanahoria, cebolla, ajo y avena hasta obtener una masa moldeable.
+3. Formar ocho croquetas y colocarlas en una bandeja ligeramente aceitada.
+4. Hornear aproximadamente 20 minutos a 180 °C, hasta que estén firmes y completamente cocidas.
+5. Servir con pimiento fresco y limón.
+Aporte nutricional: alto potencial de hierro por la sangrecita, proteína y aporte adicional de kiwicha.
+
+Consejo Allsumaq: preferir la cocción al horno en lugar de fritura profunda. Es una opción útil para preparar varias porciones en una misma sesión.
+
+Fuente: Recetario del MINAM, preparación «Croquetas de sangrecita y kiwicha». 
+catalogobiam.minam.gob.pe
+
+
+
+3. Puré de oca y sangrecita
+
+
+
+
+
+
+
+
+
+Fuente muy rica en hierro
+Preparación que combina puré de oca, tubérculo andino de sabor ligeramente dulce, con sangrecita salteada. Se complementa con ensalada de tomate.
+
+Tiempo estimado: 35 minutos · Dificultad: fácil · Porciones: 4
+
+
+Ingredientes para 4 porciones
+- 300 g de sangrecita de pollo cocida.
+- 500 g de oca.
+- 1 cebolla mediana.
+- 2 dientes de ajo.
+- 2 cucharadas de leche para el puré, opcional.
+- 1 cucharada de aceite vegetal.
+- 2 tomates y 1 limón.
+- Perejil, pimienta y sal moderada.
+Preparación
+1. Lavar y sancochar las ocas hasta que estén blandas.
+2. Triturar las ocas y agregar un poco de agua caliente hasta formar un puré suave. La leche es opcional.
+3. Preparar un aderezo de cebolla y ajo con aceite.
+4. Incorporar la sangrecita cocida, desmenuzarla y mezclarla con el aderezo caliente.
+5. Servir junto al puré y una ensalada fresca de tomate con limón.
+Aporte nutricional: hierro procedente de la sangrecita y carbohidratos de la oca para aportar energía.
+
+Consejo Allsumaq: mantener la ensalada separada y agregar el limón al momento de servir.
+
+Fuente: Recetario del MINAM, preparación «Puré de oca y sangrecita». 
+catalogobiam.minam.gob.pe
+
+
+
+4. Espesito de bazo con camote
+
+
+
+
+
+
+
+
+
+Alto potencial de hierro
+Guiso de bazo de res con camote, que combina una fuente concentrada de hierro con un alimento energético y naturalmente dulce.
+
+Tiempo estimado: 45 minutos · Dificultad: media · Porciones: 4
+
+
+Ingredientes para 4 porciones
+- 300 g de bazo de res limpio.
+- 400 g de camote amarillo.
+- 1 cebolla roja.
+- 2 dientes de ajo.
+- 1 cucharada de ají amarillo.
+- 1 cucharada de aceite vegetal.
+- 2 tomates y 1 pimiento rojo.
+- Agua, comino y sal moderada.
+Preparación
+1. Cocinar el bazo hasta que esté completamente cocido y cortarlo en trozos pequeños.
+2. Sancochar los camotes, retirar la cáscara y triturarlos ligeramente.
+3. Preparar un aderezo con cebolla, ajo y ají amarillo.
+4. Incorporar el bazo y un poco de agua; cocinar hasta integrar los sabores.
+5. Añadir parte del camote triturado para espesar el guiso.
+6. Servir con tomate y pimiento fresco.
+Aporte nutricional: bazo de res como fuente concentrada de hierro, carbohidratos del camote y vitamina C de las verduras frescas.
+
+Consejo Allsumaq: comprar el bazo en establecimientos con condiciones sanitarias adecuadas y evitar servirlo poco cocido.
+
+Fuente: MINSA, publicación sobre recetas nutritivas para prevenir la anemia, donde se presenta el «Espesito de bazo con camote». 
+Plataforma del Estado Peruano
+
+
+
+5. Caigua rellena con higadito y cañihua
+
+
+
+
+
+
+
+
+
+Hierro animal y vegetal
+Caiguas rellenas con hígado de pollo y cañihua, una combinación de ingredientes tradicionales peruanos con verduras y cereales andinos.
+
+Tiempo estimado: 45 minutos · Dificultad: media · Porciones: 4
+
+
+Ingredientes para 4 porciones
+- 4 caiguas medianas.
+- 250 g de hígado de pollo.
+- 120 g de cañihua cocida.
+- 1 cebolla mediana.
+- 2 dientes de ajo.
+- 1 zanahoria pequeña.
+- 2 tomates.
+- 1 cucharada de aceite.
+- 1 limón, perejil y sal moderada.
+Preparación
+1. Lavar las caiguas, abrirlas y retirar sus semillas.
+2. Cocinar completamente el hígado de pollo y picarlo en trozos pequeños.
+3. Preparar un aderezo de cebolla, ajo y zanahoria.
+4. Mezclar el aderezo con el hígado y la cañihua cocida.
+5. Rellenar las caiguas y cocinarlas tapadas con un poco de agua y tomate durante aproximadamente 20 minutos, hasta que estén tiernas.
+6. Servir con una ensalada de tomate y limón.
+Aporte nutricional: hierro, proteínas, nutrientes de la cañihua y verduras.
+
+Consejo Allsumaq: es una buena preparación para explicar cómo combinar alimentos animales y vegetales. El hígado contiene mucha vitamina A, por lo que debe consumirse con moderación y evitarse durante el embarazo salvo indicación profesional.
+
+Fuente: Recetario del MINAM, «Caigua rellena con higadito y cañihua». 
+catalogobiam.minam.gob.pe
+
+
+
+6. Pepián de quinua con hígado de pollo
+
+
+
+
+
+
+
+
+
+Hierro y proteína
+Guiso espeso a base de quinua e hígado de pollo, enriquecido con verduras. Se acompaña de una ensalada fresca de pimiento y limón.
+
+Tiempo estimado: 40 minutos · Dificultad: fácil-media · Porciones: 4
+
+
+Ingredientes para 4 porciones
+- 250 g de hígado de pollo.
+- 200 g de quinua cruda.
+- 1 cebolla mediana.
+- 2 dientes de ajo.
+- 2 cucharadas de ají amarillo molido.
+- 1 zanahoria.
+- 1 cucharada de aceite.
+- 1 pimiento rojo y 1 limón.
+- Agua, perejil y sal moderada.
+Preparación
+1. Lavar muy bien la quinua y cocinarla en agua hasta que esté suave.
+2. Cocinar completamente el hígado y cortarlo en trozos pequeños.
+3. En otra olla, preparar el aderezo con ajo, cebolla y ají amarillo.
+4. Incorporar zanahoria picada, quinua cocida y un poco de agua.
+5. Añadir el hígado y mezclar hasta obtener la consistencia espesa del pepián.
+6. Servir con una ensalada fresca de pimiento y limón.
+Aporte nutricional: hierro de origen animal y vegetal, proteína y fibra de la quinua.
+
+Consejo Allsumaq: la quinua permite una preparación saciante sin depender de una gran cantidad de arroz.
+
+Fuente: Recetario del MINAM, «Pepián de quinua con hígado de pollo». 
+catalogobiam.minam.gob.pe
+
+
+
+7. Seco de hígado de res con kiwicha
+
+
+
+
+
+
+
+
+
+Hierro y cereales andinos
+Adaptación del tradicional seco peruano, elaborado con hígado de res, culantro y kiwicha como acompañamiento.
+
+Tiempo estimado: 40 minutos · Dificultad: media · Porciones: 4
+
+
+Ingredientes para 4 porciones
+- 300 g de hígado de res.
+- 180 g de kiwicha cruda.
+- 1 cebolla mediana.
+- 2 dientes de ajo.
+- ½ taza de culantro licuado.
+- 1 cucharada de ají amarillo.
+- 1 cucharada de aceite vegetal.
+- 2 tomates y 1 limón.
+- Comino, pimienta y sal moderada.
+Preparación
+1. Lavar y cocinar la kiwicha en agua hasta que esté suave.
+2. Cortar el hígado en trozos medianos.
+3. Preparar un aderezo con cebolla, ajo, ají amarillo y culantro.
+4. Incorporar el hígado y cocinar completamente con un poco de agua.
+5. Servir el seco junto a la kiwicha.
+6. Complementar con ensalada fresca de tomate y limón.
+Aporte nutricional: hierro de origen animal, proteínas y aporte de cereales andinos.
+
+Consejo Allsumaq: mantener una porción moderada de hígado y alternar con otras proteínas durante la semana.
+
+Fuente: Recetario del MINAM, «Seco de hígado de res con kiwicha». 
+catalogobiam.minam.gob.pe
+
+
+
+8. Matasquita de quinua y bofe
+
+
+
+
+
+
+
+
+
+Hierro y alimentos andinos
+Guiso tradicional preparado con bofe, papa, verduras y quinua. Es una forma de incorporar vísceras en una receta de consumo familiar.
+
+Tiempo estimado: 50 minutos · Dificultad: media · Porciones: 4
+
+
+Ingredientes para 4 porciones
+- 300 g de bofe de res limpio.
+- 150 g de quinua cruda.
+- 3 papas medianas.
+- 1 zanahoria.
+- 1 cebolla mediana.
+- 2 dientes de ajo.
+- 2 cucharadas de ají panca.
+- 1 cucharada de aceite.
+- 2 tomates y 1 limón.
+- Agua, comino y sal moderada.
+Preparación
+1. Cocinar el bofe en agua hasta que esté completamente cocido. Escurrir y cortar en cubos.
+2. Lavar y cocinar la quinua por separado.
+3. Preparar un aderezo con cebolla, ajo y ají panca.
+4. Incorporar el bofe, las papas y la zanahoria cortadas en cubos.
+5. Agregar agua y cocinar hasta que las verduras estén tiernas.
+6. Añadir la quinua y mezclar.
+7. Servir con ensalada fresca de tomate y limón.
+Aporte nutricional: hierro de origen animal, proteínas, carbohidratos y fibra.
+
+Consejo Allsumaq: esta receta aprovecha ingredientes relativamente económicos y puede prepararse en cantidad para varios comensales.
+
+Fuente: Recetario del MINAM, «Matasquita de quinua y bofe». También existen matasquitas de bofe difundidas por el MINSA. 
+catalogobiam.minam.gob.pe+1
+
+
+
+9. Anchoveta dorada con ensalada de tarwi
+
+
+
+
+
+
+
+
+
+Hierro, proteína y omega-3
+Preparación que combina anchoveta cocida y ensalada de tarwi, tomate y limón. Integra pescado y leguminosas andinas.
+
+Tiempo estimado: 30 minutos · Dificultad: fácil · Porciones: 4
+
+
+Ingredientes para 4 porciones
+- 500 g de anchoveta limpia.
+- 250 g de tarwi desamargado y cocido.
+- 2 tomates.
+- 1 cebolla roja.
+- 2 limones.
+- 1 cucharada de aceite vegetal.
+- 2 dientes de ajo.
+- Perejil, pimienta y sal moderada.
+Preparación
+1. Limpiar y lavar las anchovetas.
+2. Condimentarlas con ajo y pimienta.
+3. Cocinarlas en una sartén ligeramente aceitada hasta que estén doradas y completamente cocidas.
+4. Preparar una ensalada con tarwi cocido, tomate y cebolla.
+5. Agregar limón y perejil justo antes de servir.
+6. Acompañar las anchovetas con la ensalada.
+Aporte nutricional: proteínas del pescado, hierro y grasas omega-3; el tarwi aporta proteína vegetal y el limón aporta vitamina C.
+
+Consejo Allsumaq: preferir pescado fresco de procedencia segura y evitar la fritura profunda.
+
+Fuente: Recetario del MINAM, «Anchoveta dorada con ensalada de tarwi». 
+catalogobiam.minam.gob.pe
+
+
+
+10. Guiso de quinua con jurel
+
+
+
+
+
+
+
+
+
+Alternativa equilibrada
+Guiso preparado con quinua, jurel y verduras. Combina proteína animal y vegetal, con un acompañamiento de pimiento y limón.
+
+Tiempo estimado: 35 minutos · Dificultad: fácil · Porciones: 4
+
+
+Ingredientes para 4 porciones
+- 400 g de filete de jurel limpio.
+- 200 g de quinua cruda.
+- 1 cebolla mediana.
+- 2 dientes de ajo.
+- 1 tomate.
+- 1 zanahoria.
+- ½ taza de arvejas.
+- 1 cucharada de aceite.
+- 1 pimiento rojo y 1 limón.
+- Perejil, pimienta y sal moderada.
+Preparación
+1. Lavar la quinua hasta eliminar el sabor amargo y cocinarla en agua.
+2. Cocinar el jurel completamente, retirar las espinas y separar su carne.
+3. Preparar un aderezo con cebolla, ajo y tomate.
+4. Incorporar la zanahoria, las arvejas y un poco de agua.
+5. Añadir la quinua cocida y el jurel, mezclando suavemente.
+6. Servir con una ensalada fresca de pimiento y limón.
+Aporte nutricional: hierro, proteínas, omega-3 del pescado y nutrientes de la quinua.
+
+Consejo Allsumaq: opción conveniente para diversificar la alimentación semanal sin depender exclusivamente de vísceras o carnes rojas.
+
+Fuente: Recetario del MINAM, «Guiso de quinua con jurel». 
+catalogobiam.minam.gob.pe
+
+
+
+3. Información adicional que recomiendo para Allsumaq
+Además de los campos solicitados, las fichas del catálogo deberían incorporar una serie de atributos que mejoren la experiencia de usuario y permitan implementar funcionalidades relacionadas con búsqueda, filtros y detalles de recetas.
+Campo	Función dentro de Allsumaq
+ID de receta	Identificar cada registro, por ejemplo REC-001.
+Tipo de comida	Almuerzo, cena o preparación complementaria.
+Tiempo de preparación	Ayudar a estudiantes a encontrar recetas rápidas.
+Dificultad	Fácil, media o avanzada.
+Porciones	Mostrar para cuántas personas alcanza la preparación.
+Fuente de hierro	Identificar los ingredientes que lo aportan.
+Fuente de vitamina C	Identificar los ingredientes que favorecen la absorción del hierro no hemo.
+Advertencias	Comunicar precauciones alimentarias específicas.
+Fuente de la receta	Proporcionar credibilidad y trazabilidad.
+Imagen	Facilitar el reconocimiento visual del plato.
+
+También sería útil incluir un dato cuantitativo de hierro estimado por porción (mg), pero solo después de realizar un cálculo nutricional de cada preparación con los pesos comestibles y rendimientos correspondientes. No sería correcto asignar directamente el valor de 100 g de sangrecita al plato completo.
+4. Recomendaciones educativas para incorporar al catálogo
+Combina hierro con vitamina C
+
+Consumir alimentos ricos en vitamina C, como pimiento, tomate, naranja o limón, en la misma comida puede mejorar la absorción del hierro no hemo.
+
+
+
+Considera el momento de consumir té o café
+
+Para optimizar la absorción del hierro, especialmente en personas con deficiencia, puede ser útil separar el té y el café de las comidas principales.
+
+
+
+Prioriza la inocuidad alimentaria
+
+Cocina completamente sangrecita, vísceras, carnes y pescados. Utiliza ingredientes de procedencia segura y respeta la cadena de frío.
+
+
+
+La alimentación no reemplaza un tratamiento
+
+Estas recetas pueden formar parte de una alimentación variada para prevenir deficiencias nutricionales, pero no sustituyen la evaluación médica ni el tratamiento de una anemia diagnosticada.

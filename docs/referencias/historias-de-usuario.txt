@@ -1,0 +1,1134 @@
+Allsumaq
+Especificación de 48 Historias de Usuario | TikrAI
+Versión 2.1  ·  Documento de trabajo para Capítulo III — Requirements Specification
+Base de alcance aprobada: exploración, comparación y orientación alimentaria; catálogo curado de establecimientos; registro voluntario de hábitos. Sin compras, pagos, diagnósticos, tratamiento médico ni IA generativa obligatoria.
+Alcance y convenciones
+Requisito del Final Project Handbook (HCI for UX Design, 2026-20): 48 HU; al menos tres criterios de aceptación y dos escenarios Gherkin por HU; seleccionar 30 HU core funcionales para la landing page responsive. Este documento presenta cuatro criterios y dos escenarios por HU.
+N1 = tiempo e inmediatez; N2 = presupuesto y accesibilidad; N3 = orientación nutricional práctica. M = Must Have; S = Should Have; C = Could Have. «Core = Sí» identifica las 30 HU seleccionadas para la implementación académica, no una funcionalidad ya implementada.
+Fuente de necesidades: entrevistas y análisis del equipo TikrAI (2026). Las funciones propuestas son hipótesis de diseño a validar, no demandas universales comprobadas. El catálogo, precios, fuentes y estimaciones deberán documentarse en la implementación.
+Matriz general de trazabilidad
+HU
+Título resumido
+Necesidad
+MoSCoW
+Core
+HU-001
+Visualizar establecimientos en un mapa
+N1
+M
+Sí
+HU-002
+Buscar alimentos y platos por nombre
+N1
+M
+Sí
+HU-003
+Filtrar establecimientos por distancia
+N1
+M
+Sí
+HU-004
+Filtrar opciones según presupuesto
+N2
+M
+Sí
+HU-005
+Filtrar por aporte de hierro documentado
+N3
+M
+Sí
+HU-006
+Combinar filtros de precio, distancia y hierro
+N1, N2, N3
+M
+Sí
+HU-007
+Ordenar resultados por criterio
+N1, N2, N3
+M
+Sí
+HU-008
+Comparar alternativas alimentarias
+N1, N2, N3
+M
+Sí
+HU-009
+Recuperar búsquedas recientes
+N1
+C
+No
+HU-010
+Alternar entre mapa y lista
+N1
+M
+Sí
+HU-011
+Guardar comidas y locales favoritos
+N1
+S
+No
+HU-012
+Consultar información de un establecimiento
+N1
+M
+Sí
+HU-013
+Consultar ficha de una comida
+N2, N3
+M
+Sí
+HU-014
+Consultar tiempo orientativo de obtención
+N1
+M
+Sí
+HU-015
+Consultar fuentes de datos nutricionales
+N3
+M
+Sí
+HU-016
+Consultar platos de un establecimiento
+N1, N2
+S
+No
+HU-017
+Identificar el origen del hierro
+N3
+M
+Sí
+HU-018
+Consultar fecha de actualización de precios
+N2
+S
+No
+HU-019
+Abrir indicaciones para llegar
+N1
+S
+No
+HU-020
+Seleccionar una zona de referencia manualmente
+N1
+M
+Sí
+HU-021
+Explorar recetas con fuentes de hierro
+N3
+M
+Sí
+HU-022
+Buscar recetas por palabra clave
+N1, N3
+S
+No
+HU-023
+Consultar ingredientes y preparación
+N1, N3
+M
+Sí
+HU-024
+Consultar hierro estimado por porción
+N3
+M
+Sí
+HU-025
+Consultar tiempo de preparación
+N1
+M
+Sí
+HU-026
+Consultar costo estimado de una receta
+N2
+M
+Sí
+HU-027
+Explorar refrigerios transportables
+N1, N3
+M
+Sí
+HU-028
+Consultar combinaciones alimentarias económicas
+N2, N3
+M
+Sí
+HU-029
+Recibir sugerencias según tiempo y presupuesto
+N1, N2, N3
+M
+Sí
+HU-030
+Consultar sustitutos económicos de ingredientes
+N2, N3
+S
+No
+HU-031
+Revisar la combinación de comida y bebida
+N3
+M
+Sí
+HU-032
+Recibir advertencia educativa sobre café o té
+N3
+M
+Sí
+HU-033
+Consultar orientación sobre lácteos y hierro
+N3
+S
+No
+HU-034
+Consultar acompañamientos con vitamina C
+N3
+M
+Sí
+HU-035
+Consultar alternativas ante una advertencia
+N3
+M
+Sí
+HU-036
+Consultar orientación temporal de consumo
+N3
+S
+No
+HU-037
+Consultar consejos breves con fuentes
+N3
+M
+Sí
+HU-038
+Configurar avisos educativos
+N3
+S
+No
+HU-039
+Guardar una recomendación educativa
+N1, N3
+C
+No
+HU-040
+Registrar comidas y bebidas consumidas
+N3
+M
+Sí
+HU-041
+Marcar recomendaciones aplicadas o pendientes
+N3
+S
+No
+HU-042
+Consultar recomendaciones pendientes del día
+N3
+S
+No
+HU-043
+Consultar frecuencia semanal de registros
+N3
+S
+No
+HU-044
+Comparar elecciones dentro y fuera de casa
+N1, N3
+C
+No
+HU-045
+Editar y eliminar registros alimentarios
+N3
+S
+No
+HU-046
+Establecer metas voluntarias de hábitos
+N3
+S
+No
+HU-047
+Ajustar preferencias de tiempo y presupuesto
+N1, N2
+S
+No
+HU-048
+Consultar resumen personal de hábitos
+N3
+M
+Sí
+
+ÉPICA 01 — Exploración y comparación
+HU-001  |  Visualizar establecimientos en un mapa
+Necesidad: N1   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante con descansos cortos, quiero visualizar en un mapa los establecimientos incluidos en el catálogo cerca de mi zona de referencia, para ubicar alternativas sin revisar direcciones una por una.
+Criterios de aceptación
+CA-01. La vista representa mediante marcadores únicamente establecimientos registrados con ubicación válida.
+CA-02. Cada marcador permite identificar el nombre del establecimiento y acceder a su información básica.
+CA-03. La zona de referencia utilizada se muestra de forma comprensible y puede modificarse.
+CA-04. Si el mapa no carga o no existen puntos en la zona, se informa la situación y se ofrece una alternativa de consulta.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Mapa con establecimientos
+DADO Existe una zona seleccionada y establecimientos georreferenciados
+CUANDO El estudiante abre el mapa
+ENTONCES Aparecen marcadores seleccionables correspondientes al catálogo de esa zona
+Escenario 2: Mapa sin coincidencias
+DADO La zona elegida no contiene establecimientos registrados
+CUANDO El estudiante abre el mapa
+ENTONCES Se presenta un estado sin resultados y se ofrece cambiar la zona o consultar la lista
+
+HU-002  |  Buscar alimentos y platos por nombre
+Necesidad: N1   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que tiene un plato en mente, quiero buscar comidas por su nombre, para encontrar alternativas sin recorrer todo el catálogo.
+Criterios de aceptación
+CA-01. La búsqueda acepta nombres completos y fragmentos de texto, sin distinguir mayúsculas y minúsculas.
+CA-02. Los resultados incluyen solo comidas registradas que coincidan con la consulta.
+CA-03. El campo de búsqueda permite borrar la consulta y recuperar el listado general.
+CA-04. Si no existen coincidencias, se explica el resultado y se sugiere modificar el término.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Búsqueda parcial
+DADO El catálogo contiene una comida llamada lentejas con arroz
+CUANDO El estudiante escribe «lentejas» y ejecuta la búsqueda
+ENTONCES El sistema muestra la comida coincidente
+Escenario 2: Sin coincidencias
+DADO El catálogo no contiene ninguna comida relacionada con la consulta
+CUANDO El estudiante busca «plato inexistente»
+ENTONCES Se muestra un mensaje sin resultados y la posibilidad de limpiar la búsqueda
+
+HU-003  |  Filtrar establecimientos por distancia
+Necesidad: N1   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante con poco tiempo entre clases, quiero limitar la búsqueda por distancia desde una zona de referencia, para identificar alternativas cercanas compatibles con mis descansos.
+Criterios de aceptación
+CA-01. El sistema ofrece rangos de distancia claros expresados en metros o kilómetros.
+CA-02. El filtro usa la distancia estimada definida para la zona de referencia, sin hacerla pasar por tiempo real de caminata.
+CA-03. Los resultados y el filtro activo se actualizan al aplicar o modificar el rango.
+CA-04. Si un registro carece de ubicación suficiente, no se incluye indebidamente entre las coincidencias.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Distancia aplicada
+DADO La zona de referencia y las ubicaciones de los establecimientos están disponibles
+CUANDO El estudiante selecciona una distancia máxima de 500 metros
+ENTONCES Se muestran únicamente establecimientos dentro del rango estimado
+Escenario 2: Sin establecimientos cercanos
+DADO Ningún establecimiento registrado satisface el rango seleccionado
+CUANDO El estudiante aplica el filtro
+ENTONCES Se informa que no hay coincidencias y se permite ampliar la distancia
+
+HU-004  |  Filtrar opciones según presupuesto
+Necesidad: N2   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante con un presupuesto diario limitado, quiero consultar alimentos dentro del monto máximo que puedo gastar, para evitar opciones que excedan mis posibilidades económicas.
+Criterios de aceptación
+CA-01. El usuario puede definir un presupuesto máximo en soles.
+CA-02. El filtro muestra solamente opciones con precio registrado igual o inferior al monto elegido.
+CA-03. Cada resultado muestra el precio referencial y su condición de estimado cuando corresponda.
+CA-04. Si no hay opciones o no existe un precio registrado, el sistema informa el estado sin inventar valores.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Presupuesto de S/ 15
+DADO El catálogo tiene opciones con precios registrados
+CUANDO El estudiante aplica un máximo de S/ 15
+ENTONCES Solo se presentan opciones cuyo precio registrado no supera S/ 15
+Escenario 2: Presupuesto sin coincidencias
+DADO Las opciones disponibles exceden el presupuesto seleccionado
+CUANDO El estudiante aplica el filtro
+ENTONCES Se muestra el estado sin resultados y la opción de cambiar el importe
+
+HU-005  |  Filtrar por aporte de hierro documentado
+Necesidad: N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante interesado en incorporar fuentes de hierro, quiero filtrar alimentos con aporte de hierro documentado, para encontrar opciones pertinentes sin investigar cada plato por separado.
+Criterios de aceptación
+CA-01. El filtro utiliza una clasificación de aporte de hierro previamente definida y vinculada a fuentes documentadas.
+CA-02. Solo se presentan como coincidencias comidas con información nutricional suficiente para aplicar esa clasificación.
+CA-03. El resultado diferencia los valores orientativos de los análisis individuales o clínicos.
+CA-04. Las opciones sin datos suficientes se identifican como no clasificadas y no se presentan como ricas en hierro.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Filtro de hierro
+DADO Hay comidas con clasificación documentada de aporte de hierro
+CUANDO El estudiante activa «Con aporte de hierro»
+ENTONCES Se muestran únicamente opciones que cumplen la regla establecida
+Escenario 2: Datos insuficientes
+DADO Una comida carece de porción y dato nutricional verificable
+CUANDO El estudiante aplica el filtro
+ENTONCES Esa comida no aparece como coincidencia ni recibe una clasificación inventada
+
+HU-006  |  Combinar filtros de precio, distancia y hierro
+Necesidad: N1, N2, N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que debe decidir con rapidez y presupuesto limitado, quiero aplicar juntos filtros de precio, distancia y aporte de hierro, para identificar alternativas viables para mi contexto real.
+Criterios de aceptación
+CA-01. Los filtros de precio, distancia y hierro pueden permanecer activos simultáneamente.
+CA-02. El conjunto de resultados cumple todas las restricciones activadas y las muestra de forma visible.
+CA-03. El usuario puede eliminar un filtro sin borrar necesariamente los demás.
+CA-04. Si no existen coincidencias, el sistema ofrece modificar o reiniciar las restricciones.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Tres restricciones
+DADO Existen comidas con datos suficientes para aplicar los tres filtros
+CUANDO El estudiante fija S/ 15, 500 m y «Con aporte de hierro»
+ENTONCES Solo se listan las comidas que satisfacen los tres criterios
+Escenario 2: Retirar un filtro
+DADO Una combinación de restricciones no produce resultados
+CUANDO El estudiante elimina únicamente el filtro de distancia
+ENTONCES Se conservan precio y hierro y se actualizan las coincidencias
+
+HU-007  |  Ordenar resultados por criterio
+Necesidad: N1, N2, N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que debe comparar varias alternativas, quiero ordenar el catálogo por precio, cercanía o aporte de hierro disponible, para revisar primero los resultados más útiles para mi decisión.
+Criterios de aceptación
+CA-01. El usuario puede elegir el criterio de ordenamiento entre precio, distancia y aporte de hierro cuando haya datos.
+CA-02. Los resultados se reorganizan de acuerdo con el criterio seleccionado y se indica el orden activo.
+CA-03. Los registros sin el dato necesario se colocan al final o se marcan como no comparables.
+CA-04. El sistema no utiliza una puntuación clínica ni presenta una opción como médicamente superior.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Orden por precio
+DADO Hay varias opciones con precios distintos
+CUANDO El estudiante selecciona «Menor precio»
+ENTONCES Las opciones con precio aparecen de menor a mayor importe
+Escenario 2: Falta un dato
+DADO Una de las comidas no tiene contenido de hierro documentado
+CUANDO El estudiante ordena por aporte de hierro
+ENTONCES Esa comida se identifica como no comparable y no recibe una puntuación ficticia
+
+HU-008  |  Comparar alternativas alimentarias
+Necesidad: N1, N2, N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que evalúa precio y conveniencia, quiero comparar dos o más opciones por precio, distancia y datos nutricionales disponibles, para elegir de manera informada según mis prioridades.
+Criterios de aceptación
+CA-01. La interfaz permite seleccionar al menos dos opciones registradas para compararlas.
+CA-02. La comparación alinea precio en soles, distancia estimada y contenido de hierro cuando existan datos.
+CA-03. Los campos faltantes se presentan como «No disponible», sin inventar equivalencias.
+CA-04. El usuario puede cerrar la comparación y regresar a sus resultados sin perder los filtros activos.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Comparación completa
+DADO Dos platos contienen datos comparables registrados
+CUANDO El estudiante selecciona ambos y abre «Comparar»
+ENTONCES Se muestra una tabla con las variables disponibles para cada plato
+Escenario 2: Comparación incompleta
+DADO Uno de los platos carece de dato nutricional
+CUANDO El estudiante abre su comparación con otro plato
+ENTONCES La celda faltante aparece como «No disponible» sin impedir la comparación de precio y distancia
+
+HU-009  |  Recuperar búsquedas recientes
+Necesidad: N1   Prioridad: C   Landing core: No   
+Historia. Como estudiante que repite consultas similares, quiero acceder a mis búsquedas recientes, para repetir una consulta habitual con menos pasos.
+Criterios de aceptación
+CA-01. El sistema conserva localmente un número limitado y explícito de búsquedas recientes.
+CA-02. El usuario puede aplicar nuevamente una búsqueda anterior con sus criterios guardados.
+CA-03. Existe una opción para borrar las búsquedas guardadas.
+CA-04. Si todavía no hay búsquedas, se muestra un estado vacío claro.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Repetir búsqueda
+DADO El navegador tiene una búsqueda previa guardada
+CUANDO El estudiante selecciona esa búsqueda desde «Recientes»
+ENTONCES Se aplican nuevamente sus términos y filtros
+Escenario 2: Borrar historial
+DADO Hay búsquedas almacenadas en el navegador
+CUANDO El estudiante elige borrar y confirma
+ENTONCES El historial local queda vacío y se muestra el estado correspondiente
+
+HU-010  |  Alternar entre mapa y lista
+Necesidad: N1   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que prefiere distintos modos de exploración, quiero cambiar entre un mapa y una lista de opciones, para revisar alimentos en el formato que mejor se adapte a mi situación.
+Criterios de aceptación
+CA-01. Existe un control identificable para cambiar entre mapa y lista.
+CA-02. Ambas vistas representan el mismo conjunto de resultados del catálogo.
+CA-03. Los filtros y la selección de zona se conservan durante el cambio.
+CA-04. La lista permanece disponible si el mapa no puede mostrarse.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Pasar a lista
+DADO El estudiante tiene filtros activos en el mapa
+CUANDO Selecciona «Ver lista»
+ENTONCES Se muestran las mismas coincidencias sin perder los filtros
+Escenario 2: Mapa no disponible
+DADO La vista de mapa no logra cargarse
+CUANDO El estudiante intenta explorar opciones
+ENTONCES El sistema informa el problema y permite continuar desde la lista
+
+ÉPICA 02 — Información de alimentos y establecimientos
+HU-011  |  Guardar comidas y locales favoritos
+Necesidad: N1   Prioridad: S   Landing core: No   
+Historia. Como estudiante con opciones recurrentes, quiero guardar mis comidas y establecimientos preferidos, para consultarlos luego sin repetir toda la búsqueda.
+Criterios de aceptación
+CA-01. La ficha de comida o establecimiento ofrece agregar o quitar de favoritos.
+CA-02. Una sección permite consultar los elementos favoritos guardados localmente.
+CA-03. Un elemento guardado mantiene un estado visual comprensible.
+CA-04. Una lista vacía muestra una orientación y no se presenta como error.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Guardar favorito
+DADO Hay una comida registrada y visible
+CUANDO El estudiante activa «Guardar»
+ENTONCES La comida aparece en favoritos y la acción cambia a «Quitar»
+Escenario 2: Quitar favorito
+DADO Una comida ya está guardada
+CUANDO El estudiante selecciona «Quitar de favoritos»
+ENTONCES La comida deja de aparecer en la lista y se confirma el cambio
+
+HU-012  |  Consultar información de un establecimiento
+Necesidad: N1   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que evalúa dónde conseguir comida, quiero ver dirección, horarios declarados y datos básicos de un establecimiento, para decidir si me conviene considerarlo.
+Criterios de aceptación
+CA-01. La ficha identifica nombre, dirección y ubicación de referencia del establecimiento.
+CA-02. Se muestran horarios únicamente cuando estén registrados y se indica si no están verificados.
+CA-03. La ficha ofrece regresar a la lista o al mapa.
+CA-04. Cuando falte un dato, se presenta «No disponible» sin indicar que el local está abierto en tiempo real.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Ficha disponible
+DADO Un establecimiento contiene nombre, dirección y horario registrado
+CUANDO El estudiante abre su marcador o tarjeta
+ENTONCES Se presenta una ficha con la información registrada
+Escenario 2: Horario no registrado
+DADO Un establecimiento no tiene horario documentado
+CUANDO El estudiante abre su detalle
+ENTONCES El horario figura como «No disponible» sin afirmación de abierto o cerrado
+
+HU-013  |  Consultar ficha de una comida
+Necesidad: N2, N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que necesita evaluar una alternativa, quiero consultar ingredientes, porción y precio referencial de una comida, para saber qué estoy comparando antes de decidir.
+Criterios de aceptación
+CA-01. La ficha identifica el nombre de la comida y los ingredientes documentados.
+CA-02. Muestra porción y precio referencial cuando estén registrados, con unidad o moneda.
+CA-03. Indica de forma explícita qué información falta.
+CA-04. Permite volver al listado sin perder el contexto de navegación.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Ficha completa
+DADO El catálogo contiene una comida con ingredientes, porción y precio
+CUANDO El estudiante abre «Ver detalle»
+ENTONCES Se muestran dichos datos con sus unidades y estado referencial
+Escenario 2: Dato ausente
+DADO Una comida no posee porción registrada
+CUANDO El estudiante consulta su ficha
+ENTONCES El campo indica «No disponible» sin asumir un tamaño de ración
+
+HU-014  |  Consultar tiempo orientativo de obtención
+Necesidad: N1   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante con descanso limitado, quiero conocer un tiempo de obtención orientativo cuando el establecimiento lo haya informado, para evitar elegir una alternativa incompatible con mi tiempo.
+Criterios de aceptación
+CA-01. El tiempo de obtención solo aparece cuando existe una estimación documentada.
+CA-02. La interfaz identifica el valor como referencial y no como garantía de entrega.
+CA-03. No se confunde tiempo de obtención con distancia ni tiempo de caminata.
+CA-04. Cuando no existe estimación, se muestra «Tiempo no disponible».
+Escenarios de aceptación (Gherkin)
+Escenario 1: Tiempo registrado
+DADO Un menú tiene tiempo de obtención referencial cargado
+CUANDO El estudiante abre su tarjeta o detalle
+ENTONCES Ve el valor identificado como estimación y distinto de la distancia
+Escenario 2: Tiempo ausente
+DADO Un menú no tiene estimación documentada
+CUANDO El estudiante abre su detalle
+ENTONCES Se muestra «Tiempo no disponible» en lugar de un tiempo supuesto
+
+HU-015  |  Consultar fuentes de datos nutricionales
+Necesidad: N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que busca información confiable, quiero ver de dónde provienen los datos de hierro de los alimentos, para distinguir estimaciones documentadas de afirmaciones sin respaldo.
+Criterios de aceptación
+CA-01. Las fichas con información sobre hierro presentan el origen de los datos o un enlace a la referencia.
+CA-02. Los valores estimados indican unidad y base de cálculo o porción cuando existan.
+CA-03. La interfaz explica que esos valores no sustituyen evaluación clínica.
+CA-04. Cuando la fuente sea insuficiente, la ficha no muestra un valor como confirmado.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Consultar fuente
+DADO Una comida tiene un aporte estimado calculado con una tabla documentada
+CUANDO El estudiante abre «Fuente del dato»
+ENTONCES Se identifica la referencia y se explica el carácter estimado de la cifra
+Escenario 2: Fuente incompleta
+DADO Una comida no tiene evidencia suficiente para calcular su aporte
+CUANDO El estudiante revisa la información nutricional
+ENTONCES Se muestra información no disponible y no se atribuye una cifra precisa
+
+HU-016  |  Consultar platos de un establecimiento
+Necesidad: N1, N2   Prioridad: S   Landing core: No   
+Historia. Como estudiante que evalúa comer en un local cercano, quiero ver las comidas registradas para un establecimiento, para revisar varias alternativas de ese lugar sin iniciar otra búsqueda.
+Criterios de aceptación
+CA-01. La ficha del local ofrece una lista de comidas vinculadas a ese establecimiento.
+CA-02. Cada comida enlaza a su ficha y muestra el precio disponible.
+CA-03. La lista no presupone stock ni disponibilidad inmediata.
+CA-04. Cuando no haya platos registrados, se informa explícitamente.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Consultar menús
+DADO Un establecimiento tiene tres comidas asociadas en el catálogo
+CUANDO El estudiante abre la sección «Comidas registradas»
+ENTONCES Se muestran las tres tarjetas con acceso al detalle
+Escenario 2: Sin comidas registradas
+DADO Un local carece de menús cargados
+CUANDO El estudiante abre la lista del establecimiento
+ENTONCES Se informa que aún no hay opciones registradas
+
+HU-017  |  Identificar el origen del hierro
+Necesidad: N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que desea comprender sus opciones, quiero distinguir fuentes animales y vegetales de hierro en una comida, para interpretar mejor las recomendaciones educativas.
+Criterios de aceptación
+CA-01. La ficha indica si la comida incluye fuentes animales y/o vegetales documentadas de hierro.
+CA-02. La información identifica ingredientes relevantes y evita inferir proporciones de absorción individual.
+CA-03. Se explica brevemente la diferencia entre hierro hemo y no hemo con lenguaje accesible.
+CA-04. Si no se conoce el ingrediente o su fuente, se presenta como dato insuficiente.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Fuente vegetal
+DADO Una comida registrada contiene lentejas como ingrediente fuente de hierro
+CUANDO El estudiante abre el apartado «Tipo de hierro»
+ENTONCES Se identifica la fuente vegetal y se ofrece una explicación breve
+Escenario 2: Fuente desconocida
+DADO La receta de una comida carece de ingredientes suficientes
+CUANDO El estudiante abre «Tipo de hierro»
+ENTONCES Se informa que no hay datos para clasificar el origen
+
+HU-018  |  Consultar fecha de actualización de precios
+Necesidad: N2   Prioridad: S   Landing core: No   
+Historia. Como estudiante que debe administrar un presupuesto preciso, quiero ver cuándo se revisó por última vez un precio referencial, para juzgar si la información podría haber cambiado.
+Criterios de aceptación
+CA-01. Los precios disponibles incluyen una fecha de revisión cuando esté registrada.
+CA-02. La fecha se presenta junto con una nota de que el precio puede variar.
+CA-03. La información nunca se identifica automáticamente como precio del día.
+CA-04. Si falta la fecha, se señala que no hay actualización registrada.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Precio con fecha
+DADO El catálogo contiene un precio con fecha de revisión
+CUANDO El estudiante abre el detalle de la opción
+ENTONCES Se muestra el precio en soles y su fecha de actualización
+Escenario 2: Sin fecha
+DADO Existe un precio registrado sin fecha verificable
+CUANDO El estudiante revisa esa opción
+ENTONCES Se indica «Fecha no disponible» y se conserva la advertencia de precio referencial
+
+HU-019  |  Abrir indicaciones para llegar
+Necesidad: N1   Prioridad: S   Landing core: No   
+Historia. Como estudiante que identifica un lugar conveniente, quiero abrir su ubicación en un servicio de mapas, para orientarme hacia el establecimiento sin buscar la dirección manualmente.
+Criterios de aceptación
+CA-01. El establecimiento con coordenadas o dirección suficiente muestra la acción «Cómo llegar».
+CA-02. La acción abre un enlace de mapa con el destino correspondiente.
+CA-03. No se promete un tiempo de ruta o un trayecto calculado por Allsumaq.
+CA-04. Cuando falta ubicación suficiente, la acción no ofrece una dirección inventada.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Indicaciones disponibles
+DADO Un local tiene ubicación válida registrada
+CUANDO El estudiante pulsa «Cómo llegar»
+ENTONCES Se abre el servicio de mapas con el destino del local
+Escenario 2: Ubicación incompleta
+DADO La ficha no tiene dirección ni coordenadas suficientes
+CUANDO El estudiante consulta las acciones disponibles
+ENTONCES El sistema indica que no es posible abrir indicaciones para ese local
+
+HU-020  |  Seleccionar una zona de referencia manualmente
+Necesidad: N1   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que no desea compartir su ubicación, quiero escoger un campus o zona registrada como referencia, para encontrar opciones cercanas sin depender del GPS.
+Criterios de aceptación
+CA-01. El sistema permite seleccionar una zona o campus de referencia de una lista registrada.
+CA-02. La búsqueda y los filtros de cercanía utilizan la zona seleccionada.
+CA-03. La ubicación exacta del dispositivo no es obligatoria para explorar.
+CA-04. Cuando no existan opciones para la zona, se informa y se permite elegir otra.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Cambiar campus
+DADO El catálogo contiene establecimientos agrupados por zonas
+CUANDO El estudiante selecciona otro campus de referencia
+ENTONCES Se recalculan los resultados aplicables a esa zona
+Escenario 2: Sin GPS
+DADO El usuario no concede acceso a su ubicación
+CUANDO Selecciona manualmente una zona
+ENTONCES Puede explorar las opciones de la zona sin conceder permisos
+
+ÉPICA 03 — Recetas y alternativas prácticas
+HU-021  |  Explorar recetas con fuentes de hierro
+Necesidad: N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que quiere preparar alimentos prácticos, quiero ver un catálogo de recetas con fuentes documentadas de hierro, para identificar preparaciones posibles para mi rutina.
+Criterios de aceptación
+CA-01. La sección presenta recetas registradas cuya relación con fuentes de hierro esté documentada.
+CA-02. Cada tarjeta presenta nombre e información de tiempo o costo cuando exista.
+CA-03. Las recetas pueden abrirse para consultar sus detalles.
+CA-04. Si la categoría está vacía, se informa sin crear recetas ficticias.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Explorar recetas
+DADO Existen recetas con fuentes de hierro registradas
+CUANDO El estudiante abre «Recetas»
+ENTONCES Se muestran sus tarjetas con acceso al detalle
+Escenario 2: Catálogo vacío
+DADO No hay recetas cargadas en la categoría consultada
+CUANDO El estudiante abre «Recetas»
+ENTONCES Se informa que aún no hay opciones y se permite volver a explorar
+
+HU-022  |  Buscar recetas por palabra clave
+Necesidad: N1, N3   Prioridad: S   Landing core: No   
+Historia. Como estudiante que conoce una preparación o ingrediente, quiero buscar recetas por nombre o ingrediente, para encontrar preparaciones sin revisar todo el recetario.
+Criterios de aceptación
+CA-01. El buscador de recetas acepta nombres y fragmentos de ingredientes.
+CA-02. Se presentan recetas coincidentes sin alterar el catálogo de establecimientos.
+CA-03. La consulta puede limpiarse fácilmente.
+CA-04. Cuando no existen coincidencias, se muestra una respuesta clara.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Buscar ingrediente
+DADO El recetario contiene recetas con lentejas
+CUANDO El estudiante busca «lentejas»
+ENTONCES Se muestran las recetas asociadas al ingrediente
+Escenario 2: Búsqueda vacía
+DADO El recetario no incluye el término consultado
+CUANDO El estudiante ejecuta la búsqueda
+ENTONCES Se indica que no hay resultados y se puede borrar la consulta
+
+HU-023  |  Consultar ingredientes y preparación
+Necesidad: N1, N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que quiere elaborar una receta, quiero consultar ingredientes y pasos de preparación, para evaluar si puedo cocinarla con los recursos disponibles.
+Criterios de aceptación
+CA-01. La ficha de receta enumera ingredientes con cantidades cuando estén definidas.
+CA-02. Los pasos se presentan en una secuencia clara y legible.
+CA-03. La receta indica cantidad de porciones cuando esté documentada.
+CA-04. Si falta información, se identifica como incompleta en lugar de inventar cantidades.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Receta completa
+DADO Una receta contiene ingredientes, porciones y pasos
+CUANDO El estudiante abre su ficha
+ENTONCES Visualiza todos los datos en una secuencia comprensible
+Escenario 2: Cantidad ausente
+DADO Una receta carece de una cantidad para cierto ingrediente
+CUANDO El estudiante revisa la lista
+ENTONCES Ese valor se señala como no disponible sin asumir la cantidad
+
+HU-024  |  Consultar hierro estimado por porción
+Necesidad: N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que busca información nutricional sobre recetas, quiero ver el aporte estimado de hierro por porción cuando sea calculable, para comparar preparaciones con mayor información.
+Criterios de aceptación
+CA-01. Solo se muestran miligramos de hierro cuando existe método, fuente y porción documentados.
+CA-02. Los valores figuran como estimaciones alimentarias y no como hierro absorbido.
+CA-03. El sistema indica las unidades y la porción a la que corresponde el cálculo.
+CA-04. No se presentan valores calculados si faltan datos esenciales de ingredientes o cantidades.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Valor estimado
+DADO Una receta tiene porciones e ingredientes vinculados a una fuente nutricional
+CUANDO El estudiante abre «Aporte de hierro»
+ENTONCES Consulta el valor estimado por porción y la fuente del cálculo
+Escenario 2: No calculable
+DADO Una receta no tiene porciones definidas
+CUANDO El estudiante consulta su aporte de hierro
+ENTONCES Se informa que la estimación por porción no está disponible
+
+HU-025  |  Consultar tiempo de preparación
+Necesidad: N1   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante con tiempo limitado para cocinar, quiero conocer la duración estimada de una receta, para descartar preparaciones incompatibles con mi horario.
+Criterios de aceptación
+CA-01. La ficha muestra la duración estimada en minutos cuando esté disponible.
+CA-02. El dato se identifica como aproximado, no como una garantía.
+CA-03. El valor se distingue del tiempo de obtención en un establecimiento.
+CA-04. Cuando no se registró tiempo, se comunica «No disponible».
+Escenarios de aceptación (Gherkin)
+Escenario 1: Tiempo presente
+DADO Una receta incluye 15 minutos como estimación de preparación
+CUANDO El estudiante consulta su ficha
+ENTONCES Se muestra «15 min aprox.» como duración de preparación
+Escenario 2: Tiempo ausente
+DADO Una receta no registra duración
+CUANDO El estudiante abre la ficha
+ENTONCES El campo indica «No disponible» sin sustituirlo por un tiempo supuesto
+
+HU-026  |  Consultar costo estimado de una receta
+Necesidad: N2   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que cocina con presupuesto reducido, quiero ver el costo aproximado de una receta, para decidir si resulta viable económicamente.
+Criterios de aceptación
+CA-01. El costo se expresa en soles e indica si corresponde al total o a una porción.
+CA-02. Los importes se presentan como referenciales y pueden estar sujetos a variación.
+CA-03. Cuando existan datos de referencia, se indica su procedencia o fecha de cálculo.
+CA-04. Si no puede calcularse un costo razonable, se muestra «No disponible».
+Escenarios de aceptación (Gherkin)
+Escenario 1: Costo registrado
+DADO Una receta tiene un costo estimado por porción documentado
+CUANDO El estudiante abre «Costo estimado»
+ENTONCES Se muestra el valor en soles con la unidad correspondiente
+Escenario 2: Costo no calculable
+DADO Faltan precios de ingredientes necesarios
+CUANDO El estudiante consulta la ficha
+ENTONCES Se indica que el costo no está disponible
+
+HU-027  |  Explorar refrigerios transportables
+Necesidad: N1, N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que tiene descansos cortos, quiero consultar refrigerios fáciles de transportar con fuentes alimentarias de hierro, para contar con alternativas prácticas durante mis jornadas.
+Criterios de aceptación
+CA-01. La sección presenta refrigerios registrados y documenta sus ingredientes.
+CA-02. Cada opción describe cómo se conserva o transporta cuando esa información exista.
+CA-03. La ficha distingue un refrigerio preparado de un producto disponible en un local.
+CA-04. Las opciones no se publican como clínicamente preventivas de anemia.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Refrigerios disponibles
+DADO El recetario incluye opciones transportables documentadas
+CUANDO El estudiante abre «Para llevar»
+ENTONCES Se muestran opciones con ingredientes y detalle práctico
+Escenario 2: Sin refrigerios registrados
+DADO No existen opciones de la categoría
+CUANDO El estudiante abre «Para llevar»
+ENTONCES Se muestra un estado vacío y un acceso al recetario general
+
+HU-028  |  Consultar combinaciones alimentarias económicas
+Necesidad: N2, N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que necesita sentirse satisfecho sin gastar demasiado, quiero explorar combinaciones de comidas con costos referenciales y fuentes de hierro, para considerar opciones compatibles con mi presupuesto.
+Criterios de aceptación
+CA-01. Cada combinación identifica los alimentos que la integran.
+CA-02. El costo referencial se muestra únicamente cuando hay datos suficientes.
+CA-03. La explicación indica qué ingredientes constituyen fuentes de hierro documentadas.
+CA-04. No se presenta una combinación como dieta individual prescrita.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Combinación documentada
+DADO El catálogo contiene una combinación con ingredientes y costo orientativo
+CUANDO El estudiante consulta «Combinaciones económicas»
+ENTONCES Se muestra el conjunto, su costo referencial y sus fuentes de hierro
+Escenario 2: Precio incompleto
+DADO Una combinación carece de datos de costo suficientes
+CUANDO El estudiante consulta su tarjeta
+ENTONCES El costo se identifica como no disponible y no se presenta un total falso
+
+HU-029  |  Recibir sugerencias según tiempo y presupuesto
+Necesidad: N1, N2, N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante con restricciones concretas, quiero obtener sugerencias de recetas o refrigerios acordes con mi tiempo y presupuesto, para identificar opciones realizables sin analizar todo el recetario.
+Criterios de aceptación
+CA-01. El estudiante puede introducir un tiempo máximo y presupuesto disponible.
+CA-02. Las sugerencias utilizan reglas transparentes sobre tiempo, costo y fuentes de hierro documentadas.
+CA-03. Cada sugerencia permite consultar por qué coincide con las restricciones.
+CA-04. Si no existen coincidencias, el sistema informa y facilita ampliar los límites.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Sugerencia compatible
+DADO Existen recetas con costos y duraciones registradas
+CUANDO El estudiante solicita opciones de hasta 15 minutos y S/ 10
+ENTONCES Se muestran solo preparaciones con datos compatibles y la explicación de coincidencia
+Escenario 2: Sin recomendaciones
+DADO Ninguna receta cumple los límites definidos
+CUANDO El estudiante aplica las restricciones
+ENTONCES Se muestra un aviso y controles para ajustar tiempo o presupuesto
+
+HU-030  |  Consultar sustitutos económicos de ingredientes
+Necesidad: N2, N3   Prioridad: S   Landing core: No   
+Historia. Como estudiante que no encuentra o no puede costear un ingrediente, quiero consultar sustituciones posibles y sus limitaciones, para adaptar recetas al presupuesto y disponibilidad.
+Criterios de aceptación
+CA-01. Solo se sugieren alternativas previamente documentadas para ingredientes seleccionados.
+CA-02. Cada sustitución explica su función culinaria y las diferencias nutricionales relevantes conocidas.
+CA-03. El cambio no conserva automáticamente valores nutricionales previos sin recalcularlos.
+CA-04. Si no hay sustituto documentado, se comunica que no existe sugerencia disponible.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Sustituto disponible
+DADO Una receta tiene una sustitución aprobada registrada para un ingrediente
+CUANDO El estudiante solicita una alternativa
+ENTONCES Se muestra el sustituto y la advertencia sobre posibles cambios en el aporte nutricional
+Escenario 2: Sin sustituto
+DADO No hay reemplazo documentado para un ingrediente
+CUANDO El estudiante consulta alternativas
+ENTONCES Se indica que no hay sustitución disponible
+
+ÉPICA 04 — Orientación sobre combinaciones
+HU-031  |  Revisar la combinación de comida y bebida
+Necesidad: N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que quiere entender su elección, quiero seleccionar una comida y una bebida para revisar su combinación, para recibir orientación nutricional contextualizada.
+Criterios de aceptación
+CA-01. El usuario puede seleccionar una comida y una bebida del catálogo educativo.
+CA-02. El sistema evalúa reglas documentadas de interacción alimentaria aplicables a esos elementos.
+CA-03. El resultado ofrece una explicación breve sin calcular absorción personal de hierro.
+CA-04. Cuando no hay regla confiable, se indica que no existe orientación específica disponible.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Combinación evaluable
+DADO Hay reglas documentadas para una comida con fuente vegetal de hierro y té
+CUANDO El estudiante selecciona ambos elementos y solicita revisar
+ENTONCES Se presenta la orientación aplicable con su explicación
+Escenario 2: Sin regla registrada
+DADO La combinación seleccionada no tiene evidencia suficiente en el catálogo
+CUANDO El estudiante solicita revisarla
+ENTONCES Se informa que no se dispone de una recomendación específica
+
+HU-032  |  Recibir advertencia educativa sobre café o té
+Necesidad: N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que consume bebidas cerca de sus comidas, quiero ser informado cuando el café o el té puedan reducir la absorción de hierro no hemo, para considerar otra elección sin perder autonomía.
+Criterios de aceptación
+CA-01. Si una combinación coincide con una regla documentada, se muestra una advertencia contextual.
+CA-02. El aviso usa expresiones como «puede reducir la absorción» y no «destruye» o «anula el hierro».
+CA-03. La advertencia incluye una alternativa de consulta y no impide continuar con la elección.
+CA-04. El usuario puede acceder a la fuente o fundamento resumido del aviso.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Advertencia pertinente
+DADO El estudiante seleccionó una comida con hierro no hemo y té, según una regla documentada
+CUANDO Solicita evaluar la combinación
+ENTONCES Se muestra una advertencia educativa breve y una acción para consultar alternativas
+Escenario 2: Sin disparador
+DADO El estudiante seleccionó una combinación para la que no se documentó ese efecto
+CUANDO Solicita revisar su elección
+ENTONCES No aparece una advertencia categórica de interferencia
+
+HU-033  |  Consultar orientación sobre lácteos y hierro
+Necesidad: N3   Prioridad: S   Landing core: No   
+Historia. Como estudiante con dudas sobre acompañamientos, quiero leer información contextualizada sobre lácteos y absorción del hierro, para evitar conclusiones incorrectas sobre combinaciones alimentarias.
+Criterios de aceptación
+CA-01. La guía presenta información sobre el papel del calcio y su contexto de consumo con fuentes documentadas.
+CA-02. No afirma que cualquier lácteo anule todo el hierro de una comida.
+CA-03. Incluye un mensaje que evita recomendaciones de restricción general sin evaluación profesional.
+CA-04. La explicación es comprensible y permite consultar su fuente.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Consultar orientación
+DADO Existe contenido educativo revisado sobre calcio y hierro
+CUANDO El estudiante abre «Lácteos y hierro»
+ENTONCES Ve una explicación contextualizada y su referencia
+Escenario 2: Información insuficiente
+DADO No hay evidencia revisada para una combinación específica
+CUANDO El estudiante busca una recomendación concreta
+ENTONCES El sistema aclara el límite y no inventa una prohibición
+
+HU-034  |  Consultar acompañamientos con vitamina C
+Necesidad: N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que desea combinar mejor fuentes vegetales de hierro, quiero ver acompañamientos que aporten vitamina C, para aplicar una recomendación alimentaria sencilla y contextualizada.
+Criterios de aceptación
+CA-01. Las sugerencias muestran alimentos o bebidas con vitamina C documentada.
+CA-02. La interfaz explica que la vitamina C puede favorecer la absorción de hierro no hemo.
+CA-03. Las recomendaciones son alternativas de información, no pedidos ni cambios automáticos de compra.
+CA-04. Cuando una comida no tiene una sugerencia documentada, se informa el límite.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Sugerencia pertinente
+DADO El estudiante seleccionó una comida con una fuente vegetal de hierro
+CUANDO Abre «Acompañamientos»
+ENTONCES Se presentan opciones documentadas con vitamina C y una explicación breve
+Escenario 2: Sin acompañamiento registrado
+DADO El catálogo no tiene un acompañamiento documentado para esa selección
+CUANDO El estudiante consulta recomendaciones
+ENTONCES Se muestra que no hay sugerencias específicas disponibles
+
+HU-035  |  Consultar alternativas ante una advertencia
+Necesidad: N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que recibe una orientación nutricional, quiero ver alternativas de bebidas o acompañamientos tras una advertencia, para poder cambiar mi elección con información suficiente.
+Criterios de aceptación
+CA-01. Una advertencia con alternativas registradas ofrece la acción «Ver alternativas».
+CA-02. La lista explica brevemente qué cambia respecto de la combinación consultada.
+CA-03. El usuario puede revisar una alternativa sin crear carritos ni pedidos.
+CA-04. Si no hay alternativas registradas, se informa y se conserva la opción de cerrar el aviso.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Ver alternativas
+DADO Una combinación activó un aviso con opciones educativas registradas
+CUANDO El estudiante selecciona «Ver alternativas»
+ENTONCES Se muestran opciones comparables y una explicación de cada una
+Escenario 2: Sin alternativas
+DADO Una advertencia no tiene sustituciones documentadas
+CUANDO El estudiante intenta consultar alternativas
+ENTONCES Se muestra un mensaje de ausencia sin bloquear la navegación
+
+HU-036  |  Consultar orientación temporal de consumo
+Necesidad: N3   Prioridad: S   Landing core: No   
+Historia. Como estudiante que suele consumir café o té cerca de las comidas, quiero leer recomendaciones sobre la separación temporal de bebidas y comidas, para entender la evidencia y sus límites antes de decidir.
+Criterios de aceptación
+CA-01. La guía explica que los efectos de bebidas y alimentos pueden depender de cantidad, preparación y momento de consumo.
+CA-02. Cualquier intervalo indicado se vincula con una fuente y se presenta como orientación contextualizada, no regla universal.
+CA-03. No se prescribe una pauta clínica individual ni se calcula riesgo de anemia.
+CA-04. El usuario puede volver a la recomendación anterior fácilmente.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Orientación disponible
+DADO Existe una recomendación temporal sustentada y revisada
+CUANDO El estudiante abre «¿Cuándo tomar café o té?»
+ENTONCES Se muestra el contexto, el posible intervalo y la referencia
+Escenario 2: Sin pauta generalizable
+DADO No hay evidencia suficiente para fijar un intervalo universal
+CUANDO El estudiante consulta la guía
+ENTONCES El sistema explica la limitación y evita mostrar una regla absoluta
+
+HU-037  |  Consultar consejos breves con fuentes
+Necesidad: N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que necesita información inmediata, quiero leer consejos cortos y documentados sobre fuentes y combinaciones de hierro, para recordar decisiones útiles sin estudiar textos extensos.
+Criterios de aceptación
+CA-01. Los consejos se organizan por tema con títulos comprensibles.
+CA-02. Cada consejo tiene una explicación breve y su fuente o referencia identificable.
+CA-03. Se evita lenguaje médico categórico o promesas de prevención clínica.
+CA-04. El usuario puede abrir una explicación ampliada cuando la necesite.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Consejo disponible
+DADO El catálogo contiene un consejo documentado sobre vitamina C
+CUANDO El estudiante abre «Consejos rápidos»
+ENTONCES Ve su resumen y puede consultar el detalle y la fuente
+Escenario 2: Consejo sin fundamento
+DADO Un borrador de consejo no cuenta con una fuente comprobable
+CUANDO El estudiante consulta los consejos publicados
+ENTONCES Ese consejo no aparece como recomendación respaldada
+
+HU-038  |  Configurar avisos educativos
+Necesidad: N3   Prioridad: S   Landing core: No   
+Historia. Como estudiante que prefiere controlar las interrupciones, quiero activar o silenciar avisos sobre combinaciones alimentarias, para recibir orientación sin interrupciones no deseadas.
+Criterios de aceptación
+CA-01. El usuario dispone de un ajuste local claro para activar o desactivar avisos contextuales.
+CA-02. El cambio afecta futuras advertencias no esenciales, pero no elimina las guías consultables.
+CA-03. El estado elegido se refleja de inmediato y puede modificarse.
+CA-04. La configuración no requiere permisos de notificaciones push.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Silenciar aviso
+DADO Los avisos educativos están activados
+CUANDO El estudiante elige «Silenciar avisos»
+ENTONCES Se guarda la preferencia local y no aparecen avisos automáticos posteriores
+Escenario 2: Reactivar
+DADO Los avisos educativos están desactivados
+CUANDO El estudiante vuelve a activarlos
+ENTONCES Las advertencias contextuales se muestran cuando corresponda
+
+HU-039  |  Guardar una recomendación educativa
+Necesidad: N1, N3   Prioridad: C   Landing core: No   
+Historia. Como estudiante que quiere revisar un consejo luego, quiero guardar recomendaciones de orientación alimentaria, para consultarlas cuando pueda aplicarlas.
+Criterios de aceptación
+CA-01. Los consejos publicados permiten guardarse o quitarse de una lista personal.
+CA-02. La lista de recomendaciones guardadas se consulta sin iniciar sesión, si el navegador conserva datos locales.
+CA-03. El estado guardado se comunica visualmente y mediante texto accesible.
+CA-04. Una lista sin elementos muestra una indicación clara.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Guardar consejo
+DADO El estudiante lee un consejo educativo
+CUANDO Selecciona «Guardar para después»
+ENTONCES El consejo aparece en la lista de guardados
+Escenario 2: Quitar consejo
+DADO Un consejo está guardado localmente
+CUANDO El estudiante pulsa «Quitar»
+ENTONCES El consejo desaparece de la lista y se confirma el cambio
+
+ÉPICA 05 — Registro y hábitos alimentarios
+HU-040  |  Registrar comidas y bebidas consumidas
+Necesidad: N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que desea observar sus hábitos, quiero registrar voluntariamente qué alimentos y bebidas consumí, para reconocer patrones de mi alimentación cotidiana.
+Criterios de aceptación
+CA-01. El registro permite seleccionar una comida o bebida y registrar una fecha o momento de consumo.
+CA-02. El sistema valida que el elemento y la fecha obligatorios existan antes de guardar.
+CA-03. Una confirmación indica que el registro local se guardó y aparece en el historial.
+CA-04. La interfaz aclara que registrar alimentos no permite diagnosticar anemia ni medir absorción de hierro.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Registro válido
+DADO El estudiante elige una comida y un momento de consumo válidos
+CUANDO Confirma «Guardar registro»
+ENTONCES La entrada se guarda localmente y aparece en el historial
+Escenario 2: Registro incompleto
+DADO El estudiante no seleccionó una comida ni bebida
+CUANDO Intenta guardar el registro
+ENTONCES No se guarda y se indica el dato obligatorio pendiente
+
+HU-041  |  Marcar recomendaciones aplicadas o pendientes
+Necesidad: N3   Prioridad: S   Landing core: No   
+Historia. Como estudiante que consulta consejos alimentarios, quiero señalar si puse en práctica una recomendación, para distinguir las acciones que deseo intentar de las ya realizadas.
+Criterios de aceptación
+CA-01. Una recomendación guardada puede marcarse «Aplicada» o «Pendiente».
+CA-02. El estado cambia únicamente por acción explícita del usuario.
+CA-03. La marca representa una declaración personal, no un resultado de salud.
+CA-04. El usuario puede corregir el estado posteriormente.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Marcar aplicada
+DADO Hay una recomendación pendiente en la lista personal
+CUANDO El estudiante selecciona «Marcar aplicada»
+ENTONCES La recomendación cambia a «Aplicada»
+Escenario 2: Revertir estado
+DADO Una recomendación fue marcada aplicada
+CUANDO El estudiante la cambia a «Pendiente»
+ENTONCES La lista refleja la nueva marca sin modificar el historial alimentario
+
+HU-042  |  Consultar recomendaciones pendientes del día
+Necesidad: N3   Prioridad: S   Landing core: No   
+Historia. Como estudiante que desea recordar ideas prácticas, quiero revisar las recomendaciones educativas que dejé pendientes, para identificar qué consejo quiero considerar durante el día.
+Criterios de aceptación
+CA-01. La sección muestra recomendaciones personales marcadas como pendientes.
+CA-02. Cada elemento ofrece acceso a su explicación y a la acción de marcarlo aplicado.
+CA-03. La lista no comunica incumplimientos médicos ni emite alertas de riesgo.
+CA-04. Cuando no haya pendientes, se muestra un estado vacío apropiado.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Pendientes presentes
+DADO El estudiante guardó dos consejos con estado «Pendiente»
+CUANDO Abre «Mis pendientes»
+ENTONCES Consulta ambos y puede acceder a sus detalles
+Escenario 2: Sin pendientes
+DADO No existen consejos pendientes para mostrar
+CUANDO El estudiante abre esa sección
+ENTONCES Se presenta un mensaje que indica que no hay pendientes
+
+HU-043  |  Consultar frecuencia semanal de registros
+Necesidad: N3   Prioridad: S   Landing core: No   
+Historia. Como estudiante que quiere reconocer si registra sus comidas, quiero ver cuántos días hice registros durante la semana, para observar mi constancia sin interpretar datos clínicos.
+Criterios de aceptación
+CA-01. El resumen semanal contabiliza días con al menos un registro alimentario.
+CA-02. El periodo semanal se identifica con fechas claras.
+CA-03. Los días sin entradas se muestran como «Sin registro», no como «No comió».
+CA-04. Las cifras no se presentan como cumplimiento nutricional ni medición médica.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Semana con entradas
+DADO Existen registros alimentarios en tres días distintos de una semana
+CUANDO El estudiante consulta el resumen semanal
+ENTONCES El sistema muestra tres días con registro
+Escenario 2: Semana vacía
+DADO No hay entradas para la semana consultada
+CUANDO El estudiante abre el resumen
+ENTONCES Se muestran cero días registrados y una explicación de su significado
+
+HU-044  |  Comparar elecciones dentro y fuera de casa
+Necesidad: N1, N3   Prioridad: C   Landing core: No   
+Historia. Como estudiante que come en diferentes entornos, quiero distinguir mis registros alimentarios hechos en casa y fuera de ella, para entender cómo cambia mi alimentación según el contexto.
+Criterios de aceptación
+CA-01. El registro permite identificar opcionalmente el contexto «En casa» o «Fuera de casa».
+CA-02. El resumen organiza entradas según el contexto indicado sin inferirlo automáticamente.
+CA-03. Los registros sin contexto se agrupan como «No especificado».
+CA-04. No se asignan etiquetas de saludable o no saludable solo por el lugar de consumo.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Comparación por contexto
+DADO Hay registros etiquetados en casa y fuera de casa
+CUANDO El estudiante abre la comparación por entorno
+ENTONCES Ve ambos grupos con sus cantidades registradas
+Escenario 2: Sin contexto
+DADO Una entrada no contiene el campo de entorno
+CUANDO El estudiante consulta el resumen
+ENTONCES Esa entrada figura en «No especificado»
+
+HU-045  |  Editar y eliminar registros alimentarios
+Necesidad: N3   Prioridad: S   Landing core: No   
+Historia. Como estudiante que puede cometer errores al registrar, quiero corregir o borrar entradas anteriores, para mantener mi historial voluntario acorde con lo que consumí.
+Criterios de aceptación
+CA-01. El historial ofrece acciones diferenciadas para editar y eliminar una entrada.
+CA-02. Al editar, se validan nuevamente los campos obligatorios.
+CA-03. Al eliminar, se pide confirmación antes de retirar la entrada.
+CA-04. Los resúmenes se actualizan para reflejar cualquier cambio guardado.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Editar registro
+DADO Existe una comida registrada en el historial
+CUANDO El estudiante cambia su fecha y guarda
+ENTONCES Se actualiza la entrada y su ubicación temporal en el resumen
+Escenario 2: Cancelar eliminación
+DADO El estudiante selecciona eliminar una entrada existente
+CUANDO Cancela la confirmación
+ENTONCES El registro permanece sin cambios
+
+HU-046  |  Establecer metas voluntarias de hábitos
+Necesidad: N3   Prioridad: S   Landing core: No   
+Historia. Como estudiante que quiere dar continuidad a elecciones prácticas, quiero definir una meta personal sencilla de registro o exploración de opciones, para dar seguimiento a una intención sin convertirla en indicación médica.
+Criterios de aceptación
+CA-01. El usuario puede definir una meta conductual no clínica, como registrar comidas cierto número de días.
+CA-02. El valor se introduce o cambia voluntariamente y se muestra con una unidad comprensible.
+CA-03. El sistema no establece metas de miligramos de hierro ni dosificación de suplementos.
+CA-04. El usuario puede desactivar la meta y conservar sus registros.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Meta voluntaria
+DADO El estudiante abre «Mis metas»
+CUANDO Define registrar comidas cuatro días por semana
+ENTONCES La meta se guarda con su unidad de días por semana
+Escenario 2: Desactivar meta
+DADO Existe una meta guardada
+CUANDO El estudiante la desactiva
+ENTONCES Deja de mostrarse como objetivo activo sin eliminar los registros
+
+HU-047  |  Ajustar preferencias de tiempo y presupuesto
+Necesidad: N1, N2   Prioridad: S   Landing core: No   
+Historia. Como estudiante cuyas restricciones cambian, quiero guardar o modificar mis preferencias de tiempo y presupuesto, para recibir sugerencias coherentes con mis necesidades actuales.
+Criterios de aceptación
+CA-01. El usuario puede indicar presupuesto máximo y tiempo disponible como preferencias opcionales.
+CA-02. Las preferencias se utilizan en sugerencias posteriores y pueden sobrescribirse.
+CA-03. Los campos y unidades son claros y permiten restablecer valores.
+CA-04. Se explica que las preferencias se almacenan localmente en esta versión.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Actualizar preferencias
+DADO El estudiante tenía un presupuesto guardado de S/ 12
+CUANDO Lo modifica a S/ 15 y guarda
+ENTONCES Las futuras sugerencias consideran el nuevo límite
+Escenario 2: Restablecer preferencias
+DADO Hay límites guardados
+CUANDO El estudiante selecciona «Restablecer»
+ENTONCES Los límites locales vuelven al estado sin preferencia
+
+HU-048  |  Consultar resumen personal de hábitos
+Necesidad: N3   Prioridad: M   Landing core: Sí   
+Historia. Como estudiante que registra comidas de forma voluntaria, quiero consultar un resumen sencillo de mis registros y orientaciones revisadas, para reconocer mi actividad sin interpretaciones clínicas.
+Criterios de aceptación
+CA-01. El resumen muestra el número de comidas o bebidas registradas para el periodo señalado.
+CA-02. Se presenta por separado el número de consejos educativos consultados o guardados cuando exista registro de la acción.
+CA-03. Los datos mostrados coinciden con la información local almacenada y se actualizan tras nuevos registros.
+CA-04. Si no hay información, se muestra un estado de inicio sin asociarlo a deficiencia nutricional.
+Escenarios de aceptación (Gherkin)
+Escenario 1: Resumen con actividad
+DADO El estudiante registró dos comidas y consultó un consejo registrado
+CUANDO Abre «Mi resumen»
+ENTONCES Se muestran las cantidades correspondientes a cada categoría
+Escenario 2: Sin registros
+DADO El estudiante utiliza el resumen por primera vez
+CUANDO Abre «Mi resumen»
+ENTONCES Ve un estado vacío con invitación a registrar una comida sin alertas de salud
+
+
+Comprobación de consistencia
+Cantidad total de HU: 48 (HU-001 a HU-048, sin saltos ni identificadores duplicados).
+Criterios de aceptación: 192 (cuatro por historia).
+Escenarios Gherkin: 96 (dos por historia).
+Historias core para implementar: 30; complementarias: 18.
+Las 30 HU core podrán representar funcionalidades dentro de una misma landing page, no requieren treinta páginas distintas.
+Las estimaciones en Story Points deben actualizarse mediante Planning Poker después de esta reformulación; el documento no conserva SP anteriores como si estuvieran revalidados.
+Pendiente de validación: consistencia de datos reales (precios, ubicaciones, fuentes, recetas), pruebas de tareas con usuarios y trazabilidad de cada HU a pantallas y pruebas de aceptación.
+No se afirma que todas las funciones estén implementadas ni clínicamente validadas.

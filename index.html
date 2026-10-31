@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0F7A55">
+  <meta name="description" content="Allsumaq: explora opciones de alimentación, descubre recetas prácticas y lleva un registro voluntario de tus hábitos.">
+  <title>Allsumaq · Come mejor hoy</title>
+  <link rel="icon" href="assets/logo/allsumaq-horizontal.png" type="image/png">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/datos.js" defer></script>
+  <script src="js/recetas-datos.js" defer></script>
+  <script src="js/modelo.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5m6-6-6 6 6 6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2Zm6-2v16m6-14v16"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3S7 2 4 10c-3 9 7 12 11 7 4-4 5-14 5-14ZM4 21 16 8"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5C8 2 3 3 3 3v16s5-1 9 2c4-3 9-2 9-2V3s-5-1-9 2Zm0 0v16"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V12m6 8V8m6 12V4m5 16H2"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L20 5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.5 5.5a5 5 0 0 0-7 0L12 7l-1.5-1.5a5 5 0 0 0-7 7L12 21l8.5-8.5a5 5 0 0 0 0-7Z"/></symbol>
+    <symbol id="i-plate" viewBox="0 0 24 24"><circle cx="13" cy="12" r="7"/><path d="M2 3v6m3-6v6M2 7h3M3.5 9v12M22 3v18"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 9 4v6c0 6-9 10-9 10s-9-4-9-10V6Zm-4 9 3 3 5-6"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v5m10-5v5M3 11h18m-13 5h3"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.1M3 12h.1M3 18h.1"/></symbol>
+    <symbol id="i-cup" viewBox="0 0 24 24"><path d="M3 8h14v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Zm14 1h2a3 3 0 1 1 0 6h-2M7 2v3m6-3v3"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="Allsumaq, ir a Inicio"><img src="assets/logo/allsumaq-horizontal.png" alt="Allsumaq" width="2172" height="724"></a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio" class="active" aria-current="location">Inicio</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#registrar">Registrar</a>
+        <a href="#progreso">Progreso</a>
+        <a href="#perfil">Perfil</a>
+      </nav>
+      <div class="header-actions">
+        <a class="icon-button" href="#mapa" data-focus-search aria-label="Buscar alimentos"><svg class="icon"><use href="#i-search"/></svg></a>
+        <a class="icon-button icon-button--dark" href="#perfil" aria-label="Ir a mi perfil"><svg class="icon"><use href="#i-user"/></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section id="inicio" class="home-section observed-section" aria-labelledby="titulo-inicio">
+      <div class="home-organic organic-one" aria-hidden="true"></div>
+      <div class="home-organic organic-two" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow" id="inicio-etiqueta">ALIMENTACIÓN INTELIGENTE<br>PARA TU DÍA A DÍA</p>
+            <h1 id="titulo-inicio"><span id="inicio-titulo">Come mejor hoy,</span><br><span class="text-sage" id="inicio-destacado">vive mejor siempre.</span></h1>
+            <span class="brush-line" aria-hidden="true"></span>
+            <p class="hero-description" id="inicio-descripcion">Encuentra opciones de comida rica en hierro, accesibles y cerca de ti. Mejora tu alimentación de forma simple y práctica.</p>
+            <div class="button-row">
+              <a class="button button--primary" href="#mapa" data-focus-search><svg class="icon"><use href="#i-search"/></svg>Explorar alimentos<svg class="icon"><use href="#i-arrow"/></svg></a>
+              <a class="button button--light" href="#mapa" data-map-link><svg class="icon"><use href="#i-map"/></svg>Ver mapa cercano</a>
+            </div>
+          </div>
+          <div class="hero-art">
+            <img class="hero-dish" src="assets/img/portada-plato.webp" alt="Plato referencial de carne salteada con tomate, cebolla y papas doradas" width="668" height="406" fetchpriority="high">
+            <p class="handwritten" id="inicio-nota">Buena comida,<br>más energía<br>para tus ideas.</p>
+          </div>
+        </div>
+
+        <div class="quick-links" aria-label="Descubre Allsumaq">
+          <a class="quick-card" href="#mapa" data-focus-search>
+            <img src="assets/img/acceso-alimentos.webp" alt="" width="359" height="103">
+            <div class="quick-card-body"><h2>Explora alimentos</h2><p>Busca por precio y distrito.<br>Conoce las opciones del catálogo.</p><span class="circle-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
+          </a>
+          <a class="quick-card" href="#mapa" data-map-link>
+            <img src="assets/img/acceso-mapa.webp" alt="" width="357" height="103">
+            <div class="quick-card-body"><h2>Mapa interactivo</h2><p>Descubre opciones<br>en tu zona de referencia.</p><span class="circle-arrow circle-arrow--warm"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
+          </a>
+          <a class="quick-card" href="#recetas" data-open="recetas">
+            <img src="assets/img/acceso-recetas.webp" alt="" width="360" height="103">
+            <div class="quick-card-body"><h2>Recetas saludables</h2><p>Prepara comidas prácticas<br>y descubre sus ingredientes.</p><span class="circle-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
+          </a>
+          <a class="quick-card" href="#progreso">
+            <img src="assets/img/acceso-progreso.webp" alt="" width="354" height="103">
+            <div class="quick-card-body"><h2>Tu progreso</h2><p>Registra tu alimentación<br>y conoce tus hábitos.</p><span class="circle-arrow circle-arrow--warm"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
+          </a>
+        </div>
+
+        <div class="how-it-works">
+          <div class="how-intro"><p class="eyebrow eyebrow--sage">PASO A PASO</p><h2>¿Cómo funciona<br>Allsumaq?</h2><p>Te ayudamos a tomar mejores decisiones de alimentación en simples pasos.</p></div>
+          <ol class="steps">
+            <li><div class="step-visual"><span>1</span><img src="assets/img/paso-explora.webp" alt="" width="141" height="100"></div><h3>Explora</h3><p>Busca alimentos<br>y lugares cercanos.</p></li>
+            <li><div class="step-visual"><span>2</span><img src="assets/img/paso-conoce.webp" alt="" width="137" height="96"></div><h3>Conoce</h3><p>Revisa su información<br>nutricional y precios.</p></li>
+            <li><div class="step-visual"><span>3</span><img src="assets/img/paso-elige.webp" alt="" width="162" height="92"></div><h3>Elige</h3><p>Compara y encuentra<br>una opción para ti.</p></li>
+            <li><div class="step-visual"><span>4</span><img src="assets/img/paso-registra.webp" alt="" width="159" height="99"></div><h3>Registra</h3><p>Lleva un registro<br>de tu alimentación.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="mapa" class="content-section observed-section" aria-labelledby="titulo-mapa">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">DESCUBRE OPCIONES EN TU ZONA</p><h2 id="titulo-mapa">Buena comida,<br><span class="text-sage">más cerca de ti.</span></h2></div><p>Explora los diez platos del catálogo.<br>Precios referenciales y decisiones a tu ritmo.</p></div>
+        <form id="filtros" class="filter-bar" role="search" aria-label="Buscar y filtrar alimentos">
+          <label class="search-field"><span>Busca un plato o establecimiento</span><div class="input-icon"><svg class="icon"><use href="#i-search"/></svg><input id="buscar" name="consulta" type="search" placeholder="Sangrecita, anticuchos, pescado…" autocomplete="off"></div></label>
+          <label><span>Distrito</span><select name="distrito" id="filtro-distrito"><option value="">Todos los distritos</option></select></label>
+          <label><span>Presupuesto máximo</span><select name="presupuesto"><option value="">Todos los precios</option><option value="10">Hasta S/ 10</option><option value="15">Hasta S/ 15</option><option value="20">Hasta S/ 20</option><option value="40">Hasta S/ 40</option></select></label>
+          <label><span>Ordenar por</span><select name="orden"><option value="catalogo">Orden del catálogo</option><option value="precio">Menor precio máximo</option><option value="nombre">Nombre del plato</option></select></label>
+          <button class="button button--primary" type="submit">Buscar<svg class="icon"><use href="#i-arrow"/></svg></button>
+        </form>
+        <p class="field-help filter-help">El presupuesto considera el extremo superior del rango por plato. Los precios sin confirmar y el gasto por persona se excluyen al aplicar ese filtro.</p>
+        <div class="results-toolbar"><p id="resultados-conteo" role="status" aria-live="polite"></p><div class="button-row"><button class="text-button" id="limpiar-filtros" type="button">Limpiar filtros</button><div class="view-switch" role="group" aria-label="Vista del catálogo"><button type="button" data-mode="lista" aria-pressed="true"><svg class="icon"><use href="#i-list"/></svg>Lista</button><button type="button" data-mode="mapa" aria-pressed="false"><svg class="icon"><use href="#i-map"/></svg>Mapa ilustrativo</button></div></div></div>
+        <div id="mapa-ilustrativo" class="illustrated-map" hidden>
+          <div class="map-streets" aria-hidden="true"></div><div class="map-note"><span class="feature-icon"><svg class="icon"><use href="#i-map"/></svg></span><p class="eyebrow">LIMA METROPOLITANA</p><h3 id="mapa-zona">Elige tu zona de referencia</h3><p>Mapa ilustrativo. Las direcciones y coordenadas del catálogo están pendientes de verificación.</p><p>Consulta las opciones por distrito en la lista. Todavía no se calculan distancias ni rutas.</p></div>
+        </div>
+        <div id="alimentos-grid" class="food-grid"></div>
+        <div class="notice notice--subtle"><svg class="icon"><use href="#i-info"/></svg><p>La asociación entre platos y establecimientos procede del catálogo del equipo. Confirma el puesto, la disponibilidad y el precio antes de acudir.</p></div>
+      </div>
+    </section>
+
+    <section id="registrar" class="content-section section--cream observed-section" aria-labelledby="titulo-registrar">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">REGISTRO VOLUNTARIO</p><h2 id="titulo-registrar">Lo que comes hoy,<br><span class="text-sage">lo puedes recordar.</span></h2></div><p>Lleva un registro sencillo de tus comidas y bebidas.<br>Tu información se guarda en este navegador.</p></div>
+        <div class="register-layout">
+          <form id="registro-form" class="panel register-form" novalidate>
+            <div class="panel-heading"><span class="feature-icon"><svg class="icon"><use href="#i-calendar"/></svg></span><div><h3>Registrar nuevo consumo</h3><p>Completa los campos marcados con *.</p></div></div>
+            <div class="form-error-summary" id="registro-errores" role="alert" hidden></div>
+            <div class="form-grid">
+              <label class="span-2"><span>¿Qué alimento o bebida consumiste? *</span><select name="elemento" id="registro-elemento" required aria-describedby="error-elemento"><option value="">Selecciona una opción</option></select><span class="field-error" id="error-elemento"></span></label>
+              <label><span>Fecha del consumo *</span><input name="fecha" id="registro-fecha" type="date" required aria-describedby="error-fecha"><span class="field-error" id="error-fecha"></span></label>
+              <label><span>Momento del consumo *</span><select name="momento" id="registro-momento" required aria-describedby="error-momento"><option value="">Selecciona un momento</option><option>Desayuno</option><option>Almuerzo</option><option>Cena</option><option>Refrigerio</option></select><span class="field-error" id="error-momento"></span></label>
+              <label class="span-2"><span>Observaciones <small>(opcional)</small></span><textarea name="notas" id="registro-notas" maxlength="200" rows="3" placeholder="Por ejemplo: preparación casera, con ensalada…" aria-describedby="error-notas"></textarea><span class="field-error" id="error-notas"></span><span class="field-help">Evita incluir información sensible. Máximo 200 caracteres.</span></label>
+            </div>
+            <button class="button button--primary" type="submit"><svg class="icon"><use href="#i-plus"/></svg>Guardar registro<svg class="icon"><use href="#i-arrow"/></svg></button>
+          </form>
+          <aside class="panel register-aside"><p class="eyebrow eyebrow--sage">A TU RITMO</p><h3>Registro sin complicaciones</h3><div class="aside-tip"><svg class="icon"><use href="#i-check"/></svg><div><h4>Registra lo que consumiste</h4><p>Selecciona el alimento y el momento correspondiente.</p></div></div><div class="aside-tip"><svg class="icon"><use href="#i-chart"/></svg><div><h4>Consulta tu historial</h4><p>Tus entradas aparecerán en tu resumen personal.</p></div></div><div class="notice"><svg class="icon"><use href="#i-shield"/></svg><p>Registrar alimentos describe lo que declaras. No mide absorción de hierro ni diagnostica anemia.</p></div></aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="progreso" class="content-section observed-section" aria-labelledby="titulo-progreso">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">TU ACTIVIDAD EN ALLSUMAQ</p><h2 id="titulo-progreso">Tus hábitos,<br><span class="text-sage">un registro a la vez.</span></h2></div><a class="button button--primary" href="#registrar"><svg class="icon"><use href="#i-plus"/></svg>Registrar consumo</a></div>
+        <div class="period-row"><label for="periodo">Consultar periodo</label><select id="periodo"><option value="7">Últimos 7 días</option><option value="30">Últimos 30 días</option><option value="todo">Todos mis registros</option></select><p id="periodo-descripcion" class="field-help"></p></div>
+        <div class="stats-grid" id="estadisticas"></div>
+        <div class="panel history-panel"><div class="panel-heading"><span class="feature-icon"><svg class="icon"><use href="#i-list"/></svg></span><div><h3>Tu historial de consumo</h3><p>Entradas que guardaste en este navegador.</p></div></div><div id="historial"></div></div>
+      </div>
+    </section>
+
+    <section id="perfil" class="content-section section--sage observed-section" aria-labelledby="titulo-perfil">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">TU ESPACIO PERSONAL</p><h2 id="titulo-perfil">Tus preferencias,<br><span class="text-sage">tu propia experiencia.</span></h2></div><p>Organiza tus favoritos y elige una zona<br>para seguir explorando Allsumaq.</p></div>
+        <div class="profile-grid">
+          <div class="panel profile-card"><span class="avatar"><svg class="icon"><use href="#i-user"/></svg></span><h3>Visitante Allsumaq</h3><span class="badge">Modo local de demostración</span><p>Puedes explorar y registrar consumos sin crear una cuenta.</p><a class="button button--light" href="#progreso">Ver mis registros<svg class="icon"><use href="#i-arrow"/></svg></a></div>
+          <div class="panel"><div class="panel-heading"><span class="feature-icon feature-icon--warm"><svg class="icon"><use href="#i-heart"/></svg></span><div><h3>Mis favoritos</h3><p>Platos que quieres volver a consultar.</p></div></div><div id="favoritos"></div></div>
+          <div class="profile-settings"><form id="zona-form" class="panel"><div class="panel-heading"><span class="feature-icon"><svg class="icon"><use href="#i-pin"/></svg></span><h3>Zona de referencia</h3></div><label><span>Elige un distrito</span><select id="perfil-zona" name="zona"><option value="">Sin preferencia</option></select></label><button class="button button--light" type="submit">Guardar zona<svg class="icon"><use href="#i-check"/></svg></button><p class="field-help">Se aplicará al catálogo cuando vuelvas a explorar.</p></form><div class="panel privacy-panel"><svg class="icon"><use href="#i-shield"/></svg><h3>Tu información es local</h3><p>Los favoritos, la zona y los registros permanecen en este navegador. No se envían a un servidor.</p><p class="field-help">Borrar los datos del navegador elimina también tu actividad de esta demostración.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><a class="footer-brand" href="#inicio">Allsumaq<span>Pequeños hábitos, grandes avances.</span></a><p>Proyecto académico · TikrAI · HCI for UX Design</p><span>Explora. Conoce. Elige. Registra.</span></div></footer>
+  <dialog id="detalle-dialog" aria-labelledby="dialog-titulo"><div class="dialog-topbar"><button class="text-button" type="button" data-dialog-back><svg class="icon"><use href="#i-back"/></svg><span>Volver</span></button><button class="icon-button" type="button" data-dialog-close aria-label="Cerrar vista"><svg class="icon"><use href="#i-close"/></svg></button></div><div id="dialog-contenido"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><div class="noscript-message">Activa JavaScript para buscar alimentos, abrir recetas y guardar registros. La portada y los enlaces principales están disponibles sin JavaScript.</div></noscript>
+</body>
+</html>

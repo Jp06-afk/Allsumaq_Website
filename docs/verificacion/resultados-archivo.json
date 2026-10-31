@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "pruebas": [
+    "Apertura directa de index.html sin servidor",
+    "Imágenes cargadas desde archivos locales",
+    "Scrollspy activa inicio",
+    "Scrollspy activa mapa",
+    "Scrollspy activa registrar",
+    "Scrollspy activa progreso",
+    "Scrollspy activa perfil",
+    "Registro y guardado sin servidor",
+    "Progreso actualizado sin servidor",
+    "Teclado mantiene el foco en la vista interna",
+    "Sin desbordamiento horizontal a 1440px",
+    "Sin desbordamiento horizontal a 390px"
+  ],
+  "fecha": "2026-10-31",
+  "navegador": "Chrome headless, perfil aislado",
+  "limites": "No sustituye revisión humana, pruebas con lectores de pantalla ni aprobación de los siguientes mockups."
+}

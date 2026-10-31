@@ -1,0 +1,192 @@
+@media (min-width: 1600px) {
+  .hero { min-height: 400px; }
+  .hero-art { height: 400px; }
+  .hero-copy { padding-left: 26px; }
+  .hero-description { font-size: 16px; max-width: 465px; }
+  .quick-card h2 { font-size: 17px; }
+  .quick-card p { font-size: 13px; }
+}
+@media (max-width: 1150px) {
+  .container, .header-inner { width: calc(100% - 60px); }
+  .header-inner { gap: 20px; }
+  .brand { width: 170px; }
+  .main-nav { gap: 22px; }
+  .main-nav a { font-size: 13px; }
+  .header-actions { gap: 10px; }
+  .hero-copy { padding-left: 8px; }
+  .hero-description { font-size: 14px; max-width: 360px; }
+  .hero .button { font-size: 12px; padding-inline: 14px; gap: 8px; }
+  .handwritten { font-size: 17px; right: -9px; bottom: 54px; }
+  .quick-links { gap: 12px; padding: 13px; }
+  .quick-card h2 { font-size: 14px; }
+  .quick-card p { font-size: 11px; }
+  .quick-card-body { padding: 10px; padding-right: 35px; }
+  .quick-card .circle-arrow { width: 28px; height: 28px; right: 7px; bottom: 15px; }
+  .quick-card .icon { width: 18px; height: 18px; }
+  .how-it-works { grid-template-columns: 25% 1fr; padding-inline: 8px; gap: 25px; }
+  .how-intro h2 { font-size: 24px; }
+  .how-intro > p:last-child { font-size: 12px; }
+  .steps { gap: 20px; }
+  .steps li:not(:last-child)::after { right: -19px; }
+  .steps p { font-size: 11px; }
+  .step-visual img { max-width: 120px; }
+  .filter-bar { grid-template-columns: 1.5fr 1fr 1fr; }
+  .filter-bar .search-field { grid-column: span 2; }
+  .food-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile-grid { grid-template-columns: 1fr 1.3fr; }
+  .profile-settings { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; }
+  .stats-grid { gap: 13px; }
+  .stat { padding: 17px; gap: 11px; }
+  .stat .feature-icon { width: 32px; height: 32px; }
+}
+@media (max-width: 800px) {
+  :root { --header-height: 116px; }
+  .container, .header-inner { width: calc(100% - 40px); }
+  .site-header { height: auto; min-height: var(--header-height); }
+  .header-inner { display: grid; grid-template-columns: 1fr auto; gap: 0; padding-top: 5px; }
+  .brand { width: 160px; }
+  .header-actions { grid-column: 2; grid-row: 1; }
+  .icon-button { width: 37px; height: 37px; }
+  .main-nav { grid-column: 1 / -1; justify-content: space-between; gap: 7px; }
+  .main-nav a { padding: 12px 6px 14px; font-size: 13px; }
+  .main-nav a::after { bottom: 6px; }
+  .hero { min-height: 325px; grid-template-columns: 1.1fr 1fr; }
+  .hero-art { height: 325px; }
+  .hero h1 { font-size: clamp(31px, 4.5vw, 38px); white-space: normal; }
+  .hero-description { font-size: 12px; max-width: 315px; margin-top: 15px; }
+  .hero .eyebrow { font-size: 8px; margin-bottom: 16px; }
+  .hero .button-row { gap: 8px; }
+  .hero .button { min-height: 41px; font-size: 11px; }
+  .hero-dish { margin-left: -15px; width: 117%; }
+  .handwritten { font-size: 15px; bottom: 29px; right: 2px; }
+  .quick-links { grid-template-columns: 1fr 1fr; gap: 13px; }
+  .quick-card > img { height: 88px; }
+  .quick-card-body { padding: 12px 45px 14px 12px; }
+  .quick-card h2 { font-size: 15px; }
+  .quick-card p { font-size: 12px; }
+  .quick-card .circle-arrow { width: 32px; height: 32px; right: 10px; }
+  .how-it-works { grid-template-columns: 1fr; gap: 20px; padding-top: 30px; }
+  .how-intro { display: grid; grid-template-columns: 1fr 1fr; column-gap: 25px; }
+  .how-intro .eyebrow { grid-column: 1 / -1; }
+  .how-intro h2 { font-size: 27px; }
+  .how-intro > p:last-child { margin-top: 0; align-self: center; }
+  .step-visual img { max-width: 105px; }
+  .step-visual span { left: -5px; }
+  .content-section { padding: 52px 0; }
+  .section-heading { align-items: flex-start; }
+  .section-heading > p { font-size: 12px; max-width: 230px; }
+  .section-heading > p br { display: none; }
+  .section-heading h2 { font-size: 32px; }
+  .register-layout { grid-template-columns: 1fr; }
+  .register-aside { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .register-aside > .eyebrow, .register-aside > h3, .register-aside > .notice { grid-column: 1 / -1; }
+  .register-aside .eyebrow { margin-bottom: 0; }
+  .register-aside .aside-tip { margin: 8px 0; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .site-footer .container { flex-wrap: wrap; }
+}
+@media (max-width: 540px) {
+  :root { --header-height: 111px; }
+  .container, .header-inner { width: calc(100% - 32px); }
+  .brand { width: 151px; }
+  .main-nav a { padding-inline: 5px; font-size: 12px; }
+  .header-inner { padding-top: 5px; }
+  .header-actions { gap: 9px; }
+  .hero { display: flex; flex-direction: column; min-height: 0; }
+  .hero-copy { width: 100%; padding: 25px 6px 0; }
+  .hero .eyebrow { font-size: 9px; margin-bottom: 16px; }
+  .hero h1 { font-size: clamp(31px, 9vw, 45px); line-height: 1.05; letter-spacing: -.06em; }
+  .hero-description { max-width: 340px; font-size: 13px; margin: 18px 0 20px; }
+  .hero .button-row { gap: 8px; flex-wrap: nowrap; }
+  .hero .button { font-size: 11px; padding: 12px 11px; min-height: 45px; gap: 7px; }
+  .hero .button .icon { width: 17px; height: 17px; }
+  .hero .button--primary .icon:last-child { display: none; }
+  .brush-line { width: 95px; }
+  .hero-art { width: 100%; height: 232px; flex: none; margin-top: 5px; }
+  .hero-dish { width: 96%; margin-left: -12px; max-height: 240px; }
+  .handwritten { font-size: 15px; right: -5px; bottom: 27px; max-width: 88px; }
+  .quick-links { padding: 10px; gap: 10px; border-radius: 18px; }
+  .quick-card > img { height: 69px; }
+  .quick-card-body { padding: 10px 9px 38px; }
+  .quick-card h2 { font-size: 13px; letter-spacing: -.035em; }
+  .quick-card p { font-size: 10px; line-height: 1.6; }
+  .quick-card p br { display: none; }
+  .quick-card .circle-arrow { width: 26px; height: 26px; right: 8px; bottom: 8px; }
+  .how-it-works { padding: 28px 5px 0; }
+  .how-intro { grid-template-columns: 1fr; gap: 9px; }
+  .how-intro .eyebrow { margin: 0; }
+  .how-intro h2 { font-size: 27px; }
+  .how-intro h2 br { display: none; }
+  .how-intro > p:last-child { max-width: 310px; font-size: 12px; }
+  .steps { grid-template-columns: 1fr 1fr; row-gap: 23px; column-gap: 35px; padding: 0 10px; }
+  .steps h3 { font-size: 17px; }
+  .steps p { font-size: 12px; }
+  .steps li::after { display: none; }
+  .step-visual span { left: 3px; }
+  .home-section { padding-bottom: 32px; }
+  .section-heading { flex-direction: column; gap: 18px; margin-bottom: 25px; }
+  .section-heading .eyebrow { font-size: 9px; }
+  .section-heading h2 { font-size: 33px; }
+  .section-heading > p { max-width: 100%; font-size: 13px; }
+  .filter-bar { grid-template-columns: 1fr 1fr; padding: 15px; gap: 15px 10px; }
+  .filter-bar .search-field { grid-column: 1 / -1; }
+  .filter-bar label > span { font-size: 10px; }
+  .filter-bar label:last-of-type { grid-column: 1 / -1; }
+  .filter-bar > button { grid-column: 1 / -1; }
+  .filter-bar select { font-size: 12px; }
+  .filter-help { margin: 12px 5px; }
+  .results-toolbar { flex-direction: column; align-items: stretch; gap: 11px; }
+  .results-toolbar > .button-row { justify-content: space-between; gap: 6px; }
+  .view-switch button { padding: 8px; }
+  .food-grid { grid-template-columns: 1fr; gap: 13px; }
+  .food-card { padding: 19px; }
+  .food-card-top { margin-bottom: 12px; }
+  .food-card h3 { font-size: 19px; }
+  .illustrated-map { min-height: 360px; border-width: 5px; }
+  .map-note { padding: 22px; }
+  .panel { padding: 22px; border-radius: 19px; }
+  .panel-heading h3 { font-size: 20px; }
+  .form-grid { grid-template-columns: 1fr; gap: 17px; }
+  .span-2 { grid-column: auto; }
+  .register-form > .button { width: 100%; min-width: 0; }
+  .register-aside { display: block; }
+  .register-aside .eyebrow { margin-bottom: 12px; }
+  .register-aside .aside-tip { margin: 24px 0; }
+  .stat { padding: 17px 13px; gap: 10px; align-items: flex-start; }
+  .stat .feature-icon { width: 30px; height: 30px; }
+  .stat .icon { width: 18px; height: 18px; }
+  .stat strong { font-size: 26px; }
+  .stat p { font-size: 10px; }
+  .period-row { gap: 10px; }
+  .period-row select { min-width: 0; width: auto; flex: 1; }
+  .period-row > p { width: 100%; }
+  .history-row { gap: 10px; flex-wrap: wrap; }
+  .history-row .feature-icon { width: 30px; height: 30px; }
+  .history-row .icon { width: 18px; height: 18px; }
+  .history-row > div { flex: 1; min-width: 190px; }
+  .history-row h4 { font-size: 13px; }
+  .history-row > time { font-size: 10px; margin-left: 40px; }
+  .profile-grid, .profile-settings { grid-template-columns: 1fr; }
+  .profile-settings { grid-column: auto; }
+  .site-footer .container { flex-direction: column; align-items: flex-start; gap: 15px; }
+  dialog { width: calc(100% - 20px); max-height: calc(100dvh - 24px); border-radius: 18px; }
+  .dialog-topbar { padding: 10px 17px; }
+  #dialog-contenido { padding: 20px; }
+  .detail-facts { grid-template-columns: 1fr; gap: 10px; }
+  .detail-fact { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 13px; }
+  .detail-fact dt { margin-bottom: 0; }
+  .detail-fact dd { font-size: 12px; text-align: right; }
+  .detail-columns { grid-template-columns: 1fr; gap: 10px; }
+  .recipe-card { gap: 11px; padding: 15px 12px; }
+  .recipe-card > .feature-icon { width: 31px; height: 31px; }
+  .recipe-card h3 { font-size: 14px; }
+  .recipe-card p { font-size: 10px; }
+  .recipe-card > button { width: 30px; height: 30px; }
+  .success-heading { align-items: flex-start; gap: 12px; }
+  .success-heading h2 { font-size: 27px; }
+  .success-heading .feature-icon { width: 40px; height: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
