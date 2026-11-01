@@ -6,7 +6,7 @@ todos los CA/Gherkin de una historia por tener un componente visible.
 
 | HU | Componente o acceso | Resultado y verificación inicial | Estado / pendiente |
 | --- | --- | --- | --- |
-| HU-001 | Mapa ilustrativo | Informa la ausencia de coordenadas verificadas. | Pendiente mapa con marcadores válidos y aceptación completa. |
+| HU-001 | Mapa de Lima | Cartografía real y universidades OSM; no atribuye coordenadas inventadas a locales de comida. | Pendientes coordenadas de establecimientos y aceptación completa de esta HU. |
 | HU-002 | Inicio → Explorar alimentos → Buscar | Consulta parcial, mayúsculas/tildes, limpiar y estado vacío probados. | Funcional en la base; falta revisión visual MK-03. |
 | HU-003 | Cercanía | No se publican distancias inventadas. | Pendiente coordenadas, referencia y filtro. |
 | HU-004 | Presupuesto máximo | Rango máximo, precios faltantes y gasto por persona probados. | Funcional en la base; validar datos y alcance final. |
@@ -14,7 +14,7 @@ todos los CA/Gherkin de una historia por tener un componente visible.
 | HU-006 | Buscar + Distrito + Presupuesto | Combinación y reinicio probados. | Parcial: faltan filtros de distancia/hierro y retirada individual. |
 | HU-007 | Ordenar | Orden por nombre y precio máximo; desconocidos al final. | Parcial: faltan criterios de distancia y hierro. |
 | HU-008 | Comparador | Sin controles decorativos de comparación. | Pendiente MK-04 completo y selección de al menos dos opciones. |
-| HU-010 | Lista / Mapa ilustrativo | Alternancia conserva filtros. | Parcial: falta mapa con datos geográficos válidos. |
+| HU-010 | Lista / Mapa y universidades | Alternancia conserva filtros; mapa con datos OSM reales. | Parcial: falta georreferenciar los establecimientos del catálogo de alimentos. |
 | HU-012 | Flecha de alimento → Ficha breve | Nombre, distrito y datos faltantes identificados. | Parcial: falta ficha MK-05 y direcciones/horarios documentados. |
 | HU-013 | Ficha breve de alimento | Precio con condición, porción/ingredientes ausentes explícitos; regreso probado. | Parcial: completar datos y layout MK-06. |
 | HU-014 | Ficha breve → Tiempo de obtención | Ausencia indicada, sin confundir con caminata. | Parcial: falta escenario con estimación documentada. |
@@ -43,6 +43,11 @@ Favoritos, búsqueda de recetas por ingrediente y preferencia de distrito son
 ayudas funcionales de esta base. No sustituyen HU core pendientes.
 
 ## Referencias visuales
+
+La integración posterior de mapa real y Google está registrada en
+`GOOGLE-Y-MAPA.md`. Los marcadores de universidades son una funcionalidad
+solicitada por el equipo; no certifican HU-001, que se refiere a establecimientos.
+El acceso real continúa pendiente de activar con Client ID y secreto en Cloudflare.
 
 Se verificó la disponibilidad de MK-01 a MK-14 y MK-A01 a MK-A06. La copia de
 MK-01 está en `referencias/MK-01.png`. Se conserva como fuente de comparación.

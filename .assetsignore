@@ -1,0 +1,15 @@
+/.git/
+/.github/
+/.wrangler/
+/docs/
+/tests/
+/scripts/
+/worker/
+/README.md
+/.gitignore
+/.assetsignore
+/wrangler.jsonc
+/.dev.vars
+/.dev.vars.*
+/.env
+/.env.*

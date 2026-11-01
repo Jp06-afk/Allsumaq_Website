@@ -1,0 +1,2715 @@
+{
+  "query": "[out:json][timeout:25];nwr[\"amenity\"=\"university\"](-12.50,-77.25,-11.65,-76.60);out center tags;",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-01T00:38:42Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 2169475486,
+      "lat": -12.0728108,
+      "lon": -76.9538629,
+      "tags": {
+        "addr:street": "Avenida La Fontana",
+        "amenity": "university",
+        "name": "Universidad San Ignacio de Loyola Campus 1",
+        "source": "Reconocimiento cartográfico 2017 por Kaart.",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes",
+        "wheelchair:description": "Baño para sila de ruedas dentro de otros los baños comunes. Coordinan clases para que se hagan en un mismo salon si tienes probelmas de movilidad. No conoci elevador cuando estudie alli en el 2000 pero te ayudan a subir los de mantenimiento"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4229063029,
+      "lat": -12.0500991,
+      "lon": -77.035527,
+      "tags": {
+        "addr:city": "Cercado de Lima",
+        "amenity": "university",
+        "name": "Britanico",
+        "toilets:wheelchair": "no",
+        "wheelchair": "no",
+        "wheelchair:description": "Peldaños a la entrada. El guardian dice que no hay bañó pa silla."
+      }
+    },
+    {
+      "type": "node",
+      "id": 4334426184,
+      "lat": -12.0743421,
+      "lon": -77.0358044,
+      "tags": {
+        "addr:city": "Santa Beatriz",
+        "addr:housenumber": "991",
+        "addr:street": "Avenida Arequipa",
+        "amenity": "university",
+        "name": "Universidad Sergio Bernales",
+        "operator": "Universidad Sergio Bernales",
+        "phone": "+51 1 717 3814",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG",
+        "website": "http://upsb.edu.pe/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4347715404,
+      "lat": -12.0619368,
+      "lon": -77.0356216,
+      "tags": {
+        "addr:city": "Jesús María",
+        "addr:housenumber": "400",
+        "addr:postcode": "15001",
+        "addr:state": "Lima",
+        "addr:street": "Avenida Paseo de la República",
+        "amenity": "university",
+        "description": "Universidad de arte dramático",
+        "email": "ensaddireccion@gmail.com",
+        "name": "Escuela Nacional Superior de Arte Dramático",
+        "phone": "+51 1 3320432",
+        "short_name": "ENSAD",
+        "website": "https://www.ensad.edu.pe/",
+        "wikidata": "Q5838741",
+        "wikipedia": "es:Escuela Nacional Superior de Arte Dramático (Perú)"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4359109891,
+      "lat": -12.0809114,
+      "lon": -77.0352079,
+      "tags": {
+        "amenity": "university",
+        "name": "Universidad catolica los angeles de chimbote",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4379812276,
+      "lat": -11.9983158,
+      "lon": -77.0631218,
+      "tags": {
+        "amenity": "university",
+        "name": "Universidad Católica Sede Sapientiae"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4484272989,
+      "lat": -12.047501,
+      "lon": -77.0272051,
+      "tags": {
+        "amenity": "university",
+        "name": "Escuela Internacional de Posgrado",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4633924889,
+      "lat": -12.0721191,
+      "lon": -77.0435112,
+      "tags": {
+        "amenity": "university",
+        "name": "Colegio de Psicólogos del Perú",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4763488127,
+      "lat": -12.0468543,
+      "lon": -77.0281935,
+      "tags": {
+        "addr:city": "Lima",
+        "addr:housenumber": "429",
+        "addr:street": "Jiron Junin",
+        "amenity": "university",
+        "name": "Universidad Privada Telesup",
+        "toilets:wheelchair": "no",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5199302171,
+      "lat": -12.0850544,
+      "lon": -77.0547538,
+      "tags": {
+        "addr:city": "Jesús María",
+        "addr:postcode": "51015",
+        "addr:street": "Jirón Rio de Janeiro",
+        "amenity": "university",
+        "building:levels": "4",
+        "name": "UNIVERSIDAD JAIME BAUSATE Y MEZA"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11599197932,
+      "lat": -11.9449339,
+      "lon": -77.0720326,
+      "tags": {
+        "addr:street": "Av Alfredo Mendiola",
+        "amenity": "university",
+        "education": "university",
+        "name": "Universidad Científica del Sur",
+        "phone": "+51 955021130",
+        "website": "https://www.cientifica.edu.pe/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11902359972,
+      "lat": -12.0800353,
+      "lon": -77.0717016,
+      "tags": {
+        "amenity": "university",
+        "name": "Facultad de odontologia UNFV"
+      }
+    },
+    {
+      "type": "node",
+      "id": 14174437307,
+      "lat": -12.0235021,
+      "lon": -77.0503949,
+      "tags": {
+        "amenity": "university"
+      }
+    },
+    {
+      "type": "node",
+      "id": 14183002401,
+      "lat": -12.061389,
+      "lon": -77.117634,
+      "tags": {
+        "amenity": "university",
+        "name": "UNAC"
+      }
+    },
+    {
+      "type": "way",
+      "id": 68872592,
+      "center": {
+        "lat": -12.0238046,
+        "lon": -77.0566932
+      },
+      "tags": {
+        "addr:city": "San Martín de Porres",
+        "addr:housenumber": "430",
+        "addr:street": "Avenida Honorio Delgado",
+        "amenity": "university",
+        "name": "Universidad Peruana Cayetano Heredia - Campo central",
+        "operator": "Universidad Peruana Cayetano Heredia",
+        "wikipedia": "es:Universidad Peruana Cayetano Heredia"
+      }
+    },
+    {
+      "type": "way",
+      "id": 70650383,
+      "center": {
+        "lat": -12.0001559,
+        "lon": -77.0639509
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Universidad Católica Sede Sapientiae"
+      }
+    },
+    {
+      "type": "way",
+      "id": 73952076,
+      "center": {
+        "lat": -12.0705748,
+        "lon": -77.0733715
+      },
+      "tags": {
+        "addr:city": "Pueblo Libre",
+        "addr:street": "Calle Rio Moche",
+        "amenity": "university",
+        "name": "Universidad Inca Garcilazo de la Vega"
+      }
+    },
+    {
+      "type": "way",
+      "id": 126861408,
+      "center": {
+        "lat": -12.2133631,
+        "lon": -76.9324197
+      },
+      "tags": {
+        "addr:city": "Villa El Salvador",
+        "addr:full": "Avenida Central con Avenida Bolivar, Sector 3 Grupo 1A 03",
+        "addr:neighbourhood": "Sector 3 Grupo 1",
+        "addr:postcode": "15834",
+        "addr:state": "Lima",
+        "addr:street": "Avenida Bolívar",
+        "amenity": "university",
+        "contact:email": "informes@untels.edu.pe",
+        "contact:facebook": "https://www.facebook.com/untelsperu/",
+        "contact:flickr": "https://www.flickr.com/photos/144435095@N02/",
+        "contact:instagram": "https://www.instagram.com/untelsoficial/",
+        "contact:linkedin": "https://pe.linkedin.com/company/universidad-nacional-tecnologica-de-lima-sur",
+        "contact:phone": "+511 7158878",
+        "contact:twitter": "https://twitter.com/UntelsOficial?lang=es",
+        "contact:website": "http://www.untels.edu.pe/",
+        "contact:youtube": "https://www.youtube.com/channel/UC5gvShl38CqRNPNNzrNe85Q?view_as=subscriber",
+        "name": "Universidad Nacional Tecnológica de Lima Sur",
+        "name:en": "National Technological University of South Lima",
+        "old_name": "Universidad Nacional Tecnológica del Cono Sur",
+        "related_law": "Ley N° 27431, Ley N° 30184",
+        "short_name": "UNTELS",
+        "start_date": "2001-01-10",
+        "wikidata": "Q6156576",
+        "wikipedia": "es:Universidad Nacional Tecnológica de Lima Sur"
+      }
+    },
+    {
+      "type": "way",
+      "id": 126865901,
+      "center": {
+        "lat": -12.0815711,
+        "lon": -76.9877343
+      },
+      "tags": {
+        "addr:city": "San Borja",
+        "addr:postcode": "15021",
+        "addr:street": "Avenida Circunvalación",
+        "alt_name": "Facultad de Medicina Veterinaria de la Universidad Nacional Mayor de San Marcos",
+        "amenity": "university",
+        "name": "Facultad de Veterinaria UNMSM",
+        "operator": "Universidad Nacional Mayor de San Marcos",
+        "website": "https://veterinaria.unmsm.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 127709115,
+      "center": {
+        "lat": -12.1323658,
+        "lon": -76.9802313
+      },
+      "tags": {
+        "addr:city": "Santiago de Surco",
+        "addr:housenumber": "5540",
+        "addr:postcode": "15039",
+        "addr:street": "Avenida Alfredo Benavides",
+        "amenity": "university",
+        "contact:email": "rsurp@urp.edu.pe",
+        "contact:facebook": "https://www.facebook.com/urpalma/",
+        "contact:twitter": "https://twitter.com/urpalma",
+        "contact:youtube": "https://www.youtube.com/channel/UCDGNHzxLCUCLSfrsM_jRiXw",
+        "name": "Universidad Ricardo Palma",
+        "name:en": "Ricardo Palma University",
+        "name:etymology:wikidata": "Q562178",
+        "name:it": "Università Ricardo Palma",
+        "name:pl": "Universidad Ricardo Palma",
+        "name:pt": "Universidade Ricardo Palma",
+        "name:ru": "Университет Рикардо Пальмы",
+        "operator": "Universidad Ricardo Palma",
+        "operator:type": "university",
+        "phone": "+51 1 708 0000",
+        "short_name": "URP",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.urp.edu.pe/",
+        "wheelchair": "limited",
+        "wheelchair:description": "Alguien fue y me dijo que: \"Desde la entrada principal hasta la facultad de biología, rampas y elevadores.\"",
+        "wikidata": "Q2067204",
+        "wikipedia": "es:Universidad Ricardo Palma"
+      }
+    },
+    {
+      "type": "way",
+      "id": 147185094,
+      "center": {
+        "lat": -12.1373308,
+        "lon": -77.0065233
+      },
+      "tags": {
+        "addr:city": "Santiago de Surco",
+        "addr:housenumber": "1270",
+        "addr:postcode": "15049",
+        "addr:state": "Lima",
+        "addr:street": "Avenida Mariscal Ramón Castilla",
+        "amenity": "university",
+        "name": "Universidad M. Champagnat",
+        "name:es": "Universidad Marcelino Champagnat",
+        "phone": "+51 1 4490449",
+        "source": "Reconocimiento cartográfico por KG 2016.",
+        "website": "https://umch.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 154964541,
+      "center": {
+        "lat": -12.1205347,
+        "lon": -77.0311073
+      },
+      "tags": {
+        "addr:city": "Miraflores",
+        "addr:housenumber": "162",
+        "addr:postcode": "15074",
+        "addr:street": "Calle José Olaya",
+        "amenity": "university",
+        "name": "Universidad de Piura",
+        "short_name": "UDEP"
+      }
+    },
+    {
+      "type": "way",
+      "id": 154973504,
+      "center": {
+        "lat": -12.1955433,
+        "lon": -76.971279
+      },
+      "tags": {
+        "addr:city": "Villa El Salvador",
+        "addr:street": "Antigua Panamericana Sur",
+        "amenity": "university",
+        "email": "informes@ua.edu.pe",
+        "name": "Universidad Autónoma del Perú",
+        "phone": "+51 1 7153333",
+        "source": "Bing",
+        "website": "https://www.autonoma.pe/",
+        "wikidata": "Q24960158"
+      }
+    },
+    {
+      "type": "way",
+      "id": 158617358,
+      "center": {
+        "lat": -12.0855337,
+        "lon": -76.9707266
+      },
+      "tags": {
+        "addr:city": "Lima",
+        "addr:district": "Santiago de Surco",
+        "addr:housenumber": "4600",
+        "addr:neighbourhood": "Fundo Monterrico Chico",
+        "addr:postcode": "15023",
+        "addr:state": "Lima",
+        "addr:street": "Javier Prado Este",
+        "alt_name": "Ulima",
+        "amenity": "university",
+        "contact:facebook": "https://www.facebook.com/ulima.pe",
+        "contact:instagram": "https://instagram.com/ulimaoficial",
+        "contact:linkedin": "https://www.linkedin.com/edu/school?id=15563",
+        "contact:twitter": "https://twitter.com/udelima",
+        "contact:youtube": "https://www.youtube.com/user/ulimaoficial/featured",
+        "education": "university",
+        "fax": "+51 1 4378066",
+        "internet_access": "yes",
+        "internet_access:fee": "no",
+        "name": "Universidad de Lima",
+        "phone": "+51 1 4376767;+51 1 3172900",
+        "source": "https://www.ulima.edu.pe/ulima/noticias/ulima-app-una-herramienta-para-ubicarse-y-desplazarse-en-el-campus-ulima;https://www.ulima.edu.pe/sites/default/files/event/file/arquitectura_2016_catalogo_exposicion_campus_50_v.web_.pdf",
+        "start_date": "1966-08-27",
+        "website": "https://www.ulima.edu.pe/",
+        "wikidata": "Q29675",
+        "wikipedia": "es:Universidad de Lima"
+      }
+    },
+    {
+      "type": "way",
+      "id": 160443525,
+      "center": {
+        "lat": -12.0728162,
+        "lon": -76.9538053
+      },
+      "tags": {
+        "addr:city": "La Molina",
+        "addr:housenumber": "550",
+        "addr:street": "Avenida La Fontana",
+        "alt_name": "USIL",
+        "amenity": "university",
+        "name": "Campus Arq. Fernando Belaunde Terry - USIL",
+        "operator": "Universidad San Ignacio de Loyola",
+        "phone": "+51 1 3171000",
+        "website": "https://www.usil.edu.pe/sedes/universidad-san-ignacio-loyola-campus-la-molina"
+      }
+    },
+    {
+      "type": "way",
+      "id": 160698070,
+      "center": {
+        "lat": -12.0734614,
+        "lon": -76.9484877
+      },
+      "tags": {
+        "addr:city": "La Molina",
+        "addr:district": "La Molina",
+        "addr:full": "Calle La Fontana 795",
+        "addr:housenumber": "795",
+        "addr:province": "Lima",
+        "addr:street": "Avenida La Fontana",
+        "addr:subdistrict": "La Molina",
+        "alt_name": "ISIL",
+        "amenity": "university",
+        "ele": "283",
+        "isced:level": "Superior Tecnológica",
+        "name": "Instituto San Ignacio De Loyola",
+        "note": "Ubicacion_web (local)",
+        "ref": "702407",
+        "source": "minedu.gob.pe",
+        "website": "https://isil.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 172600384,
+      "center": {
+        "lat": -12.0472072,
+        "lon": -77.0401431
+      },
+      "tags": {
+        "addr:city": "Cercado de Lima",
+        "addr:housenumber": "300",
+        "addr:street": "Avenida Nicolás de Pierola",
+        "amenity": "university",
+        "name": "Universidad Nacional Federico Villareal",
+        "short_name": "UNFV",
+        "source": "Reconocimiento cartográfico por KG 2016.",
+        "website": "http://www.unfv.edu.pe/site/",
+        "wikipedia": "es:Universidad Nacional Federico Villarreal"
+      }
+    },
+    {
+      "type": "way",
+      "id": 181375025,
+      "center": {
+        "lat": -12.0200512,
+        "lon": -77.0012172
+      },
+      "tags": {
+        "addr:housename": "IFB - Sede San Juan",
+        "addr:housenumber": "810",
+        "addr:street": "Avenida Piramides del Sol",
+        "amenity": "university",
+        "name": "IFB - Instituto de Formacion Bancaria"
+      }
+    },
+    {
+      "type": "way",
+      "id": 186174865,
+      "center": {
+        "lat": -11.9816935,
+        "lon": -77.0001847
+      },
+      "tags": {
+        "addr:housenumber": "640",
+        "addr:street": "Avenida Del Parque",
+        "amenity": "university",
+        "name": "Universidad Cesar Vallejo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 220415161,
+      "center": {
+        "lat": -11.9551553,
+        "lon": -77.0681398
+      },
+      "tags": {
+        "addr:city": "Comas",
+        "addr:housenumber": "6232",
+        "addr:street": "Avenida Alfredo Mendiola",
+        "amenity": "university",
+        "name": "Universidad César Vallejo",
+        "name:es": "Universidad César Vallejo Lima Norte",
+        "phone": "+51 1 2024342",
+        "short_name": "UCV",
+        "website": "https://www.ucv.edu.pe/",
+        "wikipedia": "es:Universidad César Vallejo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 220562243,
+      "center": {
+        "lat": -12.061397,
+        "lon": -77.1176527
+      },
+      "tags": {
+        "addr:city": "Bellavista",
+        "addr:housename": "Campus Universitario",
+        "addr:housenumber": "306",
+        "addr:postcode": "callao 2",
+        "addr:street": "Avenida Juan Pablo II",
+        "amenity": "university",
+        "education": "university",
+        "name": "Universidad Nacional del Callao",
+        "operator": "Universidad Nacional del Callao",
+        "phone": "+51 1 4299740",
+        "short_name": "UNAC",
+        "website": "https://unac.edu.pe/",
+        "wheelchair": "yes",
+        "wikidata": "Q442106",
+        "wikipedia": "es:Universidad Nacional del Callao"
+      }
+    },
+    {
+      "type": "way",
+      "id": 225365951,
+      "center": {
+        "lat": -12.1052697,
+        "lon": -76.9552346
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "CENTRUM - Católica"
+      }
+    },
+    {
+      "type": "way",
+      "id": 249995023,
+      "center": {
+        "lat": -12.1052774,
+        "lon": -77.0174166
+      },
+      "tags": {
+        "addr:city": "Surquillo",
+        "addr:housenumber": "751",
+        "addr:postcode": "15036",
+        "addr:street": "Avenida Tomás Marsano",
+        "amenity": "university",
+        "name": "Universidad San Martín de Porres - Facultad de Ciencias de la Comunicación, Turismo y Psicología",
+        "wikidata": "Q3438435",
+        "wikipedia": "es:Universidad de San Martín de Porres"
+      }
+    },
+    {
+      "type": "way",
+      "id": 274692575,
+      "center": {
+        "lat": -12.1056052,
+        "lon": -76.9609456
+      },
+      "tags": {
+        "addr:city": "Santiago de Surco",
+        "addr:housenumber": "1625",
+        "addr:street": "Alonso de Molina",
+        "amenity": "university",
+        "name": "Universidad ESAN",
+        "opening_hours": "Mo-Sa 08:00-17:00",
+        "phone": "+51 1 3177200",
+        "short_name": "ESAN",
+        "website": "https://www.esan.edu.pe/",
+        "wikidata": "Q6156439",
+        "wikipedia": "es:Universidad ESAN"
+      }
+    },
+    {
+      "type": "way",
+      "id": 285827604,
+      "center": {
+        "lat": -11.9114984,
+        "lon": -76.9824437
+      },
+      "tags": {
+        "addr:city": "Huarochirí",
+        "addr:full": "Sector el Valle, Jicamarca, Huarochirí",
+        "amenity": "university",
+        "email": "admision@unisdg.edu.pe",
+        "name": "Universidad Santo Domingo de Guzmán",
+        "phone": "+51 991846538;+51 991113507",
+        "website": "https://usdg.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 293085744,
+      "center": {
+        "lat": -12.1041202,
+        "lon": -76.9630675
+      },
+      "tags": {
+        "addr:city": "Santiago de Surco",
+        "addr:street": "Avenida Primavera",
+        "amenity": "university",
+        "name": "Universidad Peruana de Ciencias Aplicadas",
+        "short_name": "UPC",
+        "website": "https://www.upc.edu.pe/",
+        "wikidata": "Q5202363",
+        "wikimedia_commons": "Category:Universidad Peruana de Ciencias Aplicadas",
+        "wikipedia": "es:Universidad Peruana de Ciencias Aplicadas"
+      }
+    },
+    {
+      "type": "way",
+      "id": 293107608,
+      "center": {
+        "lat": -12.104083,
+        "lon": -76.9659323
+      },
+      "tags": {
+        "addr:city": "Santiago de Surco",
+        "addr:housenumber": "160",
+        "addr:street": "Jiron Aldebarán",
+        "alt_name": "PAD Piura",
+        "amenity": "university",
+        "name": "Escuela de Dirección Universidad de Piura",
+        "operator": "Universidad de Piura",
+        "phone": "+511 2171200",
+        "website": "https://pad.edu/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 295177769,
+      "center": {
+        "lat": -12.102452,
+        "lon": -77.0321099
+      },
+      "tags": {
+        "addr:city": "San Isidro",
+        "amenity": "university",
+        "name": "Universidad Inca Garcilazo de la Vega"
+      }
+    },
+    {
+      "type": "way",
+      "id": 298459855,
+      "center": {
+        "lat": -12.0630548,
+        "lon": -77.037993
+      },
+      "tags": {
+        "addr:city": "Lima",
+        "addr:housenumber": "1880",
+        "addr:street": "Avenida Garcilaso de la Vega",
+        "amenity": "university",
+        "building": "yes",
+        "name": "Universidad Peruana de las Américas",
+        "phone": "+51 1 3327461",
+        "website": "https://www.ulasamericas.edu.pe/",
+        "wikidata": "Q6156620",
+        "wikipedia": "es:Universidad Peruana de las Américas"
+      }
+    },
+    {
+      "type": "way",
+      "id": 310523619,
+      "center": {
+        "lat": -12.083895,
+        "lon": -77.0482573
+      },
+      "tags": {
+        "addr:city": "Jesús María",
+        "addr:housenumber": "2020",
+        "addr:street": "Avenida Salaverry",
+        "amenity": "university",
+        "name": "Universidad del Pacífico",
+        "phone": "+51 1 2190100",
+        "website": "https://www.up.edu.pe/default.aspx",
+        "wikipedia": "es:Universidad del Pacífico (Perú)"
+      }
+    },
+    {
+      "type": "way",
+      "id": 326855710,
+      "center": {
+        "lat": -12.0694499,
+        "lon": -77.051665
+      },
+      "tags": {
+        "addr:city": "Pueblo Libre",
+        "addr:housenumber": "251",
+        "addr:street": "Jirón Pedro Ruiz Gallo",
+        "amenity": "university",
+        "ele": "95",
+        "name": "Universidad Alas Peruanas - Pueblo Libre",
+        "operator": "Universidad Alas Peruanas",
+        "phone": "+51 1 4335522",
+        "short_name": "UAP",
+        "website": "https://www.uap.edu.pe/",
+        "wikidata": "Q6156327",
+        "wikipedia": "es:Universidad Alas Peruanas"
+      }
+    },
+    {
+      "type": "way",
+      "id": 331618378,
+      "center": {
+        "lat": -12.0716947,
+        "lon": -76.9662093
+      },
+      "tags": {
+        "addr:city": "La Molina",
+        "addr:housenumber": "953",
+        "addr:street": "Avenida Los Frutales",
+        "amenity": "university",
+        "name": "Universidad Femenina del Sagrado Corazón",
+        "name:en": "Sagrado Corazon Women University",
+        "operator": "Universidad Femenina del Sagrado Corazón",
+        "phone": "+51 1 4364641",
+        "short_name": "UNIFE",
+        "start_date": "1962",
+        "website": "http://www.unife.edu.pe/",
+        "wikidata": "Q29054169",
+        "wikipedia": "es:Universidad Femenina del Sagrado Corazón"
+      }
+    },
+    {
+      "type": "way",
+      "id": 357287696,
+      "center": {
+        "lat": -12.043984,
+        "lon": -76.952911
+      },
+      "tags": {
+        "addr:city": "Santa Anita",
+        "addr:housenumber": "2221",
+        "addr:street": "Avenida Los Cascanueces",
+        "amenity": "university",
+        "description": "Campus Lima",
+        "email": "informeslima@tecsup.edu.pe",
+        "name": "TECSUP",
+        "phone": "+51 1 3173900",
+        "website": "https://www.tecsup.edu.pe/home/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 357299856,
+      "center": {
+        "lat": -12.0728107,
+        "lon": -76.9518205
+      },
+      "tags": {
+        "addr:city": "La Molina",
+        "addr:housenumber": "750",
+        "addr:postcode": "15024",
+        "addr:street": "Avenida La Fontana",
+        "amenity": "university",
+        "name": "Campus Gran Almirante Miguel Grau - USIL",
+        "operator": "Universidad San Ignacio de Loyola",
+        "phone": "+51 1 3171000",
+        "website": "https://www.usil.edu.pe/sedes/universidad-san-ignacio-loyola-campus-la-molina",
+        "wikidata": "Q7894314",
+        "wikipedia": "es:Universidad San Ignacio de Loyola"
+      }
+    },
+    {
+      "type": "way",
+      "id": 360056176,
+      "center": {
+        "lat": -12.0633364,
+        "lon": -76.9595894
+      },
+      "tags": {
+        "addr:city": "La Molina",
+        "addr:housenumber": "585",
+        "addr:street": "Avenida La Molina",
+        "amenity": "university",
+        "name": "Universidad SEL",
+        "phone": "+51 1 3480761",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG",
+        "website": "https://usel.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 371941313,
+      "center": {
+        "lat": -12.2228221,
+        "lon": -76.976858
+      },
+      "tags": {
+        "addr:city": "Villa El Salvador",
+        "addr:housenumber": "Km. 19",
+        "addr:street": "Carretera Panamericana Sur",
+        "amenity": "university",
+        "contact:facebook": "https://www.facebook.com/universidadcientifica",
+        "contact:instagram": "https://www.instagram.com/cientifica_sur/",
+        "contact:linkedin": "https://www.linkedin.com/school/universidad-cient-fica-del-sur/",
+        "contact:twitter": "https://twitter.com/CIENTIFICA_Sur",
+        "contact:youtube": "https://www.youtube.com/user/CIENTIFICAsur",
+        "email": "informes@cientifica.edu.pe",
+        "name": "Universidad Científica del Sur",
+        "phone": "+511 610 6400",
+        "ref": "Campus Villa I",
+        "website": "https://www.cientifica.edu.pe/",
+        "wikidata": "Q5202300",
+        "wikimedia_commons": "Category:Universidad Científica del Sur",
+        "wikipedia": "es:Universidad Científica del Sur"
+      }
+    },
+    {
+      "type": "way",
+      "id": 379598570,
+      "center": {
+        "lat": -12.1426861,
+        "lon": -77.0224987
+      },
+      "tags": {
+        "addr:city": "Barranco",
+        "addr:housenumber": "116",
+        "addr:postcode": "15063",
+        "addr:street": "Avenida Sáenz Peña",
+        "amenity": "university",
+        "email": "esc_arquitectura@uap.edu.pe",
+        "name": "Universidad Alas Peruanas - Facultad de Arquitectura",
+        "operator": "Universidad Alas Peruanas",
+        "phone": "+51 1 2476767",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG;Reconocimiento cartográfico por KG 2016",
+        "website": "https://www.uap.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 387031740,
+      "center": {
+        "lat": -12.0692133,
+        "lon": -77.080548
+      },
+      "tags": {
+        "addr:city": "Lima",
+        "addr:district": "San Miguel",
+        "addr:housenumber": "1801",
+        "addr:postcode": "15088",
+        "addr:street": "Avenida Universitaria",
+        "amenity": "university",
+        "education": "university",
+        "ele": "64",
+        "internet_access": "wlan",
+        "internet_access:fee": "customers",
+        "name": "Pontificia Universidad Católica del Perú",
+        "opening_hours": "Mo-Fr 06:00-22:00; Sa 06:00-18:00",
+        "operator": "Pontificia Universidad Católica del Perú",
+        "operator:type": "private",
+        "short_name": "PUCP",
+        "source": "Reconocimiento cartográfico por KG 2016",
+        "start_date": "1917",
+        "toilets:wheelchair": "yes",
+        "website": "https://www.pucp.edu.pe",
+        "wheelchair": "limited",
+        "wheelchair:description": "Escalón más alto a 7 cm",
+        "wikidata": "Q200601",
+        "wikipedia": "es:Pontificia Universidad Católica del Perú"
+      }
+    },
+    {
+      "type": "way",
+      "id": 401029769,
+      "center": {
+        "lat": -12.0641121,
+        "lon": -77.034612
+      },
+      "tags": {
+        "addr:city": "Jesús María",
+        "addr:housenumber": "1056",
+        "addr:street": "Avenida 28 de Julio",
+        "amenity": "university",
+        "building": "university",
+        "building:levels": "4",
+        "email": "contacto@utelesup.com",
+        "name": "Telesup",
+        "name:es": "Universidad Privada Telesup",
+        "operator": "Universidad Privada Telesup",
+        "phone": "+51 1 3769404",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG",
+        "website": "https://utelesup.com/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 402752730,
+      "center": {
+        "lat": -12.0444445,
+        "lon": -76.9675142
+      },
+      "tags": {
+        "addr:city": "Santa Anita",
+        "addr:housenumber": "151",
+        "addr:street": "Calle Las Calandrias",
+        "amenity": "university",
+        "name": "Universidad San Martín de Porres",
+        "operator": "Universidad San Marín de Porres",
+        "wikidata": "Q3438435",
+        "wikimedia_commons": "Category:Universidad de San Martín de Porres",
+        "wikipedia": "es:Universidad de San Martín de Porres"
+      }
+    },
+    {
+      "type": "way",
+      "id": 403117999,
+      "center": {
+        "lat": -12.0977344,
+        "lon": -76.9501969
+      },
+      "tags": {
+        "addr:city": "La Molina",
+        "addr:housenumber": "1531",
+        "addr:street": "Alameda del Corregidor",
+        "amenity": "university",
+        "name": "Facultad de Medicina Humana",
+        "operator": "Universidad de San Martín de Porres",
+        "operator:type": "private",
+        "operator:wikidata": "Q3438435",
+        "operator:wikipedia": "es:Universidad de San Martín de Porres",
+        "website": "https://medicina.usmp.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 403120494,
+      "center": {
+        "lat": -12.1026363,
+        "lon": -76.9482886
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Facultad de Derecho",
+        "operator": "Universidad de San Martín de Porres",
+        "operator:type": "private",
+        "operator:wikidata": "Q3438435",
+        "operator:wikipedia": "es:Universidad de San Martín de Porres",
+        "website": "https://derecho.usmp.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 405574434,
+      "center": {
+        "lat": -12.0688315,
+        "lon": -77.0371632
+      },
+      "tags": {
+        "addr:city": "Santa Beatriz",
+        "addr:street": "Avenida Arequipa",
+        "amenity": "university",
+        "building": "university",
+        "name": "Universidad N. Wiener",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      }
+    },
+    {
+      "type": "way",
+      "id": 405584317,
+      "center": {
+        "lat": -11.9611522,
+        "lon": -77.0655097
+      },
+      "tags": {
+        "addr:city": "Los Olivos",
+        "addr:street": "Avenida Universitaria",
+        "amenity": "university",
+        "name": "Universidad de Ciencias y Humanidades",
+        "short_name": "UCH"
+      }
+    },
+    {
+      "type": "way",
+      "id": 405584319,
+      "center": {
+        "lat": -11.9595565,
+        "lon": -77.0677868
+      },
+      "tags": {
+        "addr:city": "Los Olivos",
+        "addr:housenumber": "6062",
+        "addr:street": "Alfredo Mendiola",
+        "amenity": "university",
+        "name": "Universidad Privada del Norte Lima Norte",
+        "name:es": "Universidad Privada del Norte Lima Norte",
+        "phone": "+51 1 6143311",
+        "short_name": "UPN",
+        "website": "https://www.upn.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 406615116,
+      "center": {
+        "lat": -12.0423935,
+        "lon": -76.9914188
+      },
+      "tags": {
+        "addr:city": "El Agustino",
+        "addr:housenumber": "285",
+        "addr:street": "Río Chepen",
+        "amenity": "university",
+        "contact:email": "occii@unfv.edu.pe",
+        "contact:facebook": "https://www.facebook.com/UNFV.EDU",
+        "contact:instagram": "https://www.instagram.com/unfvoficial/",
+        "contact:twitter": "https://twitter.com/UNFVoficial",
+        "contact:website": "https://web2.unfv.edu.pe/Sitio/",
+        "contact:youtube": "https://www.youtube.com/user/PrensaUNFV",
+        "name": "Universidad Nacional Federico Villarreal",
+        "phone": "+51 1 7480888",
+        "start_date": "1963-10-30",
+        "wikidata": "Q5202383",
+        "wikipedia": "es:Universidad Nacional Federico Villarreal"
+      }
+    },
+    {
+      "type": "way",
+      "id": 410708877,
+      "center": {
+        "lat": -12.0461348,
+        "lon": -77.0477994
+      },
+      "tags": {
+        "addr:city": "Lima",
+        "addr:postcode": "15082",
+        "addr:street": "Av. Óscar R. Benavides 450, Lima 15082",
+        "amenity": "university",
+        "contact:facebook": "UNFV.EDU",
+        "contact:instagram": "unfvoficial",
+        "contact:twitter": "UNFVoficial",
+        "email": "ceuci@unfv.edu.pe",
+        "internet_access": "wlan",
+        "name": "Universidad Nacional Federico Villarreal - SL07",
+        "name:en": "Federico Villarreal National University - SL07",
+        "opening_hours": "Mo-Sa 08:00-23:00",
+        "phone": "+51 1 7480888",
+        "website": "https://www.unfv.edu.pe/",
+        "wikidata": "Q5202383",
+        "wikipedia": "es:Universidad Nacional Federico Villarreal"
+      }
+    },
+    {
+      "type": "way",
+      "id": 412573932,
+      "center": {
+        "lat": -12.083652,
+        "lon": -77.0692404
+      },
+      "tags": {
+        "addr:city": "Pueblo Libre",
+        "addr:housenumber": "600",
+        "addr:street": "Jirón Carlos Bondy",
+        "amenity": "university",
+        "name": "Facultad de Teología Pontificia y Civil de Lima",
+        "operator": "Universidad Católica San José",
+        "phone": "+51 1 4616385",
+        "website": "https://www.ftpcl.edu.pe/",
+        "wikidata": "Q5855156",
+        "wikipedia": "es:Facultad de Teología Pontificia y Civil de Lima"
+      }
+    },
+    {
+      "type": "way",
+      "id": 418674556,
+      "center": {
+        "lat": -12.0764289,
+        "lon": -77.0935526
+      },
+      "tags": {
+        "addr:country": "PE",
+        "addr:housenumber": "2810",
+        "addr:postcode": "15087",
+        "addr:street": "Avenida de La Marina",
+        "amenity": "university",
+        "check_date": "2024-12-27",
+        "full_name": "Universidad Privada de Ciencias Aplicadas",
+        "internet_access": "wlan",
+        "name": "UPC - Campus San Miguel",
+        "operator": "Universidad Privada de Ciencias Aplicadas",
+        "phone": "+51 1 3133333",
+        "short_name": "UPC",
+        "website": "https://www.upc.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 421696055,
+      "center": {
+        "lat": -12.0875676,
+        "lon": -77.0500678
+      },
+      "tags": {
+        "addr:street": "Avenida Salaverry",
+        "amenity": "university",
+        "name": "Universidad Peruana de Ciencias Aplicadas",
+        "name:es": "UPC San Isidro",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 421697851,
+      "center": {
+        "lat": -12.0906889,
+        "lon": -77.0516166
+      },
+      "tags": {
+        "addr:city": "San Isidro",
+        "addr:housenumber": "2443",
+        "addr:street": "Avenida General Felipe Santiago Salaverry",
+        "amenity": "university",
+        "building": "university",
+        "name": "Universidad Tecnológica del Perú",
+        "note": "Escuela de Postgrado",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      }
+    },
+    {
+      "type": "way",
+      "id": 421698652,
+      "center": {
+        "lat": -12.0813096,
+        "lon": -77.0485662
+      },
+      "tags": {
+        "amenity": "university",
+        "building": "university",
+        "name": "Escuela de Posgrado",
+        "operator": "Universidad Inca Garcilaso de la Vega",
+        "source": "Reconocimiento cartográfico por KG 2016."
+      }
+    },
+    {
+      "type": "way",
+      "id": 434497626,
+      "center": {
+        "lat": -12.07123,
+        "lon": -77.0418633
+      },
+      "tags": {
+        "addr:city": "Jesús María",
+        "addr:housenumber": "700",
+        "addr:street": "Jirón Nazca",
+        "amenity": "university",
+        "name": "Goethe Insitut",
+        "website": "https://www.goethe.de/ins/pe/es/lim.html"
+      }
+    },
+    {
+      "type": "way",
+      "id": 435489107,
+      "center": {
+        "lat": -12.0778198,
+        "lon": -77.0556977
+      },
+      "tags": {
+        "addr:street": "Avenida Brasil",
+        "amenity": "university",
+        "building": "university",
+        "name": "Universidad de San Martín de Porres",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      }
+    },
+    {
+      "type": "way",
+      "id": 435533946,
+      "center": {
+        "lat": -12.0658881,
+        "lon": -77.0369685
+      },
+      "tags": {
+        "amenity": "university",
+        "building": "university",
+        "name": "Universidad Tecnológica del Perú",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      }
+    },
+    {
+      "type": "way",
+      "id": 435535466,
+      "center": {
+        "lat": -12.0740894,
+        "lon": -77.0356957
+      },
+      "tags": {
+        "addr:city": "Santa Beatriz",
+        "addr:housenumber": "979",
+        "addr:street": "Avenida Arequipa",
+        "amenity": "university",
+        "name": "Universidad Privada Arzobispo Loayz",
+        "operator": "Universidad Privada Arzobispo Loayza",
+        "phone": "+51 1 3306060",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG",
+        "website": "http://ual.edu.pe"
+      }
+    },
+    {
+      "type": "way",
+      "id": 435547883,
+      "center": {
+        "lat": -12.0948425,
+        "lon": -77.0326154
+      },
+      "tags": {
+        "addr:city": "San Isidro",
+        "addr:street": "Calle Bañón",
+        "amenity": "university",
+        "building": "university",
+        "name": "Instituto empresarial de la Universidad \"Alas Peruanas\"",
+        "opening_hours": "Mo-Fr 07:00-20:00; Sa 10:00-13:00",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      }
+    },
+    {
+      "type": "way",
+      "id": 435835085,
+      "center": {
+        "lat": -12.0474449,
+        "lon": -77.0414612
+      },
+      "tags": {
+        "addr:city": "Cercado de Lima",
+        "addr:housenumber": "262",
+        "addr:street": "Avenida Nicolás de Pierola",
+        "amenity": "university",
+        "building": "university",
+        "building:levels": "5",
+        "name": "Facultad de Ciencias Financieras y Contables",
+        "operator": "Universidad Nacional Federico Villareal",
+        "source": "Reconocimiento terrestre cartográfico realizado por Kaart en 2016",
+        "website": "http://www.unfv.edu.pe/facultades/fcfc/index.php/itemlist/user/0"
+      }
+    },
+    {
+      "type": "way",
+      "id": 435838258,
+      "center": {
+        "lat": -12.08108,
+        "lon": -77.0265562
+      },
+      "tags": {
+        "addr:city": "La Victoria",
+        "addr:housenumber": "1773",
+        "addr:street": "Paseo de la República",
+        "amenity": "university",
+        "building": "university",
+        "description": "Sede de la vía expresa Paseo de la República. Estudia mayormente",
+        "name": "Universidad Alas Peruanas - Paseo de la República",
+        "operator": "Universidad Alas Peruanas",
+        "phone": "+51 1 4721398",
+        "website": "https://www.uap.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436248578,
+      "center": {
+        "lat": -12.0912436,
+        "lon": -77.0518665
+      },
+      "tags": {
+        "addr:city": "San Isidro",
+        "addr:street": "Avenida General Felipe Santiago Salaverry",
+        "amenity": "university",
+        "building": "university",
+        "name": "Universidad Peruana Cayetano Heredia",
+        "note": "Postgrado en Estomatología",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436267029,
+      "center": {
+        "lat": -12.0701189,
+        "lon": -77.0588466
+      },
+      "tags": {
+        "addr:city": "Pueblo Libre",
+        "addr:housenumber": "970",
+        "addr:postcode": "15074",
+        "addr:street": "Avenida Paso de los Andes",
+        "amenity": "university",
+        "name": "Universidad Antonio Ruiz de Montoya",
+        "operator": "Universidad Antonia Ruiz de Montoya",
+        "phone": "+51 1 7195990",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG",
+        "website": "https://www.uarm.edu.pe",
+        "wikidata": "Q6156337",
+        "wikimedia_commons": "Category:Universidad Antonio Ruiz de Montoya",
+        "wikipedia": "es:Universidad Antonio Ruiz de Montoya"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436270526,
+      "center": {
+        "lat": -12.0496914,
+        "lon": -77.1236197
+      },
+      "tags": {
+        "amenity": "university",
+        "building": "yes",
+        "name": "Universidad César Vallejo",
+        "source": "Actualizaciones en Peru. Reconocimiento cartográfico por KG 2016"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436274968,
+      "center": {
+        "lat": -12.0890694,
+        "lon": -77.0483304
+      },
+      "tags": {
+        "addr:street": "Avenida Guillermo Prescott",
+        "amenity": "university",
+        "building": "university",
+        "name": "Universidad del Pacífico",
+        "note": "language_school",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436300781,
+      "center": {
+        "lat": -12.1270032,
+        "lon": -77.0258398
+      },
+      "tags": {
+        "addr:city": "Miraflores",
+        "addr:housenumber": "469",
+        "addr:postcode": "15074",
+        "addr:street": "Calle Grimaldo del Solar",
+        "amenity": "university",
+        "building": "yes",
+        "name": "El Sol Escuela de Español",
+        "phone": "+51 1 2426936",
+        "source": "Reconocimiento cartográfico por Kaart 2017",
+        "website": "http://idiomasperu.com"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436470086,
+      "center": {
+        "lat": -12.092566,
+        "lon": -77.0376267
+      },
+      "tags": {
+        "addr:street": "Avenida Javier Prado Oeste",
+        "amenity": "university",
+        "building": "university",
+        "name": "Universidad de San Martín de Porres",
+        "note": "Centro de Idiomas",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436588420,
+      "center": {
+        "lat": -12.0752943,
+        "lon": -77.0394772
+      },
+      "tags": {
+        "addr:city": "Jesús María",
+        "addr:housenumber": "301",
+        "addr:street": "Avenida Cuba",
+        "amenity": "university",
+        "ele": "131",
+        "name": "Universidad Alas Peruanas - Filial Cuba",
+        "operator": "Universidad Alas Peruanas",
+        "phone": "+51 1 4716792",
+        "short_name": "UAP",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG",
+        "website": "https://www.uap.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436754010,
+      "center": {
+        "lat": -11.8677171,
+        "lon": -77.1181714
+      },
+      "tags": {
+        "addr:city": "Ventanilla",
+        "addr:street": "Avenida Pedro Beltrán",
+        "amenity": "university",
+        "name": "Senati - CFP Callao - Ventanilla",
+        "operator": "Sociedad Nacional de Industrias",
+        "phone": "+51 1 553 2109"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436795846,
+      "center": {
+        "lat": -12.0598987,
+        "lon": -77.1334602
+      },
+      "tags": {
+        "alt_name": "Oficinas Administrativas de la UNAC",
+        "amenity": "university",
+        "building": "yes",
+        "building:colour": "blue",
+        "building:levels": "5",
+        "name": "Oficinas Administrativas de la Universidad Nacional del Callao",
+        "office": "educational_institution",
+        "source": "Reconocimiento cartográfico por KG 2016"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436918516,
+      "center": {
+        "lat": -12.0934521,
+        "lon": -77.0616778
+      },
+      "tags": {
+        "addr:street": "Avenida Javier Prado Oeste",
+        "amenity": "university",
+        "building": "university",
+        "name": "Universidad Nacional de Ingenieria",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436919686,
+      "center": {
+        "lat": -12.0951632,
+        "lon": -77.0553162
+      },
+      "tags": {
+        "addr:city": "San Isidro",
+        "addr:housenumber": "2291",
+        "addr:street": "Avenida Javier Prado Oeste",
+        "amenity": "university",
+        "name": "Facultad de Ciencias de la Comunicación Turismo y Hotelería (UIGV)",
+        "operator": "Universidad Inca Garcilaso de la Vega",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG",
+        "website": "https://www.uigv.edu.pe/ciencias-de-la-comunicacion-turismo-y-hoteleria/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 436934910,
+      "center": {
+        "lat": -12.0721653,
+        "lon": -77.0420884
+      },
+      "tags": {
+        "addr:housenumber": "722;724;726",
+        "addr:street": "Avenida Salaverry",
+        "amenity": "university",
+        "building": "yes",
+        "ele": "131",
+        "name": "Universidad Peruana de Ciencias e Informatica",
+        "source": "www.minedu.gob.pe",
+        "wikidata": "Q5396521",
+        "wikimedia_commons": "Category:Universidad Peruana de Ciencias e Informática"
+      }
+    },
+    {
+      "type": "way",
+      "id": 437212067,
+      "center": {
+        "lat": -12.1351309,
+        "lon": -77.0221393
+      },
+      "tags": {
+        "addr:city": "Lima",
+        "addr:district": "Barranco",
+        "addr:housenumber": "165",
+        "addr:postcode": "15063",
+        "addr:street": "Jirón Medrano Silva",
+        "amenity": "university",
+        "building": "university",
+        "building:levels": "6",
+        "check_date": "2026-09-24",
+        "height": "21",
+        "name": "Universidad de Ingenieria y Tecnologia",
+        "opening_hours": "Mo-Fr 08:00-19:30",
+        "phone": "+51 1 2305000;+51 1 2305020",
+        "source": "Reconocimiento cartográfico por Kaart 2017",
+        "website": "https://www.utec.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 437330219,
+      "center": {
+        "lat": -12.1975469,
+        "lon": -77.0084432
+      },
+      "tags": {
+        "addr:city": "Chorrillos",
+        "addr:housenumber": "Cdra. 2",
+        "addr:street": "Avenida Alameda San Marcos",
+        "amenity": "university",
+        "description": "Campus Villa.",
+        "name": "Universidad Peruana de Ciencias Aplicadas",
+        "short_name": "UPC",
+        "website": "https://www.upc.edu.pe"
+      }
+    },
+    {
+      "type": "way",
+      "id": 437330220,
+      "center": {
+        "lat": -12.1965122,
+        "lon": -77.0070591
+      },
+      "tags": {
+        "addr:district": "Chorrillos",
+        "addr:street": "Avenida José Antonio Lavalle",
+        "amenity": "university",
+        "description": "Campus Universitario Chorrillos.",
+        "name": "Universidad San Juan Bautista",
+        "phone": "+51 1 2545302",
+        "website": "https://www.upsjb.edu.pe/",
+        "wikidata": "Q7894308",
+        "wikipedia": "es:Universidad Privada San Juan Bautista"
+      }
+    },
+    {
+      "type": "way",
+      "id": 437352802,
+      "center": {
+        "lat": -12.0168044,
+        "lon": -77.0023375
+      },
+      "tags": {
+        "amenity": "university",
+        "building": "yes",
+        "name": "Universidad Privada Telesup",
+        "source": "Reconocimiento cartográfico por KG 2016."
+      }
+    },
+    {
+      "type": "way",
+      "id": 437375014,
+      "center": {
+        "lat": -12.087834,
+        "lon": -76.9962162
+      },
+      "tags": {
+        "Source": "Actualizaciones en Peru. Reconocimiento cartográfico por KG 2016",
+        "amenity": "university",
+        "building": "yes",
+        "name": "Universidad Privada San Juan Bautista",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      }
+    },
+    {
+      "type": "way",
+      "id": 437682201,
+      "center": {
+        "lat": -11.9848628,
+        "lon": -77.0049626
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Universidad Privada del Norte",
+        "source": "Reconocimiento cartográfico por KG 2016."
+      }
+    },
+    {
+      "type": "way",
+      "id": 437981876,
+      "center": {
+        "lat": -12.0791506,
+        "lon": -76.9983501
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Universidad de San Martín de Porres",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG"
+      }
+    },
+    {
+      "type": "way",
+      "id": 438435174,
+      "center": {
+        "lat": -12.1106971,
+        "lon": -76.9912939
+      },
+      "tags": {
+        "addr:city": "San Borja",
+        "addr:housenumber": "207",
+        "addr:postcode": "15037",
+        "addr:street": "Avenida Primavera",
+        "amenity": "university",
+        "building": "yes",
+        "name": "Orval",
+        "name:es": "Universidad Peruana de Arte Oval",
+        "source": "Reconocimiento cartográfico de campo 2016 por KG",
+        "website": "http://orval.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 439098237,
+      "center": {
+        "lat": -12.1017939,
+        "lon": -76.9723284
+      },
+      "tags": {
+        "addr:city": "Lima",
+        "addr:district": "Santiago de Surco",
+        "addr:housenumber": "641",
+        "addr:postcode": "15023",
+        "addr:street": "Avenida El Polo",
+        "amenity": "university",
+        "contact:facebook": "https://es-la.facebook.com/escuelatezza/",
+        "name": "Escuela de Enfermería Padre Luis Tezza",
+        "name:en": "Padre Luis Tezza's Nursery Academy",
+        "opening_hours": "Mo-Fr 08:00-17:00; Sa 08:00-14:00",
+        "operator": "Universidad Católica Sedes Sapientiae",
+        "operator:type": "private",
+        "phone": "+51 1 4342770",
+        "website": "https://www.ucss.edu.pe/nosotros/nuestros-locales/en-lima/padre-luis-tezza"
+      }
+    },
+    {
+      "type": "way",
+      "id": 439241360,
+      "center": {
+        "lat": -11.9906243,
+        "lon": -77.0599316
+      },
+      "tags": {
+        "addr:housenumber": "3701",
+        "addr:street": "Avenida Industrial",
+        "amenity": "university",
+        "education": "university",
+        "email": "info@usan.edu.pe",
+        "name": "Universidad San Andrés",
+        "phone": "+51 1 5224702",
+        "website": "https://www.usan.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 439814660,
+      "center": {
+        "lat": -12.0238693,
+        "lon": -76.9101529
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Universidad Cesar Vallejo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 439916826,
+      "center": {
+        "lat": -12.016543,
+        "lon": -76.890203
+      },
+      "tags": {
+        "addr:street": "Carretera Central",
+        "amenity": "university",
+        "name": "Universidad Privada Sise"
+      }
+    },
+    {
+      "type": "way",
+      "id": 440545637,
+      "center": {
+        "lat": -12.0687646,
+        "lon": -76.9678665
+      },
+      "tags": {
+        "addr:city": "La Molina",
+        "addr:housenumber": "310",
+        "addr:street": "Jose Antonio",
+        "amenity": "university",
+        "description": "Facultad de Psicología",
+        "name": "Universidad Peruana Cayetano Heredia Campus Este",
+        "operator": "Universidad Peruana Cayetano Heredia",
+        "website": "http://www.upch.edu.pe/portal/",
+        "wikidata": "Q5055311",
+        "wikimedia_commons": "Category:Universidad Peruana Cayetano Heredia",
+        "wikipedia": "es:Universidad Peruana Cayetano Heredia"
+      }
+    },
+    {
+      "type": "way",
+      "id": 441935349,
+      "center": {
+        "lat": -11.8338014,
+        "lon": -77.1745298
+      },
+      "tags": {
+        "addr:city": "Pachacútec",
+        "alt_name": "Universidad Laboral Católica de Pachacútec",
+        "amenity": "university",
+        "name": "Universidad Laboral de Pachacútec",
+        "name:en": "Pachacutec Laborary University",
+        "note": "Ver http://enlacenacional.com/2011/06/29/endesa-y-el-proyecto-universitario-emprendedor-en-ventanilla/",
+        "start_date": "2003",
+        "website": "https://www.fundacionpachacutec.org/educacion_integral"
+      }
+    },
+    {
+      "type": "way",
+      "id": 445592477,
+      "center": {
+        "lat": -12.2361768,
+        "lon": -76.8671006
+      },
+      "tags": {
+        "addr:city": "Pachacámac",
+        "addr:street": "Avenida Paul Poblet Lind",
+        "alt_name": "USIL Pachacamac",
+        "amenity": "university",
+        "barrier": "fence",
+        "contact:facebook": "https://www.facebook.com/usil.peru",
+        "contact:instagram": "https://www.instagram.com/usil/",
+        "contact:twitter": "https://twitter.com/_USIL",
+        "contact:youtube": "https://www.youtube.com/user/usilpe",
+        "email": "admision@usil.edu.pe",
+        "fence_type": "split_rail",
+        "name": "Universidad San Ignacio de Loyola",
+        "ref": "Campus Pachacámac",
+        "website": "https://www.usil.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 450614691,
+      "center": {
+        "lat": -12.0663414,
+        "lon": -76.9538987
+      },
+      "tags": {
+        "addr:city": "La Molina",
+        "addr:housenumber": "280",
+        "addr:street": "Los Agrícolas",
+        "amenity": "university",
+        "email": "posgrado@une.edu.pe",
+        "name": "Escuela de Postgrado de la UNE",
+        "operator": "Universidad Nacional de Educacion Enrique Guzman y Valle",
+        "website": "https://www.postgradoune.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 451647230,
+      "center": {
+        "lat": -11.9474365,
+        "lon": -76.7005596
+      },
+      "tags": {
+        "addr:city": "Luringacho-Chosica",
+        "addr:state": "Lima",
+        "addr:street": "Avenida Enrique Guzmán y Valle",
+        "alt_name": "La Cantuta",
+        "amenity": "university",
+        "name": "Universidad Nacional de Educación Enrique Guzmán y Valle",
+        "name:en": "National University of Education Enrique Guzmán y Valle",
+        "name:es": "Universidad Nacional de Educación Enrique Guzmán y Valle",
+        "operator": "Universidad Nacional de Educación Enrique Guzmán y Valle",
+        "phone": "+51 1 3515856",
+        "website": "https://www.une.edu.pe/",
+        "wikidata": "Q6979244",
+        "wikimedia_commons": "Category:Universidad Nacional de Educación Enrique Guzmán y Valle",
+        "wikipedia": "es:Universidad Nacional de Educación Enrique Guzmán y Valle"
+      }
+    },
+    {
+      "type": "way",
+      "id": 458775067,
+      "center": {
+        "lat": -11.9740991,
+        "lon": -77.122866
+      },
+      "tags": {
+        "addr:city": "Callao",
+        "addr:street": "Avenida Nestor Gambetta",
+        "alt_name": "UNFV",
+        "amenity": "university",
+        "construction": "yes",
+        "name": "Universidad Federico Villareal - Oquendo",
+        "name:es": "Universidad Federico Villareal - Oquendo",
+        "operator": "Universidad Nacional Federico Villareal"
+      }
+    },
+    {
+      "type": "way",
+      "id": 473647657,
+      "center": {
+        "lat": -12.0720384,
+        "lon": -76.9420575
+      },
+      "tags": {
+        "addr:city": "La Molina",
+        "addr:housenumber": "1326",
+        "addr:street": "Avenida La Fontana",
+        "amenity": "university",
+        "description": "Facultad de Ingeniería y Arquitectura.",
+        "name": "Universidad de San Martin de Porres",
+        "operator": "Universidad San Martin De Porres",
+        "website": "https://usmp.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 474927406,
+      "center": {
+        "lat": -12.0880359,
+        "lon": -76.9433767
+      },
+      "tags": {
+        "addr:district": "La Molina",
+        "addr:street": "Avenida Raúl Ferrero",
+        "amenity": "university",
+        "description": "El Banco Nacional de Semen es la primera unidad de congelamiento de semen de toros en el país; su existencia se remonta a los años 1962-1981, como Central de Inseminación Artificial y como Banco Nacional de Semen en el periodo de 1982 - 2008 y actualmente",
+        "name": "Banco Nacional de Semen Animal",
+        "operator": "Universidad Nacional Agraria La Molina",
+        "website": "http://www.lamolina.edu.pe/mejoramientoanimal/ReproduccionAnimal.htm"
+      }
+    },
+    {
+      "type": "way",
+      "id": 500543577,
+      "center": {
+        "lat": -12.0581783,
+        "lon": -77.0189175
+      },
+      "tags": {
+        "addr:city": "La Victoria",
+        "addr:housenumber": "1110",
+        "addr:street": "Avenida Almirante Miguel Grau",
+        "amenity": "university",
+        "description": "Facultad de Nutrición. Facultad de Obstetricia.",
+        "name": "Universidad Nacional Mayor de San Marcos",
+        "website": "https://medicina.unmsm.edu.pe/index.php/departamento-de-obstetricia",
+        "website_1": "http://medicina.unmsm.edu.pe/index.php/departamento-de-nutricion"
+      }
+    },
+    {
+      "type": "way",
+      "id": 512632035,
+      "center": {
+        "lat": -12.1461058,
+        "lon": -76.9707221
+      },
+      "tags": {
+        "amenity": "university",
+        "building": "yes",
+        "name": "Colegio Ingenieria",
+        "source": "Reconocimiento cartográfico por KG 2017"
+      }
+    },
+    {
+      "type": "way",
+      "id": 517364788,
+      "center": {
+        "lat": -11.9529004,
+        "lon": -77.0705641
+      },
+      "tags": {
+        "addr:city": "Los Olivos",
+        "addr:housenumber": "6377",
+        "addr:street": "Avenida Alfredo Mendiola",
+        "amenity": "university",
+        "name": "Universidad Tecnológica del Perú",
+        "name:es": "Universidad Tecnológica del Perú",
+        "opening_hours": "Mo-Fr 09:00-21:00; Sa 09:00-17:00",
+        "operator": "Universidad Tecnológica del Perú",
+        "phone": "+51 1 3159610",
+        "short_name": "UTP",
+        "source": "Reconocimiento cartográfico por KG 2016.",
+        "website": "https://www.utp.edu.pe/lima/norte",
+        "wikidata": "Q6156715"
+      }
+    },
+    {
+      "type": "way",
+      "id": 521947644,
+      "center": {
+        "lat": -12.084781,
+        "lon": -77.0330194
+      },
+      "tags": {
+        "addr:city": "Lince",
+        "addr:housenumber": "2010",
+        "addr:postcode": "15046",
+        "addr:street": "Avenida Petit Thouars",
+        "amenity": "university",
+        "building": "yes",
+        "email": "info@uwiener.edu.pe",
+        "internet_access": "wlan",
+        "name": "Universidad Nobert Wienner",
+        "name:en": "Universidad N. Wienner",
+        "name:es": "Universidad Nobert Wienner",
+        "opening_hours": "Su-Fr 09:00-18:00",
+        "phone": "+51 1 65346536",
+        "website": "https://www.uwiener.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556529023,
+      "center": {
+        "lat": -12.0834748,
+        "lon": -77.0492042
+      },
+      "tags": {
+        "amenity": "university",
+        "building": "yes",
+        "name": "Universidad del Pacífico"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556529024,
+      "center": {
+        "lat": -12.0828775,
+        "lon": -77.0491109
+      },
+      "tags": {
+        "addr:street": "Luis M. Sanchez Cerro",
+        "amenity": "university",
+        "building": "yes",
+        "name": "Universidad del Pacífico",
+        "name:es": "Centro de Investigación Universidad del Pacífico"
+      }
+    },
+    {
+      "type": "way",
+      "id": 556529026,
+      "center": {
+        "lat": -12.0827825,
+        "lon": -77.0484847
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Universidad del Pacífico"
+      }
+    },
+    {
+      "type": "way",
+      "id": 559577282,
+      "center": {
+        "lat": -11.9955849,
+        "lon": -77.0584246
+      },
+      "tags": {
+        "addr:street": "Avenida Industrial",
+        "amenity": "university",
+        "name": "Universidad San Ignacio de Loyola",
+        "phone": "+51 1 3171000",
+        "website": "https://www.usil.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 582726127,
+      "center": {
+        "lat": -12.1939165,
+        "lon": -76.9713847
+      },
+      "tags": {
+        "addr:city": "Villa El Salvador",
+        "addr:full": "Carretera Panamericana Sur km 16, Villa El Salvador",
+        "addr:street": "Carretera Panamericana Sur",
+        "amenity": "university",
+        "description": "Campos Lima Sur",
+        "name": "Universidad Tecnológica del Perú",
+        "operator": "Grupo Intercorp",
+        "short_name": "UTP",
+        "website": "https://www.utp.edu.pe",
+        "wikidata": "Q6156715"
+      }
+    },
+    {
+      "type": "way",
+      "id": 590276717,
+      "center": {
+        "lat": -11.9740734,
+        "lon": -77.0646221
+      },
+      "tags": {
+        "addr:postcode": "15306",
+        "addr:street": "Av. Alfredo Mendiola 5210, Los Olivos 15306",
+        "amenity": "university",
+        "contact:facebook": "ucontinental",
+        "contact:instagram": "ucontinental",
+        "contact:twitter": "UContinental",
+        "education": "university",
+        "internet_access": "wlan",
+        "name": "Universidad Continental",
+        "name:en": "Continental University",
+        "opening_hours": "Mo-Fr 08:30-19:00; Sa 09:00-12:30",
+        "phone": "+51 1 2132760",
+        "website": "https://ucontinental.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 604214085,
+      "center": {
+        "lat": -12.1189453,
+        "lon": -76.9730929
+      },
+      "tags": {
+        "amenity": "university"
+      }
+    },
+    {
+      "type": "way",
+      "id": 621763280,
+      "center": {
+        "lat": -11.9344565,
+        "lon": -77.0584875
+      },
+      "tags": {
+        "addr:city": "El Retablo",
+        "addr:housenumber": "1000",
+        "addr:street": "Avenida Victor Andres Belaunde Oeste",
+        "amenity": "university",
+        "barrier": "fence",
+        "fence_type": "concrete",
+        "height": "3",
+        "name": "Universidad Privada del Norte - Filial Comas",
+        "note": "Ver https://www.openstreetmap.org/note/1484674",
+        "operator": "Universidad Privada del Norte",
+        "phone": "+51 1 6015700",
+        "website": "https://www.upn.edu.pe/es"
+      }
+    },
+    {
+      "type": "way",
+      "id": 623543488,
+      "center": {
+        "lat": -12.0855769,
+        "lon": -76.9086381
+      },
+      "tags": {
+        "addr:city": "La Molina",
+        "addr:housenumber": "3755",
+        "addr:street": "Avenida La Molina",
+        "amenity": "university",
+        "name": "Universidad de Ciencias y Artes de América Latina",
+        "operator": "Universidad de Ciencias y Artes de América Latina",
+        "phone": "+51 1 6222222",
+        "short_name": "UCAL",
+        "website": "https://www.ucal.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 625173973,
+      "center": {
+        "lat": -12.1181463,
+        "lon": -77.0427926
+      },
+      "tags": {
+        "addr:city": "Miraflores",
+        "addr:housenumber": "1550",
+        "addr:postcode": "15074",
+        "addr:street": "Avenida Santa Cruz",
+        "amenity": "university",
+        "name": "Universidad Alas Peruanas - Santa Cruz",
+        "operator": "Universidad Alas Peruanas",
+        "website": "https://www.uap.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 625175155,
+      "center": {
+        "lat": -12.1012052,
+        "lon": -77.059837
+      },
+      "tags": {
+        "addr:city": "Magdalena del Mar",
+        "addr:housenumber": "2398",
+        "addr:street": "Avenida Augusto Perez Araníbar",
+        "amenity": "university",
+        "building": "university",
+        "name": "Universidad Alas Peruanas - Pérez Araníbar",
+        "operator": "Universidad Alas Peruanas",
+        "website": "https://www.uap.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 645346395,
+      "center": {
+        "lat": -11.9784186,
+        "lon": -77.016982
+      },
+      "tags": {
+        "amenity": "university",
+        "internet_access": "yes",
+        "name": "Universidad Maria Auxiliadora"
+      }
+    },
+    {
+      "type": "way",
+      "id": 701396579,
+      "center": {
+        "lat": -11.9902407,
+        "lon": -76.8399205
+      },
+      "tags": {
+        "addr:city": "Lurigancho",
+        "addr:full": "Km 19 Carretera Central, Ñaña, Lurigancho, Lima 15, Perú",
+        "addr:street": "Calle Cusipata",
+        "amenity": "university",
+        "contact:facebook": "https://www.facebook.com/UPeUOficial/",
+        "contact:instagram": "https://www.instagram.com/upeuoficial/",
+        "contact:twitter": "https://twitter.com/UPeUOficial",
+        "contact:youtube": "https://www.youtube.com/user/UPeruanaUnion",
+        "denomination": "adventist",
+        "email": "informes@upeu.edu.pe",
+        "name": "Universidad Peruana Unión",
+        "name:es": "Universidad Peruana Unión",
+        "opening_hours": "Mo-Fr 08:00-08:00, 12:30-14:00, 17:30-17:30",
+        "phone": "+511 6186300",
+        "religion": "christian",
+        "website": "https://www.upeu.edu.pe/",
+        "wikidata": "Q3551703",
+        "wikimedia_commons": "Category:Universidad Peruana Unión",
+        "wikipedia": "es:Universidad Peruana Unión"
+      }
+    },
+    {
+      "type": "way",
+      "id": 720283250,
+      "center": {
+        "lat": -12.054121,
+        "lon": -77.0449752
+      },
+      "tags": {
+        "addr:city": "Breña",
+        "addr:street": "Jirón Huaraz",
+        "amenity": "university",
+        "building": "yes",
+        "building:levels": "2",
+        "description": "-NIVEL SOCIO ECONÓMICO DE RESIDENTES: MEDIO -DENSIDAD DE POBLACIÓN RESIDENTE Y FLOTANTE: MEDIA SISTEMA CONSTRUCTIVO: MURO PORTANTE -MATERIALES PREDOMINANTES: CONCRETO LADRILLO -ESTADO DE LA CONSTRUCCIÓN: REGULAR",
+        "height": "6",
+        "name": "UNFV Facultad"
+      }
+    },
+    {
+      "type": "way",
+      "id": 749617263,
+      "center": {
+        "lat": -12.2199602,
+        "lon": -76.9786125
+      },
+      "tags": {
+        "addr:city": "Villa El Salvador",
+        "addr:housenumber": "Km. 19",
+        "addr:street": "Carretera Panamericana Sur",
+        "amenity": "university",
+        "contact:facebook": "https://www.facebook.com/universidadcientifica",
+        "contact:instagram": "https://www.instagram.com/cientifica_sur/",
+        "contact:linkedin": "https://www.linkedin.com/school/universidad-cient-fica-del-sur/",
+        "contact:twitter": "https://twitter.com/CIENTIFICA_Sur",
+        "contact:youtube": "https://www.youtube.com/user/CIENTIFICAsur",
+        "email": "informes@cientifica.edu.pe",
+        "name": "Universidad Científica del Sur",
+        "phone": "+511 610 6400",
+        "ref": "Campus Villa II",
+        "website": "https://www.cientifica.edu.pe/",
+        "wheelchair": "yes",
+        "wikidata": "Q5202300",
+        "wikimedia_commons": "Category:Universidad Científica del Sur",
+        "wikipedia": "es:Universidad Científica del Sur"
+      }
+    },
+    {
+      "type": "way",
+      "id": 969699650,
+      "center": {
+        "lat": -12.0860057,
+        "lon": -77.0587891
+      },
+      "tags": {
+        "addr:district": "Jesús María",
+        "addr:housenumber": "140",
+        "addr:state": "Lima",
+        "addr:street": "Pasaje Paez",
+        "amenity": "university",
+        "internet_access": "yes",
+        "internet_access:fee": "no",
+        "name": "Facultad de Arquitectura y Urbanismo - UNFV",
+        "operator": "Universidad Nacional Federico Villarreal",
+        "operator:type": "public"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1021349399,
+      "center": {
+        "lat": -11.9823726,
+        "lon": -77.005381
+      },
+      "tags": {
+        "addr:housenumber": "2948",
+        "addr:street": "Avenida Proceres de la Independencia",
+        "amenity": "university",
+        "name": "Universidad Privada Telesup"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1021843561,
+      "center": {
+        "lat": -12.0983845,
+        "lon": -77.0692151
+      },
+      "tags": {
+        "addr:city": "Magdalena del Mar",
+        "addr:housenumber": "430",
+        "addr:street": "Avenida Perez Araníbar",
+        "amenity": "university",
+        "email": "informes@dgallia.edu.pe",
+        "name": "D' Gallia",
+        "phone": "+51 1 2610808",
+        "start_date": "1995",
+        "toilets:wheelchair": "yes",
+        "website": "https://dgallia.edu.pe/",
+        "wheelchair": "yes",
+        "wheelchair:description": "En el Baño de mujeres del primer piso, si entra la silla. En el de hombres muy dificil. Hay un corredor y dificlmente entra."
+      }
+    },
+    {
+      "type": "way",
+      "id": 1022231743,
+      "center": {
+        "lat": -12.0584129,
+        "lon": -77.0589674
+      },
+      "tags": {
+        "addr:city": "Breña",
+        "addr:street": "Avenida Tingo María",
+        "amenity": "university",
+        "name": "Universidad Privada del Norte",
+        "website": "https://www.upn.edu.pe/es"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1022519857,
+      "center": {
+        "lat": -12.0116774,
+        "lon": -76.9223087
+      },
+      "tags": {
+        "addr:full": "Manzana C",
+        "addr:street": "Calle Cedros",
+        "amenity": "university",
+        "name": "Telesup"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1022529022,
+      "center": {
+        "lat": -12.1101389,
+        "lon": -77.0278952
+      },
+      "tags": {
+        "addr:city": "Miraflores",
+        "addr:housenumber": "355",
+        "addr:postcode": "15046",
+        "addr:street": "Junin",
+        "amenity": "university",
+        "check_date": "2025-07-31",
+        "name": "Universidad Continental",
+        "operator": "Universidad Continental",
+        "toilets:description": "Rampa. Te acomodan la clase en el primer piso",
+        "toilets:wheelchair": "yes",
+        "website": "https://ucontinental.edu.pe/",
+        "wheelchair": "limited",
+        "wheelchair:description": "Baño para silla de ruedas. Rampa. Te acomodan la clase en el primer piso. Accesible solo el primer piso.;Baño para silla de ruedas. Rampa. Te acomodan la clase en el primer piso por que no hay elevador para los otros pisos.;Baño para silla de ruedas."
+      }
+    },
+    {
+      "type": "way",
+      "id": 1027661927,
+      "center": {
+        "lat": -12.0917887,
+        "lon": -77.0347982
+      },
+      "tags": {
+        "addr:housenumber": "267",
+        "addr:street": "Avenida Arenales",
+        "amenity": "university",
+        "name": "Universidad Señor de Sipán",
+        "name:etymology:wikidata": "Q2595754",
+        "opening_hours": "Mo-Sa 08:00-18:00"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1031590187,
+      "center": {
+        "lat": -12.0725416,
+        "lon": -77.0432034
+      },
+      "tags": {
+        "addr:city": "Jesús María",
+        "addr:housenumber": "711",
+        "addr:street": "General Santa Cruz",
+        "amenity": "university",
+        "name": "UNMSM - Postgrado de Derecho",
+        "operator": "Universidad Nacional Mayor de San Marcos"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1031959656,
+      "center": {
+        "lat": -12.0545347,
+        "lon": -77.0378391
+      },
+      "tags": {
+        "addr:city": "Cercado de Lima",
+        "addr:postcode": "Lima 01",
+        "addr:street": "Jirón Rufino Torrico",
+        "alt_name": "CEPREVI",
+        "amenity": "university",
+        "check_date": "2025-04-24",
+        "name": "Escuela de Postgrado de UNFV"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1033803558,
+      "center": {
+        "lat": -12.101025,
+        "lon": -77.0316493
+      },
+      "tags": {
+        "addr:city": "San Isidro",
+        "addr:district": "San Isidro",
+        "addr:full": "Avenida Arequipa 3545",
+        "addr:housenumber": "3545",
+        "addr:province": "Lima",
+        "addr:street": "Avenida Arequipa",
+        "addr:subdistrict": "San Isidro",
+        "amenity": "university",
+        "building": "yes",
+        "ele": "107",
+        "isced:level": "superiortecnológica",
+        "name": "Universidad Telesup",
+        "note": "Ubicacion_web_med (local)",
+        "ref": "1122951",
+        "source": "minedu.gob.pe"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1184565849,
+      "center": {
+        "lat": -12.0943673,
+        "lon": -77.0768888
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Universidad Nacional Federico Villareal Ingeniería Civil",
+        "operator": "Universidad Nacional Federico Villareal"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1281816719,
+      "center": {
+        "lat": -12.0142466,
+        "lon": -76.8824309
+      },
+      "tags": {
+        "addr:street": "Carretera Central",
+        "amenity": "university",
+        "contact:whatsapp": "+51 933361944",
+        "name": "Universidad Tecnológica del Perú",
+        "short_name": "UTP",
+        "wikidata": "Q6156715"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1281893380,
+      "center": {
+        "lat": -12.136869,
+        "lon": -76.9430963
+      },
+      "tags": {
+        "addr:street": "Avenida José Carlos Mariátegui",
+        "amenity": "university",
+        "internet_access": "no",
+        "name": "UNTELS"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1311375820,
+      "center": {
+        "lat": -11.9574447,
+        "lon": -77.0670846
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Universidad Cesar Vallejo"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1386036664,
+      "center": {
+        "lat": -11.9963419,
+        "lon": -77.0684666
+      },
+      "tags": {
+        "addr:neighbourhood": "Urbanización Villa los Ángeles",
+        "addr:street": "Jirón Manuel González Prada",
+        "amenity": "university",
+        "denomination": "roman_catholic",
+        "email": "info@ucss.edu.pe",
+        "mobile": "+51 983119300",
+        "name": "Universidad Católica Sede Sapientiae",
+        "religion": "christian",
+        "short_name": "UCSS",
+        "website": "https://www.ucss.edu.pe/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1411361547,
+      "center": {
+        "lat": -12.1037908,
+        "lon": -77.0189975
+      },
+      "tags": {
+        "addr:city": "Surquillo",
+        "addr:street": "Avenida República de Panamá",
+        "amenity": "university",
+        "internet_access": "yes",
+        "name": "Universidad Científica del Sur - Campus Aramburú",
+        "wheelchair": "yes",
+        "wikidata": "Q5202300",
+        "wikipedia": "es:Universidad Científica del Sur"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1467812707,
+      "center": {
+        "lat": -12.4014947,
+        "lon": -76.7615234
+      },
+      "tags": {
+        "amenity": "university",
+        "education": "university",
+        "name": "PUCP Campus Sur",
+        "wikidata": "Q200601",
+        "wikipedia": "es:Pontificia Universidad Católica del Perú"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1467812708,
+      "center": {
+        "lat": -12.4202054,
+        "lon": -76.7613538
+      },
+      "tags": {
+        "amenity": "university",
+        "education": "university",
+        "name": "Universidad Cayetano Heredia",
+        "wikidata": "Q5055311",
+        "wikipedia": "es:Universidad Peruana Cayetano Heredia"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 3901756,
+      "center": {
+        "lat": -12.0882073,
+        "lon": -76.9471385
+      },
+      "tags": {
+        "addr:district": "La Molina",
+        "addr:postcode": "14024",
+        "addr:province": "Lima",
+        "addr:street": "Avenida La Universidad",
+        "amenity": "university",
+        "name": "Universidad Nacional Agraria La Molina",
+        "operator": "Universidad Nacional Agraria La Molina",
+        "operator:type": "public",
+        "phone": "+51 1 614 7800",
+        "short_name": "UNALM",
+        "start_date": "1901",
+        "type": "multipolygon",
+        "website": "http://www.lamolina.edu.pe",
+        "wheelchair": "limited",
+        "wikidata": "Q3551806",
+        "wikipedia": "es:Universidad Nacional Agraria La Molina"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 6252388,
+      "center": {
+        "lat": -12.056448,
+        "lon": -77.0838353
+      },
+      "tags": {
+        "addr:city": "Lima",
+        "addr:housenumber": "375",
+        "addr:postcode": "15081",
+        "addr:state": "Lima",
+        "addr:street": "Avenida Carlos Germán Amezaga",
+        "amenity": "university",
+        "education": "university",
+        "name": "Ciudad Universitaria de la Universidad Nacional Mayor de San Marcos",
+        "note": "Este es el área de la universidad",
+        "operator": "Universidad Nacional Mayor de San Marcos",
+        "phone": "+51 1 6197000",
+        "short_name": "unmsm",
+        "type": "multipolygon",
+        "website": "https://www.unmsm.edu.pe/",
+        "wikidata": "Q5770740",
+        "wikipedia": "es:Ciudad Universitaria de la Universidad Nacional Mayor de San Marcos"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 6585870,
+      "center": {
+        "lat": -12.0465865,
+        "lon": -77.0238769
+      },
+      "tags": {
+        "addr:district": "Cercado de Lima",
+        "addr:housenumber": "681",
+        "addr:street": "Jirón Ancash",
+        "amenity": "university",
+        "building": "university",
+        "building:levels": "2",
+        "height": "8",
+        "name": "Escuela Nacional de Bellas Artes",
+        "phone": "+51 1 4272200",
+        "type": "multipolygon",
+        "website": "https://ensabap.edu.pe/",
+        "wikidata": "Q5202236",
+        "wikipedia": "es:Escuela Nacional Superior Autónoma de Bellas Artes del Perú"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 9105033,
+      "center": {
+        "lat": -12.1342086,
+        "lon": -77.026111
+      },
+      "tags": {
+        "addr:city": "Miraflores",
+        "addr:housenumber": "495",
+        "addr:postcode": "15074",
+        "addr:street": "Avenida Armendariz",
+        "amenity": "university",
+        "building": "yes",
+        "name": "Universidad Peruana Cayetano Heredia - Miraflores",
+        "operator": "Universidad Peruana Cayetano Heredia",
+        "source": "Reconocimiento cartográfico por KG 2016.",
+        "type": "multipolygon",
+        "website": "http://www.upch.edu.pe/portal/visitante.html"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 12280616,
+      "center": {
+        "lat": -12.0183202,
+        "lon": -77.0483204
+      },
+      "tags": {
+        "addr:district": "San Martín de Porres",
+        "addr:postcode": "15333",
+        "addr:province": "Lima",
+        "addr:street": "Avenida Túpac Amaru",
+        "alt_name": "UNI",
+        "amenity": "university",
+        "name": "Universidad Nacional de Ingeniería",
+        "name:en": "National University of Engineering",
+        "name:es": "Universidad Nacional de Ingeniería",
+        "operator": "Universidad Nacional de Ingeniería",
+        "operator:type": "public",
+        "short_name": "UNI",
+        "type": "multipolygon",
+        "website": "https://www.uni.edu.pe/",
+        "wikidata": "Q5202403",
+        "wikipedia": "es:Universidad Nacional de Ingeniería (Perú)",
+        "wikipedia:en": "National University of Engineering",
+        "wikipedia:pl": "Universidad Nacional de Ingeniería",
+        "wikipedia:sv": "Universidad Nacional de Ingenieria"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 12860594,
+      "center": {
+        "lat": -12.2383745,
+        "lon": -76.8626368
+      },
+      "tags": {
+        "addr:city": "Pachacámac",
+        "addr:district": "Pachacámac",
+        "addr:street": "Avenida Riconada",
+        "alt_name": "Universidad Alas Peruanas Pachacamac",
+        "amenity": "university",
+        "contact:facebook": "https://www.facebook.com/ComunidadUAP.oficial/",
+        "contact:instagram": "https://www.instagram.com/uap.oficial/",
+        "contact:linkedin": "https://it.linkedin.com/school/universidad-alas-peruanas/",
+        "contact:twitter": "https://twitter.com/uap_oficial",
+        "contact:youtube": "https://www.youtube.com/channel/UCdtZFjpkXFZUm8LyefsUviQ/",
+        "name": "Universidad Alas Peruanas",
+        "phone": "+51 1 2312000",
+        "ref": "Campus Pachacámac",
+        "type": "multipolygon",
+        "website": "https://www.uap.edu.pe/"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 12894519,
+      "center": {
+        "lat": -11.9545737,
+        "lon": -76.9873831
+      },
+      "tags": {
+        "amenity": "university",
+        "description": "Campus de San Juan de Lurigancho",
+        "name": "Universidad Nacional Mayor de San Marcos",
+        "note": "Ver http://www.unmsm.edu.pe/noticias/ver/2936",
+        "type": "multipolygon"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 12921667,
+      "center": {
+        "lat": -12.0716543,
+        "lon": -77.0452174
+      },
+      "tags": {
+        "amenity": "university",
+        "name": "Universidad Inca Garcilaso de la Vega",
+        "type": "multipolygon"
+      }
+    },
+    {
+      "type": "relation",
+      "id": 14130876,
+      "center": {
+        "lat": -11.9836208,
+        "lon": -77.008966
+      },
+      "tags": {
+        "addr:street": "Avenida El Sol",
+        "amenity": "university",
+        "contact:whatsapp": "+51 944702063",
+        "name": "Universidad Tecnológica del Perú",
+        "short_name": "UTP",
+        "type": "multipolygon",
+        "wikidata": "Q6156715"
+      }
+    }
+  ]
+}

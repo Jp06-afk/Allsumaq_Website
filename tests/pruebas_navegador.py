@@ -28,6 +28,18 @@ http_errors = []
 
 
 class Handler(SimpleHTTPRequestHandler):
+    def do_GET(self):
+        # El servidor estático de pruebas representa un Worker sin OAuth activado.
+        if self.path in ["/api/auth/session", "/api/auth/config"]:
+            body = json.dumps({"authenticated": False} if self.path.endswith("session") else {"configured": False, "googleClientId": None}).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+            return
+        super().do_GET()
+
     def log_message(self, message, *args):
         if str(args[1]).startswith(("4", "5")) if len(args) > 1 else False:
             http_errors.append(message % args)
@@ -249,6 +261,74 @@ def run_file(cdp):
     assert not [e for e in cdp.events if e.get("method") == "Runtime.exceptionThrown"]
 
 
+def run_services(cdp, url):
+    cdp.call("Page.enable")
+    cdp.call("Runtime.enable")
+    cdp.call("Page.navigate", {"url": url})
+    wait_ready(cdp)
+    cdp.call("Emulation.setDeviceMetricsOverride", {"width": 1440, "height": 1000, "deviceScaleFactor": 1, "mobile": False})
+    assert_js(cdp, "ALLSUMAQ_UNIVERSIDADES.sedes.length>=100 && ALLSUMAQ_UNIVERSIDADES.sedes.every(s=>s.fuente.startsWith('https://www.openstreetmap.org/') && Number.isFinite(s.lat)&&Number.isFinite(s.lon))", "Sedes con coordenadas y enlaces de procedencia OSM")
+    cdp.js("document.getElementById('mapa-lienzo').scrollIntoView({behavior:'instant',block:'center'})")
+    for _ in range(100):
+        if cdp.js("document.getElementById('mapa-lienzo').dataset.ready==='true'"):
+            break
+        time.sleep(.1)
+    assert_js(cdp, "document.querySelectorAll('.university-marker').length>5", "Mapa de Lima con marcadores de universidades")
+    assert_js(cdp, "[...document.querySelectorAll('.map-tile')].every(t=>t.src.startsWith('https://tile.openstreetmap.org/'))", "Cartografía cargada desde el proveedor real")
+    cdp.js("window.initialZoom=AllsumaqMapa.estado.zoom;document.getElementById('mapa-acercar').click()")
+    assert_js(cdp, "AllsumaqMapa.estado.zoom===window.initialZoom+1", "Control de zoom funcional")
+    cdp.js("document.getElementById('mapa-centrar').click();document.getElementById('buscar-universidad').value='UNI';document.getElementById('buscar-universidad').dispatchEvent(new Event('input'))")
+    assert_js(cdp, "document.querySelectorAll('.university-list-item').length>0 && document.querySelectorAll('.university-list-item').length<20", "Buscar UNI no devuelve todas las universidades")
+    cdp.js("document.querySelector('.university-list-item').click()")
+    time.sleep(.1)
+    assert_js(cdp, "AllsumaqMapa.estado.zoom===15 && !document.getElementById('universidad-detalle').hidden && Boolean(document.querySelector('.university-marker.selected'))", "Seleccionar sede la centra y resalta en el mapa")
+    cdp.js("document.getElementById('buscar-universidad').value='zzzzzz-no-existe';document.getElementById('buscar-universidad').dispatchEvent(new Event('input'))")
+    assert_js(cdp, "document.querySelectorAll('.university-list-item').length===0 && document.getElementById('universidades-lista').textContent.includes('No encontramos')", "Estado sin coincidencias de universidades")
+    cdp.js("document.getElementById('buscar-universidad').value='';document.getElementById('buscar-universidad').dispatchEvent(new Event('input'));document.getElementById('mapa-centrar').click()")
+    cdp.call("Emulation.setGeolocationOverride", {"latitude": -12.056, "longitude": -77.084, "accuracy": 20})
+    cdp.call("Browser.grantPermissions", {"permissions": ["geolocation"], "origin": url.split('/index.html')[0]})
+    cdp.js("document.getElementById('mapa-ubicacion').click()")
+    time.sleep(.3)
+    assert_js(cdp, "AllsumaqMapa.estado.siguiendoUbicacion && document.getElementById('mapa-posicion-usuario') && document.getElementById('mapa-estado').textContent.includes('20 m')", "Geolocalización con permiso y precisión indicada")
+    cdp.js("document.getElementById('mapa-ubicacion').click()")
+    assert_js(cdp, "!AllsumaqMapa.estado.siguiendoUbicacion", "El usuario puede detener su ubicación")
+    cdp.js("document.getElementById('mapa-centrar').click();window.geoBefore=AllsumaqMapa.estado.centro;document.getElementById('mapa-lienzo').focus()")
+    cdp.call("Input.dispatchKeyEvent", {"type": "keyDown", "key": "ArrowRight", "code": "ArrowRight", "windowsVirtualKeyCode": 39})
+    assert_js(cdp, "AllsumaqMapa.estado.centro.lon>window.geoBefore.lon", "Desplazamiento del mapa por teclado")
+    cdp.js("document.getElementById('mapa-centrar').click()")
+    # Esperar solo las teselas visibles; sin precarga ni descargas masivas.
+    for _ in range(100):
+        if cdp.js("Number(document.getElementById('mapa-lienzo').dataset.tilesLoaded)>0"):
+            break
+        time.sleep(.1)
+    assert_js(cdp, "Number(document.getElementById('mapa-lienzo').dataset.tilesLoaded)>0", "Se recibieron imágenes cartográficas reales")
+    image = cdp.call("Page.captureScreenshot", {"format": "png", "captureBeyondViewport": False})
+    (OUTPUT / "mapa-universidades-desktop.png").write_bytes(base64.b64decode(image["data"]))
+    cdp.call("Emulation.setDeviceMetricsOverride", {"width": 390, "height": 844, "deviceScaleFactor": 1, "mobile": False})
+    time.sleep(.15)
+    assert_js(cdp, "document.documentElement.scrollWidth<=390 && document.getElementById('mapa-lienzo').clientWidth<=390", "Mapa y lista adaptados a móvil")
+    image = cdp.call("Page.captureScreenshot", {"format": "png", "captureBeyondViewport": False})
+    (OUTPUT / "mapa-universidades-mobile.png").write_bytes(base64.b64decode(image["data"]))
+    cdp.js("document.getElementById('abrir-acceso').click()")
+    time.sleep(.2)
+    assert_js(cdp, "document.getElementById('acceso-dialog').open && document.getElementById('acceso-mensaje').textContent.includes('pendiente de activación')", "Acceso Google informa configuración pendiente sin simular una cuenta")
+    assert_js(cdp, "document.getElementById('acceso-dialog').scrollWidth<=document.getElementById('acceso-dialog').clientWidth", "Acceso adaptado a móvil")
+    image = cdp.call("Page.captureScreenshot", {"format": "png", "captureBeyondViewport": False})
+    (OUTPUT / "acceso-google-mobile.png").write_bytes(base64.b64decode(image["data"]))
+    cdp.call("Input.dispatchKeyEvent", {"type": "keyDown", "key": "Escape", "code": "Escape", "windowsVirtualKeyCode": 27})
+    time.sleep(.15)
+    assert_js(cdp, "!document.getElementById('acceso-dialog').open", "Escape cierra el acceso Google")
+    cdp.js("window.guestSaved=localStorage.getItem('allsumaq:actividad:v1');document.dispatchEvent(new CustomEvent('allsumaq:sesion',{detail:{user:{sub:'123456789012345'}}}))")
+    assert_js(cdp, "document.getElementById('estadisticas').textContent.includes('0') && document.getElementById('favoritos').textContent.includes('Tu próxima elección')", "Actividad separada para la cuenta identificada")
+    cdp.js("document.dispatchEvent(new CustomEvent('allsumaq:sesion',{detail:{user:null}}))")
+    assert_js(cdp, "localStorage.getItem('allsumaq:actividad:v1')===window.guestSaved", "Cambiar de cuenta conserva la actividad del visitante")
+    auth_checks = cdp.js("import('/tests/comprobar_auth.mjs').then(m=>m.runAuthChecks())")
+    checks.extend(auth_checks)
+    for name in auth_checks:
+        print('OK:', name, flush=True)
+    assert not [e for e in cdp.events if e.get('method') == 'Runtime.exceptionThrown']
+
+
 server = ThreadingHTTPServer(("127.0.0.1", 0), functools.partial(Handler, directory=str(ROOT)))
 threading.Thread(target=server.serve_forever, daemon=True).start()
 url = f"http://127.0.0.1:{server.server_port}/index.html"
@@ -273,8 +353,14 @@ with (OUTPUT / "chrome.log").open("w", encoding="utf-8") as log:
         target = next(t for t in targets if t["type"] == "page")
         cdp = CDP(target["webSocketDebuggerUrl"])
         file_mode = "--archivo" in sys.argv
-        run_file(cdp) if file_mode else run(cdp, url)
-        (OUTPUT / ("resultados-archivo.json" if file_mode else "resultados.json")).write_text(json.dumps({"ok": True, "pruebas": checks, "fecha": time.strftime("%Y-%m-%d"), "navegador": "Chrome headless, perfil aislado", "limites": "No sustituye revisión humana, pruebas con lectores de pantalla ni aprobación de los siguientes mockups."}, ensure_ascii=False, indent=2), encoding="utf-8")
+        services_mode = "--servicios" in sys.argv
+        if services_mode:
+            run_services(cdp, url)
+        elif file_mode:
+            run_file(cdp)
+        else:
+            run(cdp, url)
+        (OUTPUT / ("resultados-servicios.json" if services_mode else "resultados-archivo.json" if file_mode else "resultados.json")).write_text(json.dumps({"ok": True, "pruebas": checks, "fecha": time.strftime("%Y-%m-%d"), "navegador": "Chrome headless, perfil aislado", "limites": "No sustituye acceso real con Google, pruebas con lectores de pantalla ni aprobación de los siguientes mockups."}, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"\n{len(checks)} comprobaciones superadas. Capturas en docs/verificacion.")
     finally:
         process.terminate()

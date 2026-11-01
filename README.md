@@ -1,12 +1,18 @@
 # Allsumaq
 
-Primera entrega de la web del proyecto TikrAI. HTML, CSS y JavaScript nativo.
-Funciona con recursos locales, sin instalar paquetes y sin compilación.
+Web del proyecto TikrAI. Frontend en HTML, CSS y JavaScript nativo, sin instalar
+paquetes ni compilar. Cartografía de Lima con universidades en OpenStreetMap
+y acceso con Google respaldado por un Cloudflare Worker.
+
+**Activación de Google y actualización del mapa:** consulta
+[`docs/GOOGLE-Y-MAPA.md`](docs/GOOGLE-Y-MAPA.md).
 
 ## Abrir la web
 
 Abre `index.html` con Chrome, Edge, Brave o Firefox actualizado. La portada,
 los catálogos y los registros funcionan directamente desde esa carpeta.
+El mapa requiere abrir la web publicada o un servidor HTTP y conexión a
+Internet. El acceso con Google requiere el Worker y sus valores de configuración.
 
 Opcionalmente, si ya tienes Python instalado, puedes servir la carpeta:
 
@@ -19,34 +25,47 @@ Abrir el archivo y usar un servidor son orígenes distintos: cada uno tendrá
 sus propios registros locales. Usa siempre el mismo navegador y origen para
 seguir viendo tu actividad.
 
-## Publicación prevista: Cloudflare Pages
+## Publicación: Cloudflare Workers con archivos estáticos
 
-El destino de alojamiento acordado es **Cloudflare**. GitHub conserva el código
-y permite conectar el repositorio a Cloudflare Pages para publicar la web.
-La aplicación continúa siendo HTML/CSS/JavaScript estático, sin paquetes ni
-compilación. No requiere GitHub Pages.
+El destino de alojamiento es **Cloudflare**. El proyecto creado en el panel se
+llama `allsumaq-website` y utiliza Workers con Static Assets, conectado a GitHub.
+El frontend continúa siendo HTML/CSS/JavaScript estático. El módulo JavaScript
+`worker/index.mjs` atiende las API de autenticación; no requiere dependencias.
 
-Cuando llegue el momento de publicar, conecta el repositorio de GitHub a un
-proyecto de Cloudflare Pages con esta configuración para la estructura actual:
+Configuración del formulario de Workers para este repositorio:
 
 | Opción | Valor |
 | --- | --- |
 | Rama de producción | `main` |
-| Framework | Ninguno / None |
-| Comando de build | `exit 0` |
-| Directorio de salida | `.` (la raíz que contiene `index.html`) |
+| Nombre del proyecto | `allsumaq-website` |
+| Comando de build | Vacío |
+| Comando de despliegue | `npx wrangler deploy` después de subir `wrangler.jsonc` |
+| Preview builds | Desactivado para el primer despliegue |
 | Directorio raíz avanzado | Dejar sin modificar si `allsumaq` es la raíz del repositorio |
 
-`exit 0` no compila la aplicación: únicamente indica que los archivos ya están
-listos. La integración Git permite publicar automáticamente los cambios que
-se suban a la rama de producción. Por ahora no se ha desplegado la web.
+`wrangler.jsonc` fija el nombre, el directorio de archivos y la fecha de
+compatibilidad `2026-10-23`, siguiendo la fecha sugerida por el registro de error
+del primer intento. Ahora también declara `main` y el binding `ASSETS` para
+verificar Google y servir la web. `.assetsignore` excluye del contenido público
+la documentación, las pruebas y los archivos de código del Worker.
+
+Sube `wrangler.jsonc` y `worker/` junto con los demás cambios antes de desplegar.
+El comando para el panel es:
+
+```bash
+npx wrangler deploy
+```
+
+El error `A compatibility_date is required when uploading a Worker` indica
+que falta esa fecha; se resuelve con el archivo de configuración o el parámetro
+explícito. Guarda el cambio del comando y vuelve a ejecutar el despliegue.
 
 Las rutas de CSS, JavaScript, imágenes y fuentes son relativas, y las vistas
 internas usan fragmentos `#...`; no necesitan un servidor de rutas adicional.
 Los registros seguirán guardándose en el navegador también al alojar la web
 en Cloudflare. La actividad del archivo local no se transfiere al dominio web.
 
-Referencia oficial: [desplegar HTML estático en Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/).
+Referencia oficial: [Static Assets en Workers](https://developers.cloudflare.com/workers/static-assets/) y [fechas de compatibilidad](https://developers.cloudflare.com/workers/configuration/compatibility-dates/).
 
 ## Qué incluye esta primera entrega
 
@@ -55,12 +74,15 @@ Referencia oficial: [desplegar HTML estático en Cloudflare Pages](https://devel
 - Navegación por scroll y clic, foco visible y movimiento reducido.
 - Diez platos con búsqueda por nombre, establecimiento y distrito.
 - Filtros combinados por distrito y presupuesto; orden por precio o nombre.
-- Vista ilustrativa de mapa y lista por distrito, sin coordenadas inventadas.
+- Mapa real de Lima con 107 sedes universitarias de OpenStreetMap, búsqueda,
+  zoom, selección y ubicación del dispositivo con permiso.
 - Ficha breve de cada plato con precio y condiciones de los datos.
 - Diez recetas, buscador por ingrediente y detalle con cantidades y pasos.
 - Registros de alimentos, recetas y bebidas; validación y confirmación.
 - Historial, resumen por periodo, favoritos y preferencia de distrito locales.
 - Vistas internas con Atrás/Adelante y enlaces directos.
+- Acceso Google preparado, verificado en servidor y pendiente de activar con
+  `GOOGLE_CLIENT_ID` y `SESSION_SECRET` en Cloudflare.
 
 MK-01 es el foco visual de la entrega. Los bloques de catálogo, registro,
 progreso, perfil y detalles son una base funcional; su fidelidad a los demás
@@ -129,15 +151,17 @@ siguiente grupo visual: todavía no calculan ni publican cifras nuevas.
 - Fotografías independientes de los alimentos y recetas: visibles en el chat,
   pero falta su ubicación local. Esta entrega utiliza los recortes visuales de
   MK-01 en la portada y no atribuye esas fotos a los establecimientos.
-- Coordenadas, direcciones, horarios, porciones y disponibilidad verificadas.
+- Coordenadas, direcciones, horarios, porciones y disponibilidad verificadas
+  de los establecimientos de alimentos. Las universidades ya tienen datos OSM.
 - Fuentes completas de datos nutricionales y enlaces exactos a los recetarios.
 - Comparador completo, filtros de distancia/hierro, orientación documentada,
-  combinaciones, refrigerios y acceso demostrativo MK-A06.
+  combinaciones y refrigerios. El acceso ahora utiliza la integración real de Google.
 - Revisión visual de los demás mockups y pruebas de aceptación pendientes.
 
-No se necesita cuenta para esta base. El almacenamiento es local: no hay
-backend ni sincronización entre dispositivos. No se guardan contraseñas ni
-se simula una autenticación segura.
+No se necesita cuenta para explorar o usar la base local. Google identifica
+al usuario mediante el Worker; sus registros se almacenan en este navegador
+separados por cuenta. No hay sincronización de registros entre dispositivos.
+No se guardan contraseñas ni credenciales de Google en localStorage.
 
 ## Organización
 
@@ -147,6 +171,8 @@ allsumaq/
 ├── css/                 # Variables, estilos y responsive
 ├── js/                  # Catálogos, reglas y comportamiento
 ├── assets/              # Logo, imágenes, Inter y licencia
+├── worker/              # Verificación de Google y sesión en Cloudflare
+├── wrangler.jsonc       # Configuración del despliegue
 ├── docs/
 │   ├── PLAN.md
 │   ├── ENTREGA-01.md
@@ -161,17 +187,20 @@ La fuente Inter se distribuye con su licencia SIL Open Font License en
 
 ## Verificación
 
-Se ejecutaron pruebas reales con Chrome sin ventana y un perfil aislado:
-48 comprobaciones superadas: 36 sobre HTTP y 12 adicionales al abrir el
-archivo directamente, incluyendo scrollspy y teclado. Resoluciones:
-1440, 768, 390 y 320 px. Resultados en `docs/verificacion/resultados.json`,
-`docs/verificacion/resultados-archivo.json` y capturas en esa carpeta.
+Se ejecutaron 87 comprobaciones con Chrome y un perfil aislado: 36 de la base,
+12 de apertura directa del archivo y 39 adicionales de mapa, cuentas y
+validación criptográfica. Resoluciones: 1440, 768, 390 y 320 px. Los resultados
+están en `docs/verificacion/resultados.json`, `resultados-archivo.json` y
+`resultados-servicios.json`. Hay capturas en esa carpeta. El acceso final con
+una cuenta real de Google queda pendiente del Client ID y la configuración
+de Cloudflare; las pruebas criptográficas usan claves generadas para la prueba.
 
 Para repetirlas en este equipo, con Python y Chrome ya instalados:
 
 ```powershell
 python -X utf8 tests/pruebas_navegador.py
 python -X utf8 tests/pruebas_navegador.py --archivo
+python -X utf8 tests/pruebas_navegador.py --servicios
 ```
 
 La prueba crea sus propios registros en un perfil temporal aislado dentro de

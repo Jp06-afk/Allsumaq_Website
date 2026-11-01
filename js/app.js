@@ -8,12 +8,13 @@
   const modelo = window.AllsumaqModelo;
   const elementos = [...alimentos, ...recetas, ...bebidas];
   const distritos = [...new Set(alimentos.flatMap((a) => a.distritos))].sort((a, b) => a.localeCompare(b, "es"));
-  const storageKey = "allsumaq:actividad:v1";
+  const guestStorageKey = "allsumaq:actividad:v1";
+  let storageKey = guestStorageKey;
   const filtrosForm = $("#filtros");
   const dialog = $("#detalle-dialog");
   const dialogBody = $("#dialog-contenido");
   let estado = leerEstado();
-  let modo = "lista";
+  let modo = "mapa";
   let focoOrigen = null;
   let toastTimer;
   let busquedaRecetas = "";
@@ -90,12 +91,12 @@
     const resultados = modelo.filtrar(alimentos, filtros);
     $("#resultados-conteo").textContent = `${resultados.length} ${resultados.length === 1 ? "opción encontrada" : "opciones encontradas"}${filtros.distrito ? " en " + filtros.distrito : ""}`;
     $("#alimentos-grid").innerHTML = resultados.length ? resultados.map(foodCard).join("") : empty("No encontramos coincidencias", "Prueba otro nombre, cambia el distrito o amplía el presupuesto.", '<button type="button" class="button button--light" data-reset-filters>Limpiar filtros</button>');
-    $("#mapa-zona").textContent = filtros.distrito || "Elige tu zona de referencia";
   }
 
   function establecerModo(nuevo) {
     modo = nuevo;
-    $("#mapa-ilustrativo").hidden = modo !== "mapa";
+    $("#mapa-real").hidden = modo !== "mapa";
+    window.AllsumaqMapa?.setVisible(modo === "mapa");
     $$("[data-mode]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === modo)));
   }
 
@@ -292,6 +293,7 @@
     renderAlimentos();
     renderFavoritos();
     renderProgreso();
+    establecerModo(modo);
     renderRuta();
     if (!history.state) history.replaceState({ app: true, scroll: window.scrollY }, "", location.href);
     document.documentElement.dataset.appReady = "true";
@@ -344,6 +346,19 @@
     estado = leerEstado();
     renderAlimentos(); renderFavoritos(); renderProgreso();
     $("#perfil-zona").value = estado.zona;
+  });
+  document.addEventListener("allsumaq:sesion", (event) => {
+    const user = event.detail?.user;
+    const nextKey = user?.sub && /^\d+$/.test(user.sub) ? guestStorageKey + ":google:" + user.sub : guestStorageKey;
+    if (nextKey === storageKey) return;
+    storageKey = nextKey;
+    estado = leerEstado();
+    renderAlimentos(); renderFavoritos(); renderProgreso();
+    $("#perfil-zona").value = estado.zona;
+    $("#filtro-distrito").value = estado.zona;
+    renderAlimentos();
+    $("#registro-form").reset();
+    $("#registro-fecha").value = hoy();
   });
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(() => {

@@ -4,10 +4,17 @@ Tecnología: HTML5, CSS3 y JavaScript nativo, sin instalación ni compilación.
 Referencia visual principal: MK-01 aprobado. Navegación: Inicio / Mapa /
 Registrar / Progreso / Perfil. Los catálogos y detalles se abren por clic.
 
-Destino de publicación: Cloudflare Pages conectado al repositorio GitHub,
+Destino de publicación: Cloudflare Workers con Static Assets conectado a GitHub,
 rama de producción `main`. Mantener recursos locales y rutas relativas, sin
 instalación ni compilación. La configuración prevista está en `README.md`.
-El despliegue se realizará más adelante, cuando lo solicite el equipo.
+Nombre del proyecto: `allsumaq-website`. La configuración está en
+`wrangler.jsonc`; debe subirse a GitHub para que Cloudflare la pueda leer.
+
+Prioridad solicitada después de la primera entrega: integrar acceso real con
+Google y mapa real de Lima con universidades. Implementación y configuración
+en `docs/GOOGLE-Y-MAPA.md`. El Client ID y el secreto de sesión aún requieren
+activación en la cuenta del propietario. Las ubicaciones de restaurantes
+siguen pendientes, aunque las sedes universitarias ya tienen fuente OSM.
 
 ## Entregas
 

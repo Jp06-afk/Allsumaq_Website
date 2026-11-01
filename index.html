@@ -10,10 +10,15 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/mapa-sesion.css">
   <script src="js/datos.js" defer></script>
   <script src="js/recetas-datos.js" defer></script>
   <script src="js/modelo.js" defer></script>
+  <script src="js/servicios-config.js" defer></script>
+  <script src="js/universidades-datos.js" defer></script>
+  <script src="js/mapa.js" defer></script>
   <script src="js/app.js" defer></script>
+  <script src="js/sesion.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -38,6 +43,8 @@
     <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v5m10-5v5M3 11h18m-13 5h3"/></symbol>
     <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.1M3 12h.1M3 18h.1"/></symbol>
     <symbol id="i-cup" viewBox="0 0 24 24"><path d="M3 8h14v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Zm14 1h2a3 3 0 1 1 0 6h-2M7 2v3m6-3v3"/></symbol>
+    <symbol id="i-university" viewBox="0 0 24 24"><path d="m2 8 10-5 10 5-10 5ZM5 10v7m14-7v7M8 12v5m8-5v5M3 21h18M5 17h14v4"/></symbol>
+    <symbol id="i-location" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4"/></symbol>
   </svg>
 
   <header class="site-header">
@@ -86,7 +93,7 @@
           </a>
           <a class="quick-card" href="#mapa" data-map-link>
             <img src="assets/img/acceso-mapa.webp" alt="" width="357" height="103">
-            <div class="quick-card-body"><h2>Mapa interactivo</h2><p>Descubre opciones<br>en tu zona de referencia.</p><span class="circle-arrow circle-arrow--warm"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
+            <div class="quick-card-body"><h2>Mapa interactivo</h2><p>Descubre opciones<br></p><span class="circle-arrow circle-arrow--warm"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
           </a>
           <a class="quick-card" href="#recetas" data-open="recetas">
             <img src="assets/img/acceso-recetas.webp" alt="" width="360" height="103">
@@ -112,7 +119,7 @@
 
     <section id="mapa" class="content-section observed-section" aria-labelledby="titulo-mapa">
       <div class="container">
-        <div class="section-heading"><div><p class="eyebrow">DESCUBRE OPCIONES EN TU ZONA</p><h2 id="titulo-mapa">Buena comida,<br><span class="text-sage">más cerca de ti.</span></h2></div><p>Explora los diez platos del catálogo.<br>Precios referenciales y decisiones a tu ritmo.</p></div>
+        <div class="section-heading"><div><p class="eyebrow">DESCUBRE OPCIONES EN TU ZONA</p><h2 id="titulo-mapa">Buena comida,<br><span class="text-sage">más cerca de ti.</span></h2></div><p>Explora los platos del catálogo.<br>Precios referenciales y decisiones a tu ritmo.</p></div>
         <form id="filtros" class="filter-bar" role="search" aria-label="Buscar y filtrar alimentos">
           <label class="search-field"><span>Busca un plato o establecimiento</span><div class="input-icon"><svg class="icon"><use href="#i-search"/></svg><input id="buscar" name="consulta" type="search" placeholder="Sangrecita, anticuchos, pescado…" autocomplete="off"></div></label>
           <label><span>Distrito</span><select name="distrito" id="filtro-distrito"><option value="">Todos los distritos</option></select></label>
@@ -121,10 +128,31 @@
           <button class="button button--primary" type="submit">Buscar<svg class="icon"><use href="#i-arrow"/></svg></button>
         </form>
         <p class="field-help filter-help">El presupuesto considera el extremo superior del rango por plato. Los precios sin confirmar y el gasto por persona se excluyen al aplicar ese filtro.</p>
-        <div class="results-toolbar"><p id="resultados-conteo" role="status" aria-live="polite"></p><div class="button-row"><button class="text-button" id="limpiar-filtros" type="button">Limpiar filtros</button><div class="view-switch" role="group" aria-label="Vista del catálogo"><button type="button" data-mode="lista" aria-pressed="true"><svg class="icon"><use href="#i-list"/></svg>Lista</button><button type="button" data-mode="mapa" aria-pressed="false"><svg class="icon"><use href="#i-map"/></svg>Mapa ilustrativo</button></div></div></div>
-        <div id="mapa-ilustrativo" class="illustrated-map" hidden>
-          <div class="map-streets" aria-hidden="true"></div><div class="map-note"><span class="feature-icon"><svg class="icon"><use href="#i-map"/></svg></span><p class="eyebrow">LIMA METROPOLITANA</p><h3 id="mapa-zona">Elige tu zona de referencia</h3><p>Mapa ilustrativo. Las direcciones y coordenadas del catálogo están pendientes de verificación.</p><p>Consulta las opciones por distrito en la lista. Todavía no se calculan distancias ni rutas.</p></div>
+        <div class="results-toolbar"><p id="resultados-conteo" role="status" aria-live="polite"></p><div class="button-row"><button class="text-button" id="limpiar-filtros" type="button">Limpiar filtros</button><div class="view-switch" role="group" aria-label="Vista del catálogo"><button type="button" data-mode="lista" aria-pressed="false"><svg class="icon"><use href="#i-list"/></svg>Lista</button><button type="button" data-mode="mapa" aria-pressed="true"><svg class="icon"><use href="#i-map"/></svg>Mapa y universidades</button></div></div></div>
+        <div id="mapa-real" class="map-layout">
+          <div class="live-map-shell">
+            <div id="mapa-lienzo" class="live-map" role="region" tabindex="0" aria-label="Mapa interactivo de Lima y universidades" aria-describedby="mapa-ayuda">
+              <div id="mapa-tiles" class="map-tiles" aria-hidden="true"></div>
+              <div id="mapa-marcadores" class="map-markers"></div>
+              <div class="map-controls"><button id="mapa-acercar" type="button" aria-label="Acercar mapa">+</button><button id="mapa-alejar" type="button" aria-label="Alejar mapa">−</button></div>
+              <div class="map-location-controls"><button id="mapa-centrar" type="button">Ver Lima</button><button id="mapa-ubicacion" type="button"><svg class="icon"><use href="#i-location"/></svg><span>Mi ubicación</span></button></div>
+              <a class="map-attribution" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a>
+              <div class="map-load-message" id="mapa-carga" role="status">El mapa se cargará al entrar en esta sección.</div>
+            </div>
+            <p id="mapa-ayuda" class="field-help map-help">Arrastra para explorar. Usa +/− o las flechas del teclado. Ctrl + rueda para ampliar; en móvil puedes usar dos dedos.</p>
+            <p id="mapa-estado" class="field-help" role="status" aria-live="polite"></p>
+          </div>
+          <aside class="university-panel" aria-label="Sedes universitarias de Lima">
+            <div class="panel-heading"><span class="feature-icon"><svg class="icon"><use href="#i-university"/></svg></span><div><h3>Universidades en Lima</h3><p>Elige una sede para ubicarla.</p></div></div>
+            <label><span>Buscar universidad o sede</span><input id="buscar-universidad" type="search" placeholder="San Marcos, UNI, UPC…" autocomplete="off"></label>
+            <p id="universidades-conteo" class="field-help" role="status"></p>
+            <div id="universidades-lista" class="university-list"></div>
+            <button id="universidades-actualizar" class="text-button" type="button">Actualizar sedes desde OpenStreetMap</button>
+            <p id="universidades-fecha" class="field-help"></p>
+          </aside>
         </div>
+        <div id="universidad-detalle" class="university-detail" hidden></div>
+        <p class="field-help map-catalog-note">Las universidades son puntos cartográficos de OpenStreetMap. Los establecimientos del catálogo se filtran por distrito; sus direcciones exactas aún están pendientes y no se les asignan marcadores ficticios.</p>
         <div id="alimentos-grid" class="food-grid"></div>
         <div class="notice notice--subtle"><svg class="icon"><use href="#i-info"/></svg><p>La asociación entre platos y establecimientos procede del catálogo del equipo. Confirma el puesto, la disponibilidad y el precio antes de acudir.</p></div>
       </div>
@@ -141,7 +169,7 @@
               <label class="span-2"><span>¿Qué alimento o bebida consumiste? *</span><select name="elemento" id="registro-elemento" required aria-describedby="error-elemento"><option value="">Selecciona una opción</option></select><span class="field-error" id="error-elemento"></span></label>
               <label><span>Fecha del consumo *</span><input name="fecha" id="registro-fecha" type="date" required aria-describedby="error-fecha"><span class="field-error" id="error-fecha"></span></label>
               <label><span>Momento del consumo *</span><select name="momento" id="registro-momento" required aria-describedby="error-momento"><option value="">Selecciona un momento</option><option>Desayuno</option><option>Almuerzo</option><option>Cena</option><option>Refrigerio</option></select><span class="field-error" id="error-momento"></span></label>
-              <label class="span-2"><span>Observaciones <small>(opcional)</small></span><textarea name="notas" id="registro-notas" maxlength="200" rows="3" placeholder="Por ejemplo: preparación casera, con ensalada…" aria-describedby="error-notas"></textarea><span class="field-error" id="error-notas"></span><span class="field-help">Evita incluir información sensible. Máximo 200 caracteres.</span></label>
+              <label class="span-2"><span>Observaciones <small>(opcional)</small></span><textarea name="notas" id="registro-notas" maxlength="200" rows="3" placeholder="Por ejemplo: preparación casera, con ensalada…" aria-describedby="error-notas"></textarea><span class="field-error" id="error-notas"></span><span class="field-help">Comparte tu experiencia. Máximo 200 caracteres.</span></label>
             </div>
             <button class="button button--primary" type="submit"><svg class="icon"><use href="#i-plus"/></svg>Guardar registro<svg class="icon"><use href="#i-arrow"/></svg></button>
           </form>
@@ -163,7 +191,7 @@
       <div class="container">
         <div class="section-heading"><div><p class="eyebrow">TU ESPACIO PERSONAL</p><h2 id="titulo-perfil">Tus preferencias,<br><span class="text-sage">tu propia experiencia.</span></h2></div><p>Organiza tus favoritos y elige una zona<br>para seguir explorando Allsumaq.</p></div>
         <div class="profile-grid">
-          <div class="panel profile-card"><span class="avatar"><svg class="icon"><use href="#i-user"/></svg></span><h3>Visitante Allsumaq</h3><span class="badge">Modo local de demostración</span><p>Puedes explorar y registrar consumos sin crear una cuenta.</p><a class="button button--light" href="#progreso">Ver mis registros<svg class="icon"><use href="#i-arrow"/></svg></a></div>
+          <div class="panel profile-card"><span class="avatar"><svg class="icon" id="perfil-avatar-icono"><use href="#i-user"/></svg><span id="perfil-iniciales" hidden></span></span><h3 id="perfil-nombre">Visitante Allsumaq</h3><span class="badge" id="perfil-estado">Explorando como visitante</span><p id="perfil-descripcion">Inicia sesión con Google o sigue explorando sin una cuenta.</p><button id="abrir-acceso" class="button button--primary" type="button">Iniciar sesión con Google</button><button id="cerrar-sesion" class="button button--light" type="button" hidden>Cerrar sesión</button><p id="sesion-estado" class="field-help" role="status"></p><a class="text-button" href="#progreso">Ver mis registros<svg class="icon"><use href="#i-arrow"/></svg></a></div>
           <div class="panel"><div class="panel-heading"><span class="feature-icon feature-icon--warm"><svg class="icon"><use href="#i-heart"/></svg></span><div><h3>Mis favoritos</h3><p>Platos que quieres volver a consultar.</p></div></div><div id="favoritos"></div></div>
           <div class="profile-settings"><form id="zona-form" class="panel"><div class="panel-heading"><span class="feature-icon"><svg class="icon"><use href="#i-pin"/></svg></span><h3>Zona de referencia</h3></div><label><span>Elige un distrito</span><select id="perfil-zona" name="zona"><option value="">Sin preferencia</option></select></label><button class="button button--light" type="submit">Guardar zona<svg class="icon"><use href="#i-check"/></svg></button><p class="field-help">Se aplicará al catálogo cuando vuelvas a explorar.</p></form><div class="panel privacy-panel"><svg class="icon"><use href="#i-shield"/></svg><h3>Tu información es local</h3><p>Los favoritos, la zona y los registros permanecen en este navegador. No se envían a un servidor.</p><p class="field-help">Borrar los datos del navegador elimina también tu actividad de esta demostración.</p></div></div>
         </div>
@@ -173,6 +201,7 @@
 
   <footer class="site-footer"><div class="container"><a class="footer-brand" href="#inicio">Allsumaq<span>Pequeños hábitos, grandes avances.</span></a><p>Proyecto académico · TikrAI · HCI for UX Design</p><span>Explora. Conoce. Elige. Registra.</span></div></footer>
   <dialog id="detalle-dialog" aria-labelledby="dialog-titulo"><div class="dialog-topbar"><button class="text-button" type="button" data-dialog-back><svg class="icon"><use href="#i-back"/></svg><span>Volver</span></button><button class="icon-button" type="button" data-dialog-close aria-label="Cerrar vista"><svg class="icon"><use href="#i-close"/></svg></button></div><div id="dialog-contenido"></div></dialog>
+  <dialog id="acceso-dialog" aria-labelledby="acceso-titulo"><div class="dialog-topbar"><span class="eyebrow">ACCESO A TU CUENTA</span><button class="icon-button" type="button" data-cerrar-acceso aria-label="Cerrar inicio de sesión"><svg class="icon"><use href="#i-close"/></svg></button></div><div class="login-layout"><div class="login-story"><span class="feature-icon"><svg class="icon"><use href="#i-shield"/></svg></span><h2 id="acceso-titulo">Bienvenido de nuevo,<br><span class="text-sage">tu espacio te espera.</span></h2><img src="assets/img/portada-plato.webp" width="668" height="406" alt="Plato de comida referencial de Allsumaq"><p>Una cuenta para identificar tu espacio. Tú eliges qué registrar.</p></div><div class="login-form"><h3>Iniciar sesión</h3><p>Continúa con una cuenta de Google.</p><div id="google-acceso" class="google-login-button"></div><p id="acceso-mensaje" role="status" aria-live="polite"></p><p class="field-help">La autorización se realiza en Google. Allsumaq no solicita ni guarda tu contraseña. Tus registros y favoritos permanecen en este navegador, separados por cuenta.</p><button class="text-button" type="button" data-cerrar-acceso>Continuar como visitante →</button></div></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
   <noscript><div class="noscript-message">Activa JavaScript para buscar alimentos, abrir recetas y guardar registros. La portada y los enlaces principales están disponibles sin JavaScript.</div></noscript>
 </body>
