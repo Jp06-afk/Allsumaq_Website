@@ -2,6 +2,10 @@
 
 Fecha de revisión: 31 de octubre de 2026.
 
+Actualización de navegación: el recorrido por scroll se limita ahora a Inicio
+y Mapa. Registrar, Progreso y Perfil se abren como vistas independientes por
+clic. El comportamiento vigente se describe en `NAVEGACION.md`.
+
 ## Pantallas y alcance
 
 Se desarrolló la estructura visual de MK-01, incluyendo logo, composición
@@ -23,7 +27,8 @@ mockups. El comparador y el orientador todavía no están implementados.
 | Ver mapa cercano, tarjeta Mapa | Clic | `#mapa`, vista ilustrativa |
 | Tarjeta Recetas saludables | Clic | `#recetas`, diálogo con las diez recetas |
 | Tarjeta Tu progreso | Clic | `#progreso` |
-| Navegación principal | Clic o scroll manual | Una de las cinco secciones |
+| Inicio / Mapa | Clic o scroll manual | Una de las dos secciones de exploración |
+| Registrar / Progreso / Perfil | Clic | Vista independiente del módulo |
 | Flecha en plato | Clic | `#alimento=ALI-xxx`, ficha breve |
 | Corazón en plato | Clic | Guarda o retira un favorito local |
 | Flecha de receta | Clic | `#receta=REC-xxx`, ingredientes y preparación |
@@ -35,9 +40,10 @@ mockups. El comparador y el orientador todavía no están implementados.
 
 ## Scroll y regreso
 
-Las cinco secciones principales se recorren mediante scroll libre. Las fichas
-y las recetas se abren por clic, en una vista interna con foco contenido por
-el diálogo nativo. El diálogo tiene scroll propio, botón Volver y Escape.
+Inicio y Mapa se recorren mediante scroll libre. Las otras tres opciones
+abren sus propias vistas por clic. Las fichas y las recetas también se abren
+por clic, en una vista interna con foco contenido por el diálogo nativo.
+El diálogo tiene scroll propio, botón Volver y Escape.
 
 Atrás/Adelante del navegador recuperan las vistas y el punto de scroll.
 La consulta, el distrito, el presupuesto y el orden del catálogo permanecen

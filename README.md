@@ -71,7 +71,8 @@ Referencia oficial: [Static Assets en Workers](https://developers.cloudflare.com
 
 - Portada basada en MK-01: logo original, hero, cuatro accesos y cuatro pasos.
 - Encabezado sticky con Inicio / Mapa / Registrar / Progreso / Perfil.
-- Navegación por scroll y clic, foco visible y movimiento reducido.
+- Inicio y Mapa conectados por scroll y clic; Registrar, Progreso y Perfil
+  se abren como vistas independientes por clic o teclado.
 - Diez platos con búsqueda por nombre, establecimiento y distrito.
 - Filtros combinados por distrito y presupuesto; orden por precio o nombre.
 - Mapa real de Lima con 107 sedes universitarias de OpenStreetMap, búsqueda,
@@ -102,8 +103,12 @@ completas ni los 20 mockups terminados.
    El resumen refleja ese registro. Recarga: se mantiene la información.
 4. En **Perfil**, guarda **Rímac** como zona. Vuelve a **Mapa**: se muestran
    sus dos platos. **Limpiar filtros** recupera las diez alternativas.
-5. Recorre las cinco secciones mediante scroll. La opción activa del
-   encabezado cambia sin tener que pulsarla.
+5. Baja desde Inicio hasta Mapa: la hotbar cambia su opción activa. Al terminar
+   el catálogo llegarás al pie de página. Pulsa Registrar, Progreso o Perfil
+   para abrir su vista, y **Volver a explorar** para recuperar tu posición.
+
+La arquitectura y la conservación de contexto están detalladas en
+[`docs/NAVEGACION.md`](docs/NAVEGACION.md).
 
 ## Editar textos, precios e imágenes
 
@@ -187,13 +192,14 @@ La fuente Inter se distribuye con su licencia SIL Open Font License en
 
 ## Verificación
 
-Se ejecutaron 87 comprobaciones con Chrome y un perfil aislado: 36 de la base,
-12 de apertura directa del archivo y 39 adicionales de mapa, cuentas y
-validación criptográfica. Resoluciones: 1440, 768, 390 y 320 px. Los resultados
-están en `docs/verificacion/resultados.json`, `resultados-archivo.json` y
-`resultados-servicios.json`. Hay capturas en esa carpeta. El acceso final con
-una cuenta real de Google queda pendiente del Client ID y la configuración
-de Cloudflare; las pruebas criptográficas usan claves generadas para la prueba.
+Las suites de Chrome cubren la base funcional, apertura directa del archivo,
+mapa, cuentas y validación criptográfica. Para la navegación actual se añadieron
+27 comprobaciones y se volvieron a ejecutar las 36 de la base. Los resultados
+están en `docs/verificacion/resultados-navegacion.json` y `resultados.json`;
+las demás suites conservan sus propios informes. Hay capturas de escritorio
+y móvil en esa carpeta. El acceso final con una cuenta real de Google queda
+pendiente del Client ID y la configuración de Cloudflare; las pruebas
+criptográficas usan claves generadas para la prueba.
 
 Para repetirlas en este equipo, con Python y Chrome ya instalados:
 
@@ -201,6 +207,7 @@ Para repetirlas en este equipo, con Python y Chrome ya instalados:
 python -X utf8 tests/pruebas_navegador.py
 python -X utf8 tests/pruebas_navegador.py --archivo
 python -X utf8 tests/pruebas_navegador.py --servicios
+python -X utf8 tests/pruebas_navegador.py --navegacion
 ```
 
 La prueba crea sus propios registros en un perfil temporal aislado dentro de

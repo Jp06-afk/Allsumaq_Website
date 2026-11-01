@@ -65,7 +65,7 @@
   </header>
 
   <main id="contenido">
-    <section id="inicio" class="home-section observed-section" aria-labelledby="titulo-inicio">
+    <section id="inicio" class="home-section observed-section" data-navigation="scroll" aria-labelledby="titulo-inicio">
       <div class="home-organic organic-one" aria-hidden="true"></div>
       <div class="home-organic organic-two" aria-hidden="true"></div>
       <div class="container">
@@ -117,7 +117,7 @@
       </div>
     </section>
 
-    <section id="mapa" class="content-section observed-section" aria-labelledby="titulo-mapa">
+    <section id="mapa" class="content-section observed-section" data-navigation="scroll" aria-labelledby="titulo-mapa">
       <div class="container">
         <div class="section-heading"><div><p class="eyebrow">DESCUBRE OPCIONES EN TU ZONA</p><h2 id="titulo-mapa">Buena comida,<br><span class="text-sage">más cerca de ti.</span></h2></div><p>Explora los platos del catálogo.<br>Precios referenciales y decisiones a tu ritmo.</p></div>
         <form id="filtros" class="filter-bar" role="search" aria-label="Buscar y filtrar alimentos">
@@ -158,8 +158,9 @@
       </div>
     </section>
 
-    <section id="registrar" class="content-section section--cream observed-section" aria-labelledby="titulo-registrar">
+    <section id="registrar" class="content-section section--cream module-view" data-navigation="click" aria-labelledby="titulo-registrar" hidden>
       <div class="container">
+        <button class="text-button view-back" type="button" data-volver-explorar><svg class="icon"><use href="#i-back"/></svg>Volver a explorar</button>
         <div class="section-heading"><div><p class="eyebrow">REGISTRO VOLUNTARIO</p><h2 id="titulo-registrar">Lo que comes hoy,<br><span class="text-sage">lo puedes recordar.</span></h2></div><p>Lleva un registro sencillo de tus comidas y bebidas.<br>Tu información se guarda en este navegador.</p></div>
         <div class="register-layout">
           <form id="registro-form" class="panel register-form" novalidate>
@@ -178,8 +179,9 @@
       </div>
     </section>
 
-    <section id="progreso" class="content-section observed-section" aria-labelledby="titulo-progreso">
+    <section id="progreso" class="content-section module-view" data-navigation="click" aria-labelledby="titulo-progreso" hidden>
       <div class="container">
+        <button class="text-button view-back" type="button" data-volver-explorar><svg class="icon"><use href="#i-back"/></svg>Volver a explorar</button>
         <div class="section-heading"><div><p class="eyebrow">TU ACTIVIDAD EN ALLSUMAQ</p><h2 id="titulo-progreso">Tus hábitos,<br><span class="text-sage">un registro a la vez.</span></h2></div><a class="button button--primary" href="#registrar"><svg class="icon"><use href="#i-plus"/></svg>Registrar consumo</a></div>
         <div class="period-row"><label for="periodo">Consultar periodo</label><select id="periodo"><option value="7">Últimos 7 días</option><option value="30">Últimos 30 días</option><option value="todo">Todos mis registros</option></select><p id="periodo-descripcion" class="field-help"></p></div>
         <div class="stats-grid" id="estadisticas"></div>
@@ -187,8 +189,9 @@
       </div>
     </section>
 
-    <section id="perfil" class="content-section section--sage observed-section" aria-labelledby="titulo-perfil">
+    <section id="perfil" class="content-section section--sage module-view" data-navigation="click" aria-labelledby="titulo-perfil" hidden>
       <div class="container">
+        <button class="text-button view-back" type="button" data-volver-explorar><svg class="icon"><use href="#i-back"/></svg>Volver a explorar</button>
         <div class="section-heading"><div><p class="eyebrow">TU ESPACIO PERSONAL</p><h2 id="titulo-perfil">Tus preferencias,<br><span class="text-sage">tu propia experiencia.</span></h2></div><p>Organiza tus favoritos y elige una zona<br>para seguir explorando Allsumaq.</p></div>
         <div class="profile-grid">
           <div class="panel profile-card"><span class="avatar"><svg class="icon" id="perfil-avatar-icono"><use href="#i-user"/></svg><span id="perfil-iniciales" hidden></span></span><h3 id="perfil-nombre">Visitante Allsumaq</h3><span class="badge" id="perfil-estado">Explorando como visitante</span><p id="perfil-descripcion">Inicia sesión con Google o sigue explorando sin una cuenta.</p><button id="abrir-acceso" class="button button--primary" type="button">Iniciar sesión con Google</button><button id="cerrar-sesion" class="button button--light" type="button" hidden>Cerrar sesión</button><p id="sesion-estado" class="field-help" role="status"></p><a class="text-button" href="#progreso">Ver mis registros<svg class="icon"><use href="#i-arrow"/></svg></a></div>
@@ -203,6 +206,6 @@
   <dialog id="detalle-dialog" aria-labelledby="dialog-titulo"><div class="dialog-topbar"><button class="text-button" type="button" data-dialog-back><svg class="icon"><use href="#i-back"/></svg><span>Volver</span></button><button class="icon-button" type="button" data-dialog-close aria-label="Cerrar vista"><svg class="icon"><use href="#i-close"/></svg></button></div><div id="dialog-contenido"></div></dialog>
   <dialog id="acceso-dialog" aria-labelledby="acceso-titulo"><div class="dialog-topbar"><span class="eyebrow">ACCESO A TU CUENTA</span><button class="icon-button" type="button" data-cerrar-acceso aria-label="Cerrar inicio de sesión"><svg class="icon"><use href="#i-close"/></svg></button></div><div class="login-layout"><div class="login-story"><span class="feature-icon"><svg class="icon"><use href="#i-shield"/></svg></span><h2 id="acceso-titulo">Bienvenido de nuevo,<br><span class="text-sage">tu espacio te espera.</span></h2><img src="assets/img/portada-plato.webp" width="668" height="406" alt="Plato de comida referencial de Allsumaq"><p>Una cuenta para identificar tu espacio. Tú eliges qué registrar.</p></div><div class="login-form"><h3>Iniciar sesión</h3><p>Continúa con una cuenta de Google.</p><div id="google-acceso" class="google-login-button"></div><p id="acceso-mensaje" role="status" aria-live="polite"></p><p class="field-help">La autorización se realiza en Google. Allsumaq no solicita ni guarda tu contraseña. Tus registros y favoritos permanecen en este navegador, separados por cuenta.</p><button class="text-button" type="button" data-cerrar-acceso>Continuar como visitante →</button></div></div></dialog>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
-  <noscript><div class="noscript-message">Activa JavaScript para buscar alimentos, abrir recetas y guardar registros. La portada y los enlaces principales están disponibles sin JavaScript.</div></noscript>
+  <noscript><div class="noscript-message">Puedes recorrer Inicio y Mapa por scroll. Activa JavaScript para abrir Registrar, Progreso y Perfil, buscar alimentos y guardar registros.</div></noscript>
 </body>
 </html>

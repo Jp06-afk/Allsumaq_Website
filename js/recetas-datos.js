@@ -1,13 +1,14 @@
 // Catálogo editable. No hace falta compilar.
 window.ALLSUMAQ_RECETAS = [
   {
-    "id": "REC-001",
-    "nombre": "Picante de sangrecita y tarwi",
-    "descripcion": "Guiso peruano que combina sangrecita de pollo y tarwi, una leguminosa andina. Se propone acompañarlo con ensalada de tomate y limón para incorporar vitamina C.",
-    "minutos": 35,
-    "dificultad": "media",
-    "porciones": "4",
-    "ingredientes": [
+    id: "REC-001",
+    nombre: "Picante de sangrecita y tarwi",
+    descripcion:
+      "Guiso peruano que combina sangrecita de pollo y tarwi, una leguminosa andina. Se propone acompañarlo con ensalada de tomate y limón para incorporar vitamina C.",
+    minutos: 35,
+    dificultad: "media",
+    porciones: "4",
+    ingredientes: [
       "300 g de sangrecita de pollo previamente cocida.",
       "200 g de tarwi desamargado y cocido.",
       "1 cebolla roja mediana.",
@@ -16,29 +17,30 @@ window.ALLSUMAQ_RECETAS = [
       "1 cucharada de aceite vegetal.",
       "2 papas medianas.",
       "2 tomates y 2 limones para acompañar.",
-      "Sal, comino y pimienta en cantidades moderadas."
+      "Sal, comino y pimienta en cantidades moderadas.",
     ],
-    "pasos": [
+    pasos: [
       "Sancochar las papas y reservar. Desmenuzar la sangrecita cocida.",
       "En una olla, calentar el aceite y preparar un aderezo con cebolla, ajo y ají amarillo.",
       "Incorporar el tarwi cocido y la sangrecita. Añadir un poco de agua y cocinar hasta integrar los sabores.",
-      "Servir con las papas sancochadas y ensalada fresca de tomate aliñada con limón."
+      "Servir con las papas sancochadas y ensalada fresca de tomate aliñada con limón.",
     ],
-    "nota": "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
-    "fuenteTexto": "Fuente muy rica en hierro",
-    "fuenteUrl": null,
-    "costo": null,
-    "hierroMg": null,
-    "imagen": null
+    nota: "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
+    fuenteTexto: "Fuente muy rica en hierro",
+    fuenteUrl: null,
+    costo: null,
+    hierroMg: null,
+    imagen: null,
   },
   {
-    "id": "REC-002",
-    "nombre": "Croquetas de sangrecita y kiwicha",
-    "descripcion": "Croquetas preparadas con sangrecita, kiwicha y verduras. Son una alternativa práctica para incorporar alimentos ricos en hierro en una presentación diferente.",
-    "minutos": 40,
-    "dificultad": "media",
-    "porciones": "4 (8 croquetas)",
-    "ingredientes": [
+    id: "REC-002",
+    nombre: "Croquetas de sangrecita y kiwicha",
+    descripcion:
+      "Croquetas preparadas con sangrecita, kiwicha y verduras. Son una alternativa práctica para incorporar alimentos ricos en hierro en una presentación diferente.",
+    minutos: 40,
+    dificultad: "media",
+    porciones: "4 (8 croquetas)",
+    ingredientes: [
       "250 g de sangrecita de pollo cocida.",
       "150 g de kiwicha cocida.",
       "1 huevo.",
@@ -47,30 +49,31 @@ window.ALLSUMAQ_RECETAS = [
       "2 cucharadas de avena molida.",
       "1 cucharada de aceite.",
       "1 pimiento rojo pequeño y 1 limón.",
-      "Ajo, perejil y sal moderada."
+      "Ajo, perejil y sal moderada.",
     ],
-    "pasos": [
+    pasos: [
       "Desmenuzar finamente la sangrecita cocida y mezclar con la kiwicha.",
       "Agregar huevo, zanahoria, cebolla, ajo y avena hasta obtener una masa moldeable.",
       "Formar ocho croquetas y colocarlas en una bandeja ligeramente aceitada.",
       "Hornear aproximadamente 20 minutos a 180 °C, hasta que estén firmes y completamente cocidas.",
-      "Servir con pimiento fresco y limón."
+      "Servir con pimiento fresco y limón.",
     ],
-    "nota": "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
-    "fuenteTexto": "Fuente muy rica en hierro",
-    "fuenteUrl": null,
-    "costo": null,
-    "hierroMg": null,
-    "imagen": null
+    nota: "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
+    fuenteTexto: "Fuente muy rica en hierro",
+    fuenteUrl: null,
+    costo: null,
+    hierroMg: null,
+    imagen: null,
   },
   {
-    "id": "REC-003",
-    "nombre": "Puré de oca y sangrecita",
-    "descripcion": "Preparación que combina puré de oca, tubérculo andino de sabor ligeramente dulce, con sangrecita salteada. Se complementa con ensalada de tomate.",
-    "minutos": 35,
-    "dificultad": "fácil",
-    "porciones": "4",
-    "ingredientes": [
+    id: "REC-003",
+    nombre: "Puré de oca y sangrecita",
+    descripcion:
+      "Preparación que combina puré de oca, tubérculo andino de sabor ligeramente dulce, con sangrecita salteada. Se complementa con ensalada de tomate.",
+    minutos: 35,
+    dificultad: "fácil",
+    porciones: "4",
+    ingredientes: [
       "300 g de sangrecita de pollo cocida.",
       "500 g de oca.",
       "1 cebolla mediana.",
@@ -78,30 +81,31 @@ window.ALLSUMAQ_RECETAS = [
       "2 cucharadas de leche para el puré, opcional.",
       "1 cucharada de aceite vegetal.",
       "2 tomates y 1 limón.",
-      "Perejil, pimienta y sal moderada."
+      "Perejil, pimienta y sal moderada.",
     ],
-    "pasos": [
+    pasos: [
       "Lavar y sancochar las ocas hasta que estén blandas.",
       "Triturar las ocas y agregar un poco de agua caliente hasta formar un puré suave. La leche es opcional.",
       "Preparar un aderezo de cebolla y ajo con aceite.",
       "Incorporar la sangrecita cocida, desmenuzarla y mezclarla con el aderezo caliente.",
-      "Servir junto al puré y una ensalada fresca de tomate con limón."
+      "Servir junto al puré y una ensalada fresca de tomate con limón.",
     ],
-    "nota": "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
-    "fuenteTexto": "Fuente muy rica en hierro",
-    "fuenteUrl": null,
-    "costo": null,
-    "hierroMg": null,
-    "imagen": null
+    nota: "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
+    fuenteTexto: "Fuente muy rica en hierro",
+    fuenteUrl: null,
+    costo: null,
+    hierroMg: null,
+    imagen: null,
   },
   {
-    "id": "REC-004",
-    "nombre": "Espesito de bazo con camote",
-    "descripcion": "Guiso de bazo de res con camote, que combina una fuente concentrada de hierro con un alimento energético y naturalmente dulce.",
-    "minutos": 45,
-    "dificultad": "media",
-    "porciones": "4",
-    "ingredientes": [
+    id: "REC-004",
+    nombre: "Espesito de bazo con camote",
+    descripcion:
+      "Guiso de bazo de res con camote, que combina una fuente concentrada de hierro con un alimento energético y naturalmente dulce.",
+    minutos: 45,
+    dificultad: "media",
+    porciones: "4",
+    ingredientes: [
       "300 g de bazo de res limpio.",
       "400 g de camote amarillo.",
       "1 cebolla roja.",
@@ -109,31 +113,33 @@ window.ALLSUMAQ_RECETAS = [
       "1 cucharada de ají amarillo.",
       "1 cucharada de aceite vegetal.",
       "2 tomates y 1 pimiento rojo.",
-      "Agua, comino y sal moderada."
+      "Agua, comino y sal moderada.",
     ],
-    "pasos": [
+    pasos: [
       "Cocinar el bazo hasta que esté completamente cocido y cortarlo en trozos pequeños.",
       "Sancochar los camotes, retirar la cáscara y triturarlos ligeramente.",
       "Preparar un aderezo con cebolla, ajo y ají amarillo.",
       "Incorporar el bazo y un poco de agua; cocinar hasta integrar los sabores.",
       "Añadir parte del camote triturado para espesar el guiso.",
-      "Servir con tomate y pimiento fresco."
+      "Servir con tomate y pimiento fresco.",
     ],
-    "nota": "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
-    "fuenteTexto": "Fuente: MINSA, publicación sobre recetas nutritivas para prevenir la anemia, donde se presenta el «Espesito de bazo con camote». ",
-    "fuenteUrl": null,
-    "costo": null,
-    "hierroMg": null,
-    "imagen": null
+    nota: "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
+    fuenteTexto:
+      "Fuente: MINSA, publicación sobre recetas nutritivas para prevenir la anemia, donde se presenta el «Espesito de bazo con camote». ",
+    fuenteUrl: null,
+    costo: null,
+    hierroMg: null,
+    imagen: null,
   },
   {
-    "id": "REC-005",
-    "nombre": "Caigua rellena con higadito y cañihua",
-    "descripcion": "Caiguas rellenas con hígado de pollo y cañihua, una combinación de ingredientes tradicionales peruanos con verduras y cereales andinos.",
-    "minutos": 45,
-    "dificultad": "media",
-    "porciones": "4",
-    "ingredientes": [
+    id: "REC-005",
+    nombre: "Caigua rellena con higadito y cañihua",
+    descripcion:
+      "Caiguas rellenas con hígado de pollo y cañihua, una combinación de ingredientes tradicionales peruanos con verduras y cereales andinos.",
+    minutos: 45,
+    dificultad: "media",
+    porciones: "4",
+    ingredientes: [
       "4 caiguas medianas.",
       "250 g de hígado de pollo.",
       "120 g de cañihua cocida.",
@@ -142,31 +148,33 @@ window.ALLSUMAQ_RECETAS = [
       "1 zanahoria pequeña.",
       "2 tomates.",
       "1 cucharada de aceite.",
-      "1 limón, perejil y sal moderada."
+      "1 limón, perejil y sal moderada.",
     ],
-    "pasos": [
+    pasos: [
       "Lavar las caiguas, abrirlas y retirar sus semillas.",
       "Cocinar completamente el hígado de pollo y picarlo en trozos pequeños.",
       "Preparar un aderezo de cebolla, ajo y zanahoria.",
       "Mezclar el aderezo con el hígado y la cañihua cocida.",
       "Rellenar las caiguas y cocinarlas tapadas con un poco de agua y tomate durante aproximadamente 20 minutos, hasta que estén tiernas.",
-      "Servir con una ensalada de tomate y limón."
+      "Servir con una ensalada de tomate y limón.",
     ],
-    "nota": "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
-    "fuenteTexto": "Fuente: Recetario del MINAM, «Caigua rellena con higadito y cañihua». ",
-    "fuenteUrl": null,
-    "costo": null,
-    "hierroMg": null,
-    "imagen": null
+    nota: "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
+    fuenteTexto:
+      "Fuente: Recetario del MINAM, «Caigua rellena con higadito y cañihua». ",
+    fuenteUrl: null,
+    costo: null,
+    hierroMg: null,
+    imagen: null,
   },
   {
-    "id": "REC-006",
-    "nombre": "Pepián de quinua con hígado de pollo",
-    "descripcion": "Guiso espeso a base de quinua e hígado de pollo, enriquecido con verduras. Se acompaña de una ensalada fresca de pimiento y limón.",
-    "minutos": 40,
-    "dificultad": "fácil-media",
-    "porciones": "4",
-    "ingredientes": [
+    id: "REC-006",
+    nombre: "Pepián de quinua con hígado de pollo",
+    descripcion:
+      "Guiso espeso a base de quinua e hígado de pollo, enriquecido con verduras. Se acompaña de una ensalada fresca de pimiento y limón.",
+    minutos: 40,
+    dificultad: "fácil-media",
+    porciones: "4",
+    ingredientes: [
       "250 g de hígado de pollo.",
       "200 g de quinua cruda.",
       "1 cebolla mediana.",
@@ -175,31 +183,33 @@ window.ALLSUMAQ_RECETAS = [
       "1 zanahoria.",
       "1 cucharada de aceite.",
       "1 pimiento rojo y 1 limón.",
-      "Agua, perejil y sal moderada."
+      "Agua, perejil y sal moderada.",
     ],
-    "pasos": [
+    pasos: [
       "Lavar muy bien la quinua y cocinarla en agua hasta que esté suave.",
       "Cocinar completamente el hígado y cortarlo en trozos pequeños.",
       "En otra olla, preparar el aderezo con ajo, cebolla y ají amarillo.",
       "Incorporar zanahoria picada, quinua cocida y un poco de agua.",
       "Añadir el hígado y mezclar hasta obtener la consistencia espesa del pepián.",
-      "Servir con una ensalada fresca de pimiento y limón."
+      "Servir con una ensalada fresca de pimiento y limón.",
     ],
-    "nota": "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
-    "fuenteTexto": "Fuente: Recetario del MINAM, «Pepián de quinua con hígado de pollo». ",
-    "fuenteUrl": null,
-    "costo": null,
-    "hierroMg": null,
-    "imagen": null
+    nota: "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
+    fuenteTexto:
+      "Fuente: Recetario del MINAM, «Pepián de quinua con hígado de pollo». ",
+    fuenteUrl: null,
+    costo: null,
+    hierroMg: null,
+    imagen: null,
   },
   {
-    "id": "REC-007",
-    "nombre": "Seco de hígado de res con kiwicha",
-    "descripcion": "Adaptación del tradicional seco peruano, elaborado con hígado de res, culantro y kiwicha como acompañamiento.",
-    "minutos": 40,
-    "dificultad": "media",
-    "porciones": "4",
-    "ingredientes": [
+    id: "REC-007",
+    nombre: "Seco de hígado de res con kiwicha",
+    descripcion:
+      "Adaptación del tradicional seco peruano, elaborado con hígado de res, culantro y kiwicha como acompañamiento.",
+    minutos: 40,
+    dificultad: "media",
+    porciones: "4",
+    ingredientes: [
       "300 g de hígado de res.",
       "180 g de kiwicha cruda.",
       "1 cebolla mediana.",
@@ -208,31 +218,33 @@ window.ALLSUMAQ_RECETAS = [
       "1 cucharada de ají amarillo.",
       "1 cucharada de aceite vegetal.",
       "2 tomates y 1 limón.",
-      "Comino, pimienta y sal moderada."
+      "Comino, pimienta y sal moderada.",
     ],
-    "pasos": [
+    pasos: [
       "Lavar y cocinar la kiwicha en agua hasta que esté suave.",
       "Cortar el hígado en trozos medianos.",
       "Preparar un aderezo con cebolla, ajo, ají amarillo y culantro.",
       "Incorporar el hígado y cocinar completamente con un poco de agua.",
       "Servir el seco junto a la kiwicha.",
-      "Complementar con ensalada fresca de tomate y limón."
+      "Complementar con ensalada fresca de tomate y limón.",
     ],
-    "nota": "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
-    "fuenteTexto": "Fuente: Recetario del MINAM, «Seco de hígado de res con kiwicha». ",
-    "fuenteUrl": null,
-    "costo": null,
-    "hierroMg": null,
-    "imagen": null
+    nota: "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
+    fuenteTexto:
+      "Fuente: Recetario del MINAM, «Seco de hígado de res con kiwicha». ",
+    fuenteUrl: null,
+    costo: null,
+    hierroMg: null,
+    imagen: null,
   },
   {
-    "id": "REC-008",
-    "nombre": "Matasquita de quinua y bofe",
-    "descripcion": "Guiso tradicional preparado con bofe, papa, verduras y quinua. Es una forma de incorporar vísceras en una receta de consumo familiar.",
-    "minutos": 50,
-    "dificultad": "media",
-    "porciones": "4",
-    "ingredientes": [
+    id: "REC-008",
+    nombre: "Matasquita de quinua y bofe",
+    descripcion:
+      "Guiso tradicional preparado con bofe, papa, verduras y quinua. Es una forma de incorporar vísceras en una receta de consumo familiar.",
+    minutos: 50,
+    dificultad: "media",
+    porciones: "4",
+    ingredientes: [
       "300 g de bofe de res limpio.",
       "150 g de quinua cruda.",
       "3 papas medianas.",
@@ -242,32 +254,34 @@ window.ALLSUMAQ_RECETAS = [
       "2 cucharadas de ají panca.",
       "1 cucharada de aceite.",
       "2 tomates y 1 limón.",
-      "Agua, comino y sal moderada."
+      "Agua, comino y sal moderada.",
     ],
-    "pasos": [
+    pasos: [
       "Cocinar el bofe en agua hasta que esté completamente cocido. Escurrir y cortar en cubos.",
       "Lavar y cocinar la quinua por separado.",
       "Preparar un aderezo con cebolla, ajo y ají panca.",
       "Incorporar el bofe, las papas y la zanahoria cortadas en cubos.",
       "Agregar agua y cocinar hasta que las verduras estén tiernas.",
       "Añadir la quinua y mezclar.",
-      "Servir con ensalada fresca de tomate y limón."
+      "Servir con ensalada fresca de tomate y limón.",
     ],
-    "nota": "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
-    "fuenteTexto": "Fuente: Recetario del MINAM, «Matasquita de quinua y bofe». También existen matasquitas de bofe difundidas por el MINSA. ",
-    "fuenteUrl": null,
-    "costo": null,
-    "hierroMg": null,
-    "imagen": null
+    nota: "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
+    fuenteTexto:
+      "Fuente: Recetario del MINAM, «Matasquita de quinua y bofe». También existen matasquitas de bofe difundidas por el MINSA. ",
+    fuenteUrl: null,
+    costo: null,
+    hierroMg: null,
+    imagen: null,
   },
   {
-    "id": "REC-009",
-    "nombre": "Anchoveta dorada con ensalada de tarwi",
-    "descripcion": "Preparación que combina anchoveta cocida y ensalada de tarwi, tomate y limón. Integra pescado y leguminosas andinas.",
-    "minutos": 30,
-    "dificultad": "fácil",
-    "porciones": "4",
-    "ingredientes": [
+    id: "REC-009",
+    nombre: "Anchoveta dorada con ensalada de tarwi",
+    descripcion:
+      "Preparación que combina anchoveta cocida y ensalada de tarwi, tomate y limón. Integra pescado y leguminosas andinas.",
+    minutos: 30,
+    dificultad: "fácil",
+    porciones: "4",
+    ingredientes: [
       "500 g de anchoveta limpia.",
       "250 g de tarwi desamargado y cocido.",
       "2 tomates.",
@@ -275,31 +289,33 @@ window.ALLSUMAQ_RECETAS = [
       "2 limones.",
       "1 cucharada de aceite vegetal.",
       "2 dientes de ajo.",
-      "Perejil, pimienta y sal moderada."
+      "Perejil, pimienta y sal moderada.",
     ],
-    "pasos": [
+    pasos: [
       "Limpiar y lavar las anchovetas.",
       "Condimentarlas con ajo y pimienta.",
       "Cocinarlas en una sartén ligeramente aceitada hasta que estén doradas y completamente cocidas.",
       "Preparar una ensalada con tarwi cocido, tomate y cebolla.",
       "Agregar limón y perejil justo antes de servir.",
-      "Acompañar las anchovetas con la ensalada."
+      "Acompañar las anchovetas con la ensalada.",
     ],
-    "nota": "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
-    "fuenteTexto": "Fuente: Recetario del MINAM, «Anchoveta dorada con ensalada de tarwi». ",
-    "fuenteUrl": null,
-    "costo": null,
-    "hierroMg": null,
-    "imagen": null
+    nota: "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
+    fuenteTexto:
+      "Fuente: Recetario del MINAM, «Anchoveta dorada con ensalada de tarwi». ",
+    fuenteUrl: null,
+    costo: null,
+    hierroMg: null,
+    imagen: null,
   },
   {
-    "id": "REC-010",
-    "nombre": "Guiso de quinua con jurel",
-    "descripcion": "Guiso preparado con quinua, jurel y verduras. Combina proteína animal y vegetal, con un acompañamiento de pimiento y limón.",
-    "minutos": 35,
-    "dificultad": "fácil",
-    "porciones": "4",
-    "ingredientes": [
+    id: "REC-010",
+    nombre: "Guiso de quinua con jurel",
+    descripcion:
+      "Guiso preparado con quinua, jurel y verduras. Combina proteína animal y vegetal, con un acompañamiento de pimiento y limón.",
+    minutos: 35,
+    dificultad: "fácil",
+    porciones: "4",
+    ingredientes: [
       "400 g de filete de jurel limpio.",
       "200 g de quinua cruda.",
       "1 cebolla mediana.",
@@ -309,21 +325,21 @@ window.ALLSUMAQ_RECETAS = [
       "½ taza de arvejas.",
       "1 cucharada de aceite.",
       "1 pimiento rojo y 1 limón.",
-      "Perejil, pimienta y sal moderada."
+      "Perejil, pimienta y sal moderada.",
     ],
-    "pasos": [
+    pasos: [
       "Lavar la quinua hasta eliminar el sabor amargo y cocinarla en agua.",
       "Cocinar el jurel completamente, retirar las espinas y separar su carne.",
       "Preparar un aderezo con cebolla, ajo y tomate.",
       "Incorporar la zanahoria, las arvejas y un poco de agua.",
       "Añadir la quinua cocida y el jurel, mezclando suavemente.",
-      "Servir con una ensalada fresca de pimiento y limón."
+      "Servir con una ensalada fresca de pimiento y limón.",
     ],
-    "nota": "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
-    "fuenteTexto": "Fuente: Recetario del MINAM, «Guiso de quinua con jurel». ",
-    "fuenteUrl": null,
-    "costo": null,
-    "hierroMg": null,
-    "imagen": null
-  }
+    nota: "Adaptación doméstica orientativa proporcionada por el equipo TikrAI.",
+    fuenteTexto: "Fuente: Recetario del MINAM, «Guiso de quinua con jurel». ",
+    fuenteUrl: null,
+    costo: null,
+    hierroMg: null,
+    imagen: null,
+  },
 ];

@@ -7,6 +7,7 @@ window.ALLSUMAQ_SERVICIOS = {
     zoomMaximo: 18,
     tiles: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
     overpass: "https://overpass-api.de/api/interpreter",
-    consulta: '[out:json][timeout:25];nwr["amenity"="university"](-12.50,-77.25,-11.65,-76.60);out center tags;'
-  }
+    consulta:
+      '[out:json][timeout:25];nwr["amenity"="university"](-12.50,-77.25,-11.65,-76.60);out center tags;',
+  },
 };

@@ -3,11 +3,11 @@
   "compatibility_date": "2026-10-23",
   "main": "worker/index.mjs",
   "vars": {
-    "PUBLIC_ORIGIN": "https://allsumaq-website.jpfj-06.workers.dev"
+    "PUBLIC_ORIGIN": "https://allsumaq-website.jpfj-06.workers.dev",
   },
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*"]
-  }
+    "run_worker_first": ["/api/*"],
+  },
 }

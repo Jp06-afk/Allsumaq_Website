@@ -4,6 +4,11 @@ Tecnología: HTML5, CSS3 y JavaScript nativo, sin instalación ni compilación.
 Referencia visual principal: MK-01 aprobado. Navegación: Inicio / Mapa /
 Registrar / Progreso / Perfil. Los catálogos y detalles se abren por clic.
 
+Navegación actual acordada: solo Inicio y Mapa forman el recorrido por scroll;
+Registrar, Progreso y Perfil son vistas independientes abiertas por clic.
+La especificación actual está en `docs/NAVEGACION.md` y sustituye la distribución
+de cinco secciones apiladas del planteamiento inicial.
+
 Destino de publicación: Cloudflare Workers con Static Assets conectado a GitHub,
 rama de producción `main`. Mantener recursos locales y rutas relativas, sin
 instalación ni compilación. La configuración prevista está en `README.md`.
@@ -53,7 +58,8 @@ ni a las 30 HU completas.
 ## Revisión de la primera entrega
 
 - Portada comparada con MK-01 en escritorio y móvil.
-- Cinco entradas de navegación, sticky y con selección según scroll.
+- Cinco entradas de navegación sticky: Inicio/Mapa por scroll y clic,
+  Registrar/Progreso/Perfil por clic, con estado activo según la vista.
 - Accesos a alimentos, mapa, recetas y progreso conectados.
 - Catálogo inicial y ficha breve conservan el término y la zona al cerrar.
 - Registro local voluntario con validación, confirmación y resumen.
