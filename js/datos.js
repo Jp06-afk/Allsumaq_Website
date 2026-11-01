@@ -153,3 +153,8 @@ window.ALLSUMAQ_BEBIDAS = [
   { id: "BEB-003", nombre: "Café" },
   { id: "BEB-004", nombre: "Té" },
 ];
+// Precios por plato de los lugares del mapa. Completar solo tras verificar el local.
+// El ID se obtiene del enlace «Ubicación y fuente» (ejemplo de formato: node/123).
+// Cada registro: { osmId, plato, min, max, fuente: "https://...", fecha: "AAAA-MM-DD", estimado: false }.
+// Los importes del catálogo sin ubicación verificada no se vinculan automáticamente.
+window.ALLSUMAQ_PRECIOS_LUGARES = [];

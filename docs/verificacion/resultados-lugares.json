@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "pruebas": [
+    "Radio inicial de 500 m en la consulta real del cliente",
+    "Mercado, restaurante y comedor; descarta categorías ajenas y puntos fuera del radio",
+    "Orden de menor a mayor distancia",
+    "Cada lugar conserva el enlace al registro cartográfico",
+    "Presupuesto excluye lugares sin precios sin confundirlos con ausencia de establecimientos",
+    "Opciones pendientes se muestran con aclaración de presupuesto",
+    "Filtro usa el máximo del precio por plato, incluida la igualdad del límite",
+    "Cambiar categoría o presupuesto no repite consultas externas",
+    "Limpiar presupuesto restaura los lugares",
+    "Caché evita repetir la misma sede y radio",
+    "Cambiar radio realiza una consulta nueva",
+    "Ver lugar desde Lista abre el mapa y sincroniza la selección",
+    "Lugares con marcadores propios en el mapa",
+    "Marcador selecciona su tarjeta",
+    "Error de red muestra reintento y elimina resultados de la consulta anterior",
+    "Una respuesta antigua no reemplaza la selección actual",
+    "Proveedor alternativo recupera una consulta cuando falla el principal",
+    "Panel de lugares sin desbordamiento horizontal en móvil"
+  ],
+  "fecha": "2026-11-01",
+  "navegador": "Chrome headless, perfil aislado",
+  "limites": "No sustituye acceso real con Google, pruebas con lectores de pantalla ni aprobación de los siguientes mockups."
+}

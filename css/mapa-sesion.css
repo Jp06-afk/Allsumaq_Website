@@ -443,3 +443,26 @@ body.auth-open {
     padding: 8px;
   }
 }
+.nearby-panel {
+  margin: 20px 0 30px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+.nearby-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 16px; margin: 18px 0; }
+.nearby-controls label { display: grid; gap: 7px; font-weight: 600; }
+.nearby-controls select { min-width: 140px; max-width: 100%; }
+.nearby-controls .nearby-pending { display: flex; flex-direction: row; align-items: center; gap: 8px; max-width: 330px; }
+.nearby-pending input { width: 20px; height: 20px; flex-shrink: 0; accent-color: #087658; }
+.nearby-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap: 16px; margin-top: 16px; }
+.nearby-card { padding: 18px; border: 1px solid var(--border); border-radius: 14px; min-width: 0; overflow-wrap: anywhere; }
+.nearby-card h4 { margin: 9px 0; font-size: 1.1rem; }
+.nearby-card p { margin: 8px 0; }
+.nearby-card small { color: #49675d; }
+.nearby-card.selected { outline: 3px solid #087658; outline-offset: -2px; }
+.nearby-price { font-weight: 700; color: #087658; }
+.venue-marker { position: absolute; transform: translate(-50%, -50%); width: 34px; height: 34px; border-radius: 50%; border: 2px solid white; background: #a64c0b; color: white; box-shadow: 0 2px 6px #0004; pointer-events: auto; display: grid; place-items: center; z-index: 3; }
+.venue-marker.selected, .venue-marker:focus-visible { background: #083c32; outline: 3px solid #ffca75; z-index: 4; }
+.venue-marker .icon { width: 20px; height: 20px; }
+@media (max-width: 600px) { .nearby-panel { padding: 16px; } .nearby-controls { align-items: stretch; } .nearby-controls label { max-width: 100%; } }

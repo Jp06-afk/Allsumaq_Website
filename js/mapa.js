@@ -188,7 +188,7 @@
           '<span class="university-pin"><svg class="icon" aria-hidden="true"><use href="#i-university"/></svg></span><span class="university-marker-label"></span>';
         marker.querySelector(".university-marker-label").textContent =
           uni.nombre;
-        marker.addEventListener("click", () => selectUniversity(uni.id, false));
+        marker.addEventListener("click", () => selectUniversity(uni.id));
         markerNodes.set(uni.id, marker);
         markersLayer.appendChild(marker);
       }
@@ -203,6 +203,7 @@
         markerNodes.delete(id);
       }
     }
+    renderPlaces(left, top, width, height);
     renderUserPosition(left, top);
     $("mapa-acercar").disabled = zoom >= config.zoomMaximo;
     $("mapa-alejar").disabled = zoom <= config.zoomMinimo;
@@ -326,6 +327,7 @@
       );
     scheduleRender();
     $("mapa-estado").textContent = "Sede seleccionada: " + uni.nombre + ".";
+    document.dispatchEvent(new CustomEvent("allsumaq:universidad-seleccionada", { detail: { ...uni } }));
   }
 
   function stopLocation() {
@@ -578,7 +580,46 @@
     }).observe(surface);
   }
   updateList();
+  let nearbyPlaces = [], selectedPlace = "";
+  const placeNodes = new Map();
+  function renderPlaces(left, top, width, height) {
+    const visibleIds = new Set();
+    for (const place of nearbyPlaces) {
+      const point = project(place), x = point.x - left, y = point.y - top;
+      if (x < -30 || x > width + 30 || y < -30 || y > height + 30) continue;
+      visibleIds.add(place.id);
+      let marker = placeNodes.get(place.id);
+      if (!marker) {
+        marker = document.createElement("button");
+        marker.type = "button";
+        marker.className = "venue-marker";
+        marker.dataset.lugar = place.id;
+        marker.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-plate"/></svg>';
+        marker.addEventListener("click", () => {
+          window.AllsumaqMapa.seleccionarLugar(place.id);
+          document.dispatchEvent(new CustomEvent("allsumaq:lugar-seleccionado", { detail: place.id }));
+        });
+        markersLayer.appendChild(marker);
+        placeNodes.set(place.id, marker);
+      }
+      marker.title = place.nombre;
+      marker.setAttribute("aria-label", "Lugar para comer: " + place.nombre);
+      marker.setAttribute("aria-pressed", String(selectedPlace === place.id));
+      marker.classList.toggle("selected", selectedPlace === place.id);
+      marker.style.left = x + "px";
+      marker.style.top = y + "px";
+    }
+    for (const [id, node] of placeNodes) if (!visibleIds.has(id)) { node.remove(); placeNodes.delete(id); }
+  }
   window.AllsumaqMapa = {
+    setLugares(places) { nearbyPlaces = places; selectedPlace = ""; scheduleRender(); },
+    seleccionarLugar(id) {
+      const place = nearbyPlaces.find(item => item.id === id);
+      if (!place) return;
+      selectedPlace = id;
+      center = { lat: place.lat, lon: place.lon };
+      scheduleRender();
+    },
     setVisible(value) {
       visible = value;
       if (value && surface.getBoundingClientRect().top < window.innerHeight)

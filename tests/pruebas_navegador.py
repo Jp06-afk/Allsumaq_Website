@@ -688,6 +688,97 @@ def run_services(cdp, url):
     assert not [e for e in cdp.events if e.get("method") == "Runtime.exceptionThrown"]
 
 
+def run_places(cdp, url):
+    cdp.call("Page.enable")
+    cdp.call("Runtime.enable")
+    cdp.call("Page.navigate", {"url": url + "#mapa"})
+    wait_ready(cdp)
+    cdp.js("""window.placeRequests=[]; window.originalFetch=window.fetch;
+      window.fetch=async (url, options)=>{
+        if (!String(url).includes('/api/interpreter') || !String(options?.body).includes('around')) return originalFetch(url,options);
+        placeRequests.push(String(options.body));
+        const u=window.testCampus;
+        return {ok:true,json:async()=>({elements:[
+          {type:'node',id:1001,lat:u.lat+.001,lon:u.lon,tags:{amenity:'restaurant',name:'Restaurante de prueba'}},
+          {type:'node',id:1002,lat:u.lat+.002,lon:u.lon,tags:{amenity:'marketplace',name:'Mercado de prueba'}},
+          {type:'way',id:1003,center:{lat:u.lat+.003,lon:u.lon},tags:{amenity:'social_facility',social_facility:'soup_kitchen',name:'Comedor de prueba'}},
+          {type:'node',id:1004,lat:u.lat+.02,lon:u.lon,tags:{amenity:'restaurant',name:'Fuera del radio'}},
+          {type:'node',id:1005,lat:u.lat,lon:u.lon,tags:{amenity:'bank',name:'Banco'}}
+        ]})};
+      };
+      window.testCampus=ALLSUMAQ_UNIVERSIDADES.sedes[0];
+      AllsumaqMapa.seleccionar(testCampus.id);""")
+    time.sleep(.3)
+    assert_js(cdp, "document.querySelector('#lugares-radio').value==='500' && placeRequests[0].includes('500')", "Radio inicial de 500 m en la consulta real del cliente")
+    assert_js(cdp, "document.querySelectorAll('.nearby-card').length===3", "Mercado, restaurante y comedor; descarta categorías ajenas y puntos fuera del radio")
+    assert_js(cdp, "document.querySelector('.nearby-card').dataset.lugar==='node/1001'", "Orden de menor a mayor distancia")
+    assert_js(cdp, "[...document.querySelectorAll('.nearby-card a')].every(a=>a.href.startsWith('https://www.openstreetmap.org/'))", "Cada lugar conserva el enlace al registro cartográfico")
+    cdp.js("document.querySelector('[name=presupuesto]').value='10'; document.querySelector('#filtros').dispatchEvent(new Event('change'))")
+    assert_js(cdp, "document.querySelectorAll('.nearby-card').length===0 && document.querySelector('#lugares-estado').textContent.includes('3 con precio por confirmar')", "Presupuesto excluye lugares sin precios sin confundirlos con ausencia de establecimientos")
+    cdp.js("document.querySelector('#lugares-pendientes').click()")
+    assert_js(cdp, "document.querySelectorAll('.nearby-card').length===3 && document.querySelector('.nearby-card').textContent.includes('No se puede confirmar')", "Opciones pendientes se muestran con aclaración de presupuesto")
+    cdp.js("""ALLSUMAQ_PRECIOS_LUGARES.push(
+      {osmId:'node/1001',plato:'Menú de prueba',min:8,max:10,fuente:'https://example.com/menu',fecha:'2026-10-31'},
+      {osmId:'node/1002',plato:'Otro menú',min:8,max:12,fuente:'https://example.com/menu',fecha:'2026-10-31'});
+      document.querySelector('#lugares-pendientes').click();""")
+    assert_js(cdp, "document.querySelectorAll('.nearby-card').length===1 && document.querySelector('.nearby-card').textContent.includes('Menú de prueba')", "Filtro usa el máximo del precio por plato, incluida la igualdad del límite")
+    cdp.js("document.querySelector('#lugares-tipo').value='comedor'; document.querySelector('#lugares-tipo').dispatchEvent(new Event('change'))")
+    assert_js(cdp, "document.querySelectorAll('.nearby-card').length===0 && placeRequests.length===1", "Cambiar categoría o presupuesto no repite consultas externas")
+    cdp.js("document.querySelector('#limpiar-filtros').click(); document.querySelector('#lugares-tipo').value=''; document.querySelector('#lugares-tipo').dispatchEvent(new Event('change'))")
+    time.sleep(.2)
+    assert_js(cdp, "document.querySelectorAll('.nearby-card').length===3", "Limpiar presupuesto restaura los lugares")
+    cdp.js("AllsumaqMapa.seleccionar(testCampus.id)")
+    time.sleep(.2)
+    assert_js(cdp, "placeRequests.length===1", "Caché evita repetir la misma sede y radio")
+    cdp.js("document.querySelector('#lugares-radio').value='1000'; document.querySelector('#lugares-radio').dispatchEvent(new Event('change'))")
+    time.sleep(.2)
+    assert_js(cdp, "placeRequests.length===2 && placeRequests[1].includes('1000')", "Cambiar radio realiza una consulta nueva")
+    cdp.js("document.querySelector('[data-mode=lista]').click(); document.querySelector('.nearby-card button').click()")
+    assert_js(cdp, "!document.querySelector('#mapa-real').hidden && document.querySelector('.nearby-card.selected').dataset.lugar==='node/1001'", "Ver lugar desde Lista abre el mapa y sincroniza la selección")
+    cdp.js("document.querySelector('#mapa-lienzo').scrollIntoView(); AllsumaqMapa.setVisible(true)")
+    time.sleep(.5)
+    assert_js(cdp, "document.querySelectorAll('.venue-marker').length>0", "Lugares con marcadores propios en el mapa")
+    cdp.js("document.querySelector('.venue-marker').click()")
+    assert_js(cdp, "!!document.querySelector('.nearby-card.selected')", "Marcador selecciona su tarjeta")
+    cdp.js("window.fetch=async()=>{throw new Error('Red simulada')}; document.querySelector('#lugares-radio').value='2000'; document.querySelector('#lugares-radio').dispatchEvent(new Event('change'))")
+    time.sleep(.2)
+    assert_js(cdp, "!document.querySelector('#lugares-reintentar').hidden && document.querySelectorAll('.nearby-card').length===0 && document.querySelector('#lugares-lista').getAttribute('aria-busy')==='false'", "Error de red muestra reintento y elimina resultados de la consulta anterior")
+    # Respuestas fuera de orden no pueden reemplazar los resultados de otra sede.
+    cdp.js("""window.pending=[]; window.fetch=(url,options)=>new Promise(resolve=>pending.push(resolve));
+      AllsumaqMapa.seleccionar(ALLSUMAQ_UNIVERSIDADES.sedes[1].id);
+      AllsumaqMapa.seleccionar(ALLSUMAQ_UNIVERSIDADES.sedes[2].id);
+      pending[1]({ok:true,json:async()=>({elements:[]})});""")
+    time.sleep(.1)
+    cdp.js("pending[0]({ok:true,json:async()=>({elements:[{type:'node',id:999,lat:testCampus.lat,lon:testCampus.lon,tags:{amenity:'restaurant'}}]})})")
+    time.sleep(.1)
+    assert_js(cdp, "document.querySelectorAll('.nearby-card').length===0 && document.querySelector('#lugares-reintentar').hidden", "Una respuesta antigua no reemplaza la selección actual")
+    cdp.js("""window.fallbackRequests=[]; window.fetch=async(url)=>{
+      fallbackRequests.push(url);
+      if (url===ALLSUMAQ_SERVICIOS.mapa.overpass) throw new Error('Proveedor principal no disponible');
+      return {ok:true,json:async()=>({elements:[]})};
+      };
+      document.querySelector('#lugares-radio').value='1000';
+      document.querySelector('#lugares-radio').dispatchEvent(new Event('change'));""")
+    time.sleep(.2)
+    assert_js(cdp, "fallbackRequests.length===2 && document.querySelector('#lugares-reintentar').hidden", "Proveedor alternativo recupera una consulta cuando falla el principal")
+    cdp.call("Emulation.setDeviceMetricsOverride", {"width": 390, "height": 844, "deviceScaleFactor": 1, "mobile": True})
+    cdp.js("document.querySelector('#lugares-cercanos').scrollIntoView({block:'start'})")
+    time.sleep(.2)
+    assert_js(cdp, "document.documentElement.scrollWidth<=innerWidth+1", "Panel de lugares sin desbordamiento horizontal en móvil")
+    (OUTPUT / "lugares-mobile.png").write_bytes(base64.b64decode(cdp.call("Page.captureScreenshot", {"format": "png"})["data"]))
+    if "--vivo" in sys.argv:
+        cdp.js("window.fetch=originalFetch; document.querySelector('#lugares-radio').value='500'; AllsumaqMapa.seleccionar(testCampus.id)")
+        # Primer radio está cacheado: usar otra sede para comprobar el proveedor real.
+        cdp.js("AllsumaqMapa.seleccionar(ALLSUMAQ_UNIVERSIDADES.sedes[3].id)")
+        for _ in range(125):
+            if cdp.js("document.querySelector('#lugares-lista').getAttribute('aria-busy')==='false'"):
+                break
+            time.sleep(.5)
+        assert_js(cdp, "document.querySelector('#lugares-reintentar').hidden && document.querySelector('#lugares-estado').textContent.includes('lugares registrados')", "Consulta al servicio público real completada")
+        print("REAL:", cdp.js("document.querySelector('#lugares-sede').textContent+' '+document.querySelector('#lugares-estado').textContent"), flush=True)
+    assert not [e for e in cdp.events if e.get("method") == "Runtime.exceptionThrown"]
+
+
 def run_navigation(cdp, url):
     cdp.call("Page.enable")
     cdp.call("Runtime.enable")
@@ -963,7 +1054,10 @@ with (OUTPUT / "chrome.log").open("w", encoding="utf-8") as log:
         file_mode = "--archivo" in sys.argv
         services_mode = "--servicios" in sys.argv
         navigation_mode = "--navegacion" in sys.argv
-        if navigation_mode:
+        places_mode = "--lugares" in sys.argv
+        if places_mode:
+            run_places(cdp, url)
+        elif navigation_mode:
             run_navigation(cdp, url)
         elif services_mode:
             run_services(cdp, url)
@@ -974,7 +1068,7 @@ with (OUTPUT / "chrome.log").open("w", encoding="utf-8") as log:
         (
             OUTPUT
             / (
-                "resultados-navegacion.json"
+                "resultados-lugares.json" if places_mode else "resultados-navegacion.json"
                 if navigation_mode
                 else (
                     "resultados-servicios.json"

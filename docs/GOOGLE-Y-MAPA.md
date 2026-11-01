@@ -133,6 +133,32 @@ Fuentes: [política de teselas OSM](https://operations.osmfoundation.org/policie
 
 ## Pruebas
 
+### Lugares cerca de una sede
+
+Al seleccionar una universidad se consultan mercados, restaurantes, comida rápida,
+cafeterías y comedores u ollas registrados en OpenStreetMap. El radio inicial es
+500 m, ampliable a 1 o 2 km, medido en línea recta desde el punto de la sede.
+No equivale a una ruta a pie ni a distancia desde cada puerta del campus.
+La búsqueda se implementa en `js/lugares.js`, sin instalar bibliotecas. Usa el
+proveedor público de Overpass y un alternativo si falla; conserva hasta 12 consultas
+durante 15 minutos en memoria. No se requieren claves de API ni datos de pago.
+
+Los precios no se obtienen automáticamente de OSM. En `js/datos.js`, completa
+`ALLSUMAQ_PRECIOS_LUGARES` con el ID del enlace OSM del lugar, el plato, `min`,
+`max`, la URL de la `fuente`, `fecha` y si es `estimado`. El importe corresponde
+a un plato, no al gasto total por persona. Para un precio único usa min igual a max.
+La lista está vacía inicialmente: los diez platos del catálogo no tienen una
+ubicación exacta verificada que permita vincularlos automáticamente a esos puntos.
+Un precio de S/ 8–12 requiere presupuesto de al menos S/ 12. Los lugares sin precio
+se excluyen al aplicar presupuesto; la casilla permite consultarlos con la advertencia
+de que no se ha confirmado que cumplan ese límite. Confirma las condiciones de
+atención de comedores antes de acudir; no se presume acceso libre o gratuito.
+
+Verificación: `python -X utf8 tests/pruebas_navegador.py --lugares` comprueba radios,
+categorías, presupuesto, marcadores, caché, fallos de conexión y respuestas fuera
+de orden con datos de prueba aislados. Añade `--vivo` para probar además el servicio
+público real (requiere conexión y disponibilidad de Overpass).
+
 Se añadieron 39 comprobaciones: mapa real, búsqueda, zoom, selección, ubicación
 simulada mediante permisos del navegador, responsive, aislamiento local de
 cuentas y validación criptográfica del Worker. Los tokens de prueba se firman
