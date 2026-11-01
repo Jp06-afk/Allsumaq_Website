@@ -123,8 +123,11 @@ Fuente: [verificación de credenciales de Google](https://developers.google.com/
 - La cartografía no muestra tráfico en vivo, horarios de sedes ni matrícula
   universitaria actual. OpenStreetMap es una fuente colaborativa; consulta
   a la institución para confirmar su operación o acceso al campus.
-- Los restaurantes del catálogo siguen sin coordenadas verificadas: se
-  muestran por distrito y no se colocan puntos inventados junto a universidades.
+- `js/establecimientos-datos.js`: copia de 52 lugares OSM, con ID, coordenadas,
+  fuente y fecha de consulta. `scripts/actualizar_establecimientos.py` permite
+  actualizarla opcionalmente con Python estándar, sin instalar paquetes.
+- El catálogo local aparece inmediatamente al elegir una sede. Buscar lugares
+  adicionales en Overpass es una acción explícita; si falla conserva los datos locales.
 - La atribución OSM es visible. No se habilitan descargas offline ni precarga
   de teselas. Servicio público de disponibilidad variable, sin SLA.
 
@@ -135,9 +138,10 @@ Fuentes: [política de teselas OSM](https://operations.osmfoundation.org/policie
 
 ### Lugares cerca de una sede
 
-Al seleccionar una universidad se consultan mercados, restaurantes, comida rápida,
-cafeterías y comedores u ollas registrados en OpenStreetMap. El radio inicial es
-500 m, ampliable a 1 o 2 km, medido en línea recta desde el punto de la sede.
+Al seleccionar una universidad se filtran las ubicaciones guardadas de mercados,
+restaurantes y puestos. El botón de búsqueda externa permite consultar además
+otros lugares, incluidos comedores u ollas registrados en OpenStreetMap.
+El radio inicial es 500 m, ampliable a 1, 2 o 3 km, medido desde el punto de la sede.
 No equivale a una ruta a pie ni a distancia desde cada puerta del campus.
 La búsqueda se implementa en `js/lugares.js`, sin instalar bibliotecas. Usa el
 proveedor público de Overpass y un alternativo si falla; conserva hasta 12 consultas
@@ -147,17 +151,61 @@ Los precios no se obtienen automáticamente de OSM. En `js/datos.js`, completa
 `ALLSUMAQ_PRECIOS_LUGARES` con el ID del enlace OSM del lugar, el plato, `min`,
 `max`, la URL de la `fuente`, `fecha` y si es `estimado`. El importe corresponde
 a un plato, no al gasto total por persona. Para un precio único usa min igual a max.
-La lista está vacía inicialmente: los diez platos del catálogo no tienen una
-ubicación exacta verificada que permita vincularlos automáticamente a esos puntos.
+Esta lista de cartas comerciales sigue vacía. Por separado, el objeto
+`ALLSUMAQ_VINCULOS_ESTABLECIMIENTOS` vincula tres platos de referencia de la tabla
+del equipo a mercados OSM: ALI-003, ALI-004 y ALI-007. La ubicación cartográfica
+está documentada; vendedor, platos vendidos y disponibilidad necesitan confirmación.
 Un precio de S/ 8–12 requiere presupuesto de al menos S/ 12. Los lugares sin precio
 se excluyen al aplicar presupuesto; la casilla permite consultarlos con la advertencia
 de que no se ha confirmado que cumplan ese límite. Confirma las condiciones de
 atención de comedores antes de acudir; no se presume acceso libre o gratuito.
 
-Verificación: `python -X utf8 tests/pruebas_navegador.py --lugares` comprueba radios,
-categorías, presupuesto, marcadores, caché, fallos de conexión y respuestas fuera
-de orden con datos de prueba aislados. Añade `--vivo` para probar además el servicio
-público real (requiere conexión y disponibilidad de Overpass).
+Verificación: `python -X utf8 tests/pruebas_navegador.py --lugares` comprueba el
+catálogo sin consulta externa, radio, presupuesto, las mismas opciones en mapa/lista,
+fichas, enlaces directos, recarga, móvil y fallos del servicio opcional. El catálogo
+guardado fue obtenido del servicio público real; las pruebas de red usan datos
+aislados para no depender de la disponibilidad de Overpass.
+
+### Recorrido principal: MK-02 → MK-05 → MK-06
+
+El recorrido es universidad → establecimiento → comidas registradas → ficha del
+alimento. Un marcador o «Ver establecimiento» abre MK-05. Cada comida enlaza a
+MK-06. Las fichas usan rutas con historial y conservan el contexto al regresar.
+El mapa comparte espacio con los resultados; el selector de universidad es
+desplegable. En móvil el mapa aparece encima de los resultados. Los colores,
+tipografía y composición proceden de los mockups; las fotos genéricas se identifican
+como referencias, sin simular una foto real del plato/local que falta.
+
+Para probar el recorrido con precios del equipo: selecciona Universidad Nacional
+de Ingeniería y amplía a 3 km. Los mercados Ciudad y Campo quedan a más de 2 km
+del punto central de esa sede; no se presentan como si estuvieran a 500 m.
+Con las Oficinas Administrativas de la Universidad Nacional del Callao hay varios
+locales cargados dentro de 500 m, con cartas/precios aún pendientes.
+
+### Extra opcional: simulación de pedido
+
+Está en un desplegable aparte, debajo del catálogo. No se abre al seleccionar
+un marcador ni es parte del recorrido de los mockups o las HU core. Se habilita
+para el último local consultado cuando tenga una carta comercial incorporada.
+La carta opcional usa los registros de `ALLSUMAQ_PRECIOS_LUGARES` con el mismo `osmId`.
+Añade un `id` único para cada plato de un mismo local. Puedes incluir `descripcion`,
+`puesto` para identificar al vendedor dentro de un mercado, y `disponible: false`
+para un plato que no se puede seleccionar. Para el filtro de establecimientos basta
+que uno de sus platos disponibles cumpla el presupuesto; no depende del primer plato
+escrito en el archivo. La carta completa permite consultar los demás precios.
+
+La selección distingue cantidades por establecimiento, suma importes con céntimos
+y conserva el rango si el precio es estimado. Si el máximo total supera el presupuesto
+no permite confirmar la demostración. El comprobante indica local, platos, cantidades
+y total: no realiza pagos, reservas, envío a un restaurante ni guarda pedidos al recargar.
+No requiere inicio de sesión. Los datos de prueba solo se inyectan en el navegador de
+verificación y no aparecen en las cartas de producción.
+
+La lista de cartas comerciales sigue pendiente de completar: el mapa no proporciona
+las cartas de todos los locales. Los locales sin comidas muestran ese estado.
+Los tres vínculos de referencia del equipo no se presentan como cartas confirmadas.
+
+Referencia del enlace de carta: [website:menu en OSM](https://wiki.openstreetmap.org/wiki/Key:website:menu).
 
 Se añadieron 39 comprobaciones: mapa real, búsqueda, zoom, selección, ubicación
 simulada mediante permisos del navegador, responsive, aislamiento local de

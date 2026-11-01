@@ -165,7 +165,7 @@
     const filtros = filtrosActuales();
     const resultados = modelo.filtrar(alimentos, filtros);
     $("#resultados-conteo").textContent =
-      `${resultados.length} ${resultados.length === 1 ? "opción encontrada" : "opciones encontradas"}${filtros.distrito ? " en " + filtros.distrito : ""}`;
+      `${resultados.length} ${resultados.length === 1 ? "plato de referencia" : "platos de referencia"}${filtros.distrito ? " en " + filtros.distrito : ""}`;
     $("#alimentos-grid").innerHTML = resultados.length
       ? resultados.map(foodCard).join("")
       : empty(
@@ -173,11 +173,14 @@
           "Prueba otro nombre, cambia el distrito o amplía el presupuesto.",
           '<button type="button" class="button button--light" data-reset-filters>Limpiar filtros</button>',
         );
+    document.dispatchEvent(new CustomEvent("allsumaq:filtros"));
   }
 
   function establecerModo(nuevo) {
     modo = nuevo;
-    $("#mapa-real").hidden = modo !== "mapa";
+    $("#mapa-real").hidden = false;
+    $("#mapa-real").dataset.modo = modo;
+    $("#mapa-real").classList.toggle("is-list-mode", modo === "lista");
     window.AllsumaqMapa?.setVisible(
       modo === "mapa" && vistaPrincipal === "exploracion",
     );
@@ -369,7 +372,7 @@
   function volver() {
     if (history.state?.interno) history.back();
     else {
-      const seccion = location.hash.startsWith("#alimento")
+      const seccion = /^#(alimento|establecimiento|plato)=/.test(location.hash)
         ? "mapa"
         : location.hash.startsWith("#guardado")
           ? "registrar"
@@ -410,13 +413,36 @@
     renderRuta(true, { enfocar: true });
   }
 
-  function detalleAlimento(a) {
-    return `<div class="dialog-header"><p class="eyebrow">PLATO DEL CATÁLOGO</p><h2 id="dialog-titulo">${esc(a.nombre)}</h2><p>${esc(a.establecimiento)} · ${esc(a.distritos.join(" / "))}</p></div>
-      ${imagenLocal(a.imagen, a.nombre)}
-      <dl class="detail-facts"><div class="detail-fact"><dt>Precio</dt><dd>${esc(precio(a))}<span class="price-note">${esc(notaPrecio(a))}</span></dd></div><div class="detail-fact"><dt>Porción</dt><dd>${esc(a.porcion || "Dato no disponible")}</dd></div><div class="detail-fact"><dt>Tiempo de obtención</dt><dd>${esc(a.tiempoObtencion || "Dato no disponible")}</dd></div></dl>
-      <div class="detail-columns"><div><h3>Información del establecimiento</h3><p class="field-help">${esc(a.establecimiento)}</p><p class="field-help">Distrito: ${esc(a.distritos.join(" / "))}</p><p class="field-help">${esc(a.direccion || "Dirección y puesto específico pendientes de confirmar.")}</p><p class="field-help">${esc(a.notaUbicacion || "Horarios y disponibilidad pendientes de confirmar.")}</p></div><div><h3>Información del alimento</h3><p class="field-help">Ingredientes: ${esc(a.ingredientes ? a.ingredientes.join(", ") : "lista completa pendiente de confirmar")}</p><p class="field-help">Hierro por porción: ${esc(a.hierroMg === null ? "dato no disponible" : a.hierroMg + " mg estimados")}</p><p class="field-help">Fuente nutricional: ${esc(a.fuenteNutricional || "pendiente de documentar")}</p></div></div>
-      <div class="notice">${icon("info")}<p>Los datos comerciales proceden de la tabla del equipo y necesitan confirmación con el establecimiento. Las cifras de hierro requieren porción, fuente y método documentados.</p></div>
-      <div class="button-row" style="margin-top:22px"><button class="button button--primary" type="button" data-register-item="${esc(a.id)}">Registrar consumo${icon("plus")}</button><button class="button button--light" type="button" data-favorito="${esc(a.id)}" aria-pressed="${estado.favoritos.includes(a.id)}">${icon("heart")}Guardar en favoritos</button></div>`;
+  function portadaDetalle(etiqueta, nombre, descripcion) {
+    return `<div class="catalog-detail-hero"><div class="dialog-header"><p class="eyebrow">${esc(etiqueta)}</p><h2 id="dialog-titulo">${esc(nombre)}</h2><p>${esc(descripcion)}</p></div><figure><img src="assets/img/portada-plato.webp" alt="Plato de referencia de Allsumaq"><figcaption>Fotografía de referencia de Allsumaq</figcaption></figure></div>`;
+  }
+  function hecho(titulo, valor) {
+    return `<div class="detail-fact"><dt>${esc(titulo)}</dt><dd>${esc(valor)}</dd></div>`;
+  }
+  function botonPlato(p, a) {
+    return alimentos.some(item => item.id === a.id)
+      ? `<button type="button" class="button button--light" data-alimento="${esc(a.id)}">Ver alimento ${icon("arrow")}</button>`
+      : `<button type="button" class="button button--light" data-plato-local="${esc(p.id + "|" + a.id)}">Ver alimento ${icon("arrow")}</button>`;
+  }
+  function detalleEstablecimiento(p) {
+    window.AllsumaqLugares.prepararFicha(p);
+    const platos = window.AllsumaqLugares.platos(p.id);
+    const distrito = p.distrito || platos.find(a => a.distritos?.length)?.distritos.join(" / ") || "Distrito no disponible";
+    const tipos = { mercado: "Mercado / puestos de comida", restaurante: "Restaurante / comida", puesto: "Puesto / comida rápida", comedor: "Comedor comunitario" };
+    return portadaDetalle("ESTABLECIMIENTO CERCANO", p.nombre, distrito) +
+      `<div class="catalog-detail-grid"><section class="catalog-panel"><h3>${icon("pin")} Información del establecimiento</h3><dl class="detail-facts">${hecho("Distrito", distrito)}${hecho("Tipo de establecimiento", tipos[p.tipo] || "Lugar de comida")}${hecho("Horario registrado", p.horario || "Horario no disponible")}${hecho("Dirección", p.direccion || "Dirección no disponible; consulta el punto cartográfico")}${hecho("Distancia estimada", Number.isFinite(p.distancia) ? Math.round(p.distancia) + " m en línea recta desde la sede" : "Selecciona una sede para calcularla")}${hecho("Disponibilidad", "Por confirmar con el local")}</dl><p class="field-help">La ubicación procede de OpenStreetMap. Los horarios declarados pueden variar; no representan atención ni stock en tiempo real.</p></section>
+      <aside class="catalog-panel"><h3>Acciones rápidas</h3><div class="catalog-actions"><button class="button button--light" type="button" data-ver-local-mapa="${esc(p.id)}">${icon("map")}Ver en mapa</button><a class="button button--light" href="${esc(p.fuente)}" target="_blank" rel="noopener noreferrer">Consultar ubicación y fuente ↗</a></div><p class="field-help">En mercados, confirma el puesto o vendedor específico antes de acudir.</p></aside></div>
+      <section class="catalog-panel establishment-dishes"><h3>Comidas registradas</h3><p class="field-help">Platos de referencia vinculados a este lugar. La asociación del equipo no confirma que un puesto los venda actualmente.</p><div class="registered-dishes">${platos.length ? platos.map(a => `<article class="registered-dish">${icon("plate")}<div><h4>${esc(a.nombre)}</h4><p class="nearby-price">${esc(precio(a))}</p><p class="field-help">${esc(notaPrecio(a))}${a.puesto ? " · Puesto: " + esc(a.puesto) : " · Vendedor por confirmar"}</p></div>${botonPlato(p, a)}</article>`).join("") : '<p class="venue-menu-empty">Todavía no hay comidas registradas para este establecimiento.</p>'}</div></section>`;
+  }
+  function detalleAlimento(a, local = null) {
+    const placeId = window.ALLSUMAQ_VINCULOS_ESTABLECIMIENTOS?.[a.id];
+    const p = local || (placeId && window.AllsumaqLugares.obtener(placeId));
+    const nombreLocal = p?.nombre || a.establecimiento || "Establecimiento por confirmar";
+    return portadaDetalle("PLATO DEL CATÁLOGO", a.nombre, nombreLocal) +
+      `<div class="catalog-food-toolbar"><div><span>Precio referencial</span><strong>${esc(precio(a))}</strong><small>${esc(notaPrecio(a))}</small></div><div><span>Establecimiento</span><strong>${esc(nombreLocal)}</strong></div>${p ? `<button type="button" class="button button--primary" data-establecimiento="${esc(p.id)}">Ver establecimiento ${icon("arrow")}</button>` : '<p class="field-help">Ubicación exacta pendiente de confirmar.</p>'}</div>
+      <div class="catalog-food-columns"><section class="catalog-panel"><h3>${icon("plate")} Información del plato</h3><dl>${hecho("Porción", a.porcion || "Dato no disponible")}${hecho("Tiempo de obtención", a.tiempoObtencion || "Dato no disponible")}${hecho("Hierro por porción", a.hierroMg == null ? "Dato no disponible" : a.hierroMg + " mg estimados")}${hecho("Fuente nutricional", a.fuenteNutricional || "Pendiente de documentar")}</dl></section>
+      <section class="catalog-panel"><h3>${icon("leaf")} Ingredientes principales</h3><p>${esc(a.ingredientes?.join(", ") || "Lista completa pendiente de confirmar.")}</p>${a.descripcion ? `<p>${esc(a.descripcion)}</p>` : ""}<p class="field-help">No se atribuyen aportes nutricionales sin porción, fuente y método documentados.</p></section>
+      <section class="catalog-panel"><h3>${icon("info")} Información del establecimiento</h3><p>${esc(nombreLocal)}</p><p class="field-help">${esc(p?.direccion || a.direccion || "Dirección y puesto específico pendientes de confirmar.")}</p><p class="field-help">${esc(p?.horario || "Horario no disponible")}</p><p class="field-help">Precio, vendedor y disponibilidad por confirmar antes de acudir.</p>${alimentos.some(item => item.id === a.id) ? `<div class="catalog-actions"><button class="button button--light" type="button" data-favorito="${esc(a.id)}" aria-pressed="${estado.favoritos.includes(a.id)}">${icon("heart")}Guardar en favoritos</button><button class="text-button" type="button" data-register-item="${esc(a.id)}">Registrar consumo ${icon("plus")}</button></div>` : ""}</section></div>`;
   }
 
   function listadoRecetas() {
@@ -455,7 +481,9 @@
 
   function renderRuta(restaurar = false, opciones = {}) {
     const hash = location.hash.slice(1);
-    const [vista, id] = hash.split("=");
+    const [vista, rawId] = hash.split("=");
+    let id = "";
+    try { id = decodeURIComponent(rawId || ""); } catch (_) { /* Enlace inválido. */ }
     const recuerdo = history.state?.retornoExploracion;
     if (
       recuerdo &&
@@ -469,6 +497,16 @@
       const a = alimentos.find((a) => a.id === id);
       if (a) contenido = detalleAlimento(a);
     }
+    if (vista === "establecimiento") {
+      const p = window.AllsumaqLugares.obtener(id);
+      if (p) contenido = detalleEstablecimiento(p);
+    }
+    if (vista === "plato") {
+      const [placeId, dishId] = id.split("|");
+      const p = window.AllsumaqLugares.obtener(placeId);
+      const a = p && window.AllsumaqLugares.platos(placeId).find(item => item.id === dishId);
+      if (a) contenido = detalleAlimento(a, p);
+    }
     if (vista === "receta") {
       const r = recetas.find((r) => r.id === id);
       if (r) contenido = detalleReceta(r);
@@ -477,7 +515,7 @@
       const r = estado.registros.find((r) => r.id === id);
       if (r) contenido = confirmacion(r);
     }
-    if (!contenido && ["alimento", "receta", "guardado"].includes(vista))
+    if (!contenido && ["alimento", "establecimiento", "plato", "receta", "guardado"].includes(vista))
       contenido =
         '<div class="dialog-header"><h2 id="dialog-titulo">No encontramos esta información</h2><p>El enlace no corresponde a un registro disponible en este navegador.</p></div><a class="button button--primary" href="#inicio">Volver a Inicio</a>';
     if (contenido) {
@@ -489,6 +527,7 @@
             : "exploracion";
       mostrarPrincipal(principal);
       dialogBody.innerHTML = contenido;
+      dialog.classList.toggle("catalog-detail-dialog", ["establecimiento", "alimento", "plato"].includes(vista));
       if (vista === "recetas") {
         $("#buscar-receta").value = busquedaRecetas;
         renderListaRecetas();
@@ -496,7 +535,7 @@
       if (!dialog.open) dialog.showModal();
       document.body.classList.add("dialog-open");
       marcarSeccion(
-        vista === "alimento"
+        ["alimento", "establecimiento", "plato"].includes(vista)
           ? "mapa"
           : vista === "guardado"
             ? "registrar"
@@ -670,6 +709,12 @@
       abrir("#recetas");
     } else if (control.dataset.alimento)
       abrir("#alimento=" + control.dataset.alimento);
+    else if (control.dataset.establecimiento) abrir("#establecimiento=" + encodeURIComponent(control.dataset.establecimiento));
+    else if (control.dataset.platoLocal) abrir("#plato=" + encodeURIComponent(control.dataset.platoLocal));
+    else if (control.dataset.verLocalMapa) {
+      establecerModo("mapa"); irSeccion("mapa");
+      window.AllsumaqLugares.verEnMapa(control.dataset.verLocalMapa);
+    }
     else if (control.dataset.receta) abrir("#receta=" + control.dataset.receta);
     else if (control.dataset.favorito) toggleFavorito(control.dataset.favorito);
     else if (control.dataset.removeFavorite)
@@ -733,5 +778,6 @@
     });
     $$(".observed-section").forEach((s) => observer.observe(s));
   }
+  window.AllsumaqNavegacion = { abrir, volver };
   inicializar();
 })();

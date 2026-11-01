@@ -24,8 +24,9 @@
     <script src="js/servicios-config.js" defer></script>
     <script src="js/universidades-datos.js" defer></script>
     <script src="js/mapa.js" defer></script>
-    <script src="js/app.js" defer></script>
+    <script src="js/establecimientos-datos.js" defer></script>
     <script src="js/lugares.js" defer></script>
+    <script src="js/app.js" defer></script>
     <script src="js/sesion.js" defer></script>
   </head>
   <body>
@@ -347,7 +348,7 @@
         aria-labelledby="titulo-mapa"
       >
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading map-hero">
             <div>
               <p class="eyebrow">DESCUBRE OPCIONES EN TU ZONA</p>
               <h2 id="titulo-mapa">
@@ -357,9 +358,10 @@
               </h2>
             </div>
             <p>
-              Explora los platos del catálogo.<br />Precios referenciales y
-              decisiones a tu ritmo.
+              Explora restaurantes, mercados y puestos de comida cerca de tu
+              universidad. Precios referenciales y decisiones a tu ritmo.
             </p>
+            <figure class="map-hero-photo"><img src="assets/img/portada-plato.webp" alt="Plato de referencia de Allsumaq" width="520" height="360"><figcaption>Comida real, lugares reales.</figcaption></figure>
           </div>
           <form
             id="filtros"
@@ -432,6 +434,41 @@
               </div>
             </div>
           </div>
+          <details id="universidades-selector" class="campus-picker">
+            <summary><svg class="icon" aria-hidden="true"><use href="#i-university"/></svg> Elegir universidad o sede <span id="sede-actual">Lima Metropolitana</span></summary>
+            <div
+              class="university-panel"
+              aria-label="Sedes universitarias de Lima"
+            >
+              <div class="panel-heading">
+                <span class="feature-icon"
+                  ><svg class="icon"><use href="#i-university" /></svg
+                ></span>
+                <div>
+                  <h3>Universidades en Lima</h3>
+                  <p>Selecciona tu zona de referencia. Las opciones aparecen junto al mapa.</p>
+                </div>
+              </div>
+              <label
+                ><span>Buscar universidad o sede</span
+                ><input
+                  id="buscar-universidad"
+                  type="search"
+                  placeholder="San Marcos, UNI, UPC…"
+                  autocomplete="off"
+              /></label>
+              <p id="universidades-conteo" class="field-help" role="status"></p>
+              <div id="universidades-lista" class="university-list"></div>
+              <button
+                id="universidades-actualizar"
+                class="text-button"
+                type="button"
+              >
+                Actualizar sedes desde OpenStreetMap
+              </button>
+              <p id="universidades-fecha" class="field-help"></p>
+            </div>
+          </details>
           <div id="mapa-real" class="map-layout">
             <div class="live-map-shell">
               <div
@@ -488,65 +525,41 @@
                 aria-live="polite"
               ></p>
             </div>
-            <aside
-              class="university-panel"
-              aria-label="Sedes universitarias de Lima"
-            >
-              <div class="panel-heading">
-                <span class="feature-icon"
-                  ><svg class="icon"><use href="#i-university" /></svg
-                ></span>
-                <div>
-                  <h3>Universidades en Lima</h3>
-                  <p>Elige una sede para ver dónde comer cerca.</p>
-                </div>
-              </div>
-              <label
-                ><span>Buscar universidad o sede</span
-                ><input
-                  id="buscar-universidad"
-                  type="search"
-                  placeholder="San Marcos, UNI, UPC…"
-                  autocomplete="off"
-              /></label>
-              <p id="universidades-conteo" class="field-help" role="status"></p>
-              <div id="universidades-lista" class="university-list"></div>
-              <button
-                id="universidades-actualizar"
-                class="text-button"
-                type="button"
-              >
-                Actualizar sedes desde OpenStreetMap
-              </button>
-              <p id="universidades-fecha" class="field-help"></p>
-            </aside>
-          </div>
-          <div id="universidad-detalle" class="university-detail" hidden></div>
-          <section id="lugares-cercanos" class="nearby-panel" aria-labelledby="lugares-titulo">
-            <h3 id="lugares-titulo">Dónde comer cerca de tu universidad</h3>
+
+          <aside id="lugares-cercanos" class="nearby-panel" aria-labelledby="lugares-titulo">
+            <h3 id="lugares-titulo">Opciones cercanas</h3>
             <p id="lugares-sede">Selecciona una sede en el mapa o en la lista para buscar lugares reales a 500 m.</p>
             <div class="nearby-controls">
               <label>Radio desde la sede
-                <select id="lugares-radio"><option value="500">500 m</option><option value="1000">1 km</option><option value="2000">2 km</option></select>
+                <select id="lugares-radio"><option value="500">500 m</option><option value="1000">1 km</option><option value="2000">2 km</option><option value="3000">3 km</option></select>
               </label>
               <label>Tipo de lugar
-                <select id="lugares-tipo"><option value="">Todos</option><option value="mercado">Mercados</option><option value="restaurante">Restaurantes y comida</option><option value="comedor">Ollas y comedores comunitarios</option></select>
+                <select id="lugares-tipo"><option value="">Todos</option><option value="mercado">Mercados</option><option value="restaurante">Restaurantes y comida</option><option value="puesto">Puestos y comida rápida</option><option value="comedor">Ollas y comedores comunitarios</option></select>
               </label>
               <label class="nearby-pending"><input id="lugares-pendientes" type="checkbox"> Ver también lugares con precio por confirmar</label>
               <button id="lugares-reintentar" class="button button--light" type="button" hidden>Reintentar búsqueda</button>
             </div>
-            <p class="field-help">Se aplica el presupuesto máximo de arriba. La distancia es en línea recta desde el punto de la sede, no una ruta a pie. OpenStreetMap puede tener información incompleta; confirma precios, horarios y condiciones de atención antes de acudir.</p>
+            <details class="map-explanation"><summary>Sobre los datos y la distancia</summary><p class="field-help">Se aplica el presupuesto máximo de arriba. La distancia es en línea recta desde el punto de la sede, no una ruta a pie. OpenStreetMap puede tener información incompleta; confirma precios, horarios y condiciones de atención antes de acudir.</p><p class="field-help">Elige un establecimiento para consultar su información y los platos registrados. Confirma el puesto específico dentro de cada mercado.</p></details>
+            <button id="lugares-actualizar" class="text-button" type="button" disabled>Buscar más lugares en OpenStreetMap</button>
+            <p id="lugares-origen" class="field-help"></p>
             <p id="lugares-estado" role="status" aria-live="polite"></p>
             <div id="lugares-lista" class="nearby-grid" aria-busy="false"></div>
-          </section>
+          </aside>
+          </div>
+          <div id="universidad-detalle" class="university-detail" hidden></div>
+
           <p class="field-help map-catalog-note">
-            Las universidades son puntos cartográficos de OpenStreetMap. Los
-            establecimientos del catálogo se filtran por distrito; sus
-            direcciones exactas aún están pendientes y no se les asignan
-            marcadores ficticios.
+            Las ubicaciones proceden de OpenStreetMap. Los platos de referencia
+            proceden del catálogo del equipo: confirma el vendedor, precio y disponibilidad.
+            La distancia se mide en línea recta desde el punto de la sede.
           </p>
-          <h3>Platos del catálogo por distrito</h3>
+          <h3>Platos de referencia del equipo</h3>
           <div id="alimentos-grid" class="food-grid"></div>
+          <details id="extras-demo" class="optional-demo">
+            <summary>Simulación de pedido (opcional)</summary>
+            <p>Explora primero un establecimiento con platos registrados. Esta demostración no envía pedidos ni realiza pagos.</p>
+            <button id="abrir-demo" class="button button--light" type="button" disabled>Abrir simulación del último local consultado</button>
+          </details>
           <div class="notice notice--subtle">
             <svg class="icon"><use href="#i-info" /></svg>
             <p>
@@ -883,6 +896,35 @@
         </button>
       </div>
       <div id="dialog-contenido"></div>
+    </dialog>
+    <dialog id="carta-dialog" aria-labelledby="carta-titulo">
+      <div class="dialog-topbar">
+        <button id="carta-volver" class="text-button" type="button">← Volver a los establecimientos</button>
+        <button id="carta-cerrar" class="icon-button" type="button" aria-label="Cerrar carta">×</button>
+      </div>
+      <div class="venue-menu-content">
+        <p class="eyebrow">CARTA DEL ESTABLECIMIENTO</p>
+        <h2 id="carta-titulo" tabindex="-1"></h2>
+        <p id="carta-ubicacion"></p>
+        <p id="carta-aviso" class="field-help"></p>
+        <p class="venue-demo-label">Pedido de demostración · sin pagos ni envío al local</p>
+        <div id="carta-platos" class="venue-dishes"></div>
+        <section id="carta-pedido" class="venue-order" aria-labelledby="pedido-titulo" hidden>
+          <h3 id="pedido-titulo">Tu selección en este establecimiento</h3>
+          <div id="pedido-lineas"></div>
+          <p id="pedido-total" class="nearby-price" role="status" aria-live="polite"></p>
+          <p id="pedido-presupuesto" class="field-help"></p>
+          <button id="pedido-vaciar" class="text-button" type="button">Vaciar selección</button>
+          <button id="pedido-confirmar" class="button button--primary" type="button" disabled>Confirmar pedido de demostración</button>
+          <p class="field-help">Esta selección no se ha enviado al establecimiento. Confirma los platos, precios y disponibilidad con el local.</p>
+        </section>
+        <section id="pedido-confirmacion" class="venue-order-confirmation" hidden aria-labelledby="pedido-confirmado-titulo">
+          <h3 id="pedido-confirmado-titulo" tabindex="-1">Pedido de demostración confirmado</h3>
+          <div id="pedido-confirmado-detalle"></div>
+          <p class="field-help">Este comprobante es una simulación dentro de Allsumaq. El establecimiento no recibió el pedido. Esta simulación no se guarda al recargar la página.</p>
+          <button id="pedido-continuar" class="button button--light" type="button">Seguir explorando establecimientos</button>
+        </section>
+      </div>
     </dialog>
     <dialog id="acceso-dialog" aria-labelledby="acceso-titulo">
       <div class="dialog-topbar">

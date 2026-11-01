@@ -18,8 +18,13 @@ Nombre del proyecto: `allsumaq-website`. La configuración está en
 Prioridad solicitada después de la primera entrega: integrar acceso real con
 Google y mapa real de Lima con universidades. Implementación y configuración
 en `docs/GOOGLE-Y-MAPA.md`. El Client ID y el secreto de sesión aún requieren
-activación en la cuenta del propietario. Las ubicaciones de restaurantes
-siguen pendientes, aunque las sedes universitarias ya tienen fuente OSM.
+activación en la cuenta del propietario. Hay 52 ubicaciones de lugares de comida
+guardadas de OSM; las cartas comerciales necesitan confirmación.
+
+Revisión de alcance del 1/11/2026: se prioriza universidad → establecimiento
+(MK-05) → alimento (MK-06). El mapa MK-02 muestra establecimientos a su derecha,
+y debajo en móvil. La simulación de pedido se conserva en un apartado opcional,
+fuera de las 30 HU core; no sustituye el comparador ni la orientación pendientes.
 
 ## Entregas
 
@@ -44,8 +49,11 @@ ni a las 30 HU completas.
 - Los precios proceden de la tabla entregada por el equipo, sin verificación
   comercial independiente. Se conserva su condición de estimados, publicados
   o pendientes. El gasto por persona de D’Kyara no es un precio de plato.
-- No hay coordenadas verificadas. No se mostrarán marcadores geográficos,
-  distancias ni rutas inventadas. El mapa inicial será ilustrativo.
+- Ubicaciones OSM y fuentes en `js/establecimientos-datos.js`. Las distancias son
+  en línea recta desde la sede; no son rutas ni tiempos de caminata. El catálogo
+  guardado se consulta sin esperar red; buscar más en Overpass es opcional.
+- Tres platos de la tabla del equipo vinculados a mercados mediante IDs OSM.
+  Se indican como referencia, sin confirmar puesto, vendedor o stock.
 - Las recetas son adaptaciones domésticas entregadas por el equipo. Las
   referencias generales todavía necesitan enlaces a las publicaciones exactas.
 - Sin cifras inventadas de hierro, calorías, costos o absorción.
@@ -53,7 +61,8 @@ ni a las 30 HU completas.
   portada se recuperan únicamente fotografías e ilustraciones de MK-01. El
   texto, los controles y la maquetación se implementan con HTML y CSS.
 - El logo se copia desde el PNG horizontal original, preservando transparencia.
-- Persistencia: navegador del dispositivo. Sin cuentas reales ni contraseñas.
+- Actividad guardada en el navegador. Acceso Google real preparado en el Worker;
+  activación pendiente de los valores del propietario en Cloudflare.
 
 ## Revisión de la primera entrega
 

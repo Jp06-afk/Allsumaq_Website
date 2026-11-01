@@ -155,6 +155,17 @@ window.ALLSUMAQ_BEBIDAS = [
 ];
 // Precios por plato de los lugares del mapa. Completar solo tras verificar el local.
 // El ID se obtiene del enlace «Ubicación y fuente» (ejemplo de formato: node/123).
-// Cada registro: { osmId, plato, min, max, fuente: "https://...", fecha: "AAAA-MM-DD", estimado: false }.
+// Cada plato: { id: "plato-1", osmId, plato, min, max, fuente: "https://...", fecha: "AAAA-MM-DD", estimado: false }.
+// Repite osmId para añadir varios platos a la carta de un mismo establecimiento.
+// Opcionales: descripcion, puesto (nombre del puesto dentro del mercado), disponible: false.
+// min y max son precios por porción. Para un precio exacto usa el mismo valor.
 // Los importes del catálogo sin ubicación verificada no se vinculan automáticamente.
 window.ALLSUMAQ_PRECIOS_LUGARES = [];
+
+// Platos de referencia de la tabla del equipo, vinculados a ubicaciones OSM.
+// Esto NO confirma que un puesto concreto los venda ni su disponibilidad actual.
+window.ALLSUMAQ_VINCULOS_ESTABLECIMIENTOS = {
+  "ALI-003": "way/835626705", // Mercado Cooperativa Ciudad y Campo
+  "ALI-004": "node/4407164831", // Mercado de Ciudad y Campo
+  "ALI-007": "way/584178252", // Mercado Ciudad de Dios
+};

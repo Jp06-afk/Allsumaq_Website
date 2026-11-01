@@ -580,11 +580,12 @@
     }).observe(surface);
   }
   updateList();
-  let nearbyPlaces = [], selectedPlace = "";
+  let nearbyPlaces = [], selectedPlace = "", focusedPlace = null;
   const placeNodes = new Map();
   function renderPlaces(left, top, width, height) {
     const visibleIds = new Set();
-    for (const place of nearbyPlaces) {
+    const candidates = focusedPlace && !nearbyPlaces.some(p => p.id === focusedPlace.id) ? [...nearbyPlaces, focusedPlace] : nearbyPlaces;
+    for (const place of candidates) {
       const point = project(place), x = point.x - left, y = point.y - top;
       if (x < -30 || x > width + 30 || y < -30 || y > height + 30) continue;
       visibleIds.add(place.id);
@@ -612,7 +613,13 @@
     for (const [id, node] of placeNodes) if (!visibleIds.has(id)) { node.remove(); placeNodes.delete(id); }
   }
   window.AllsumaqMapa = {
-    setLugares(places) { nearbyPlaces = places; selectedPlace = ""; scheduleRender(); },
+    setLugares(places) { nearbyPlaces = places; focusedPlace = null; selectedPlace = ""; scheduleRender(); },
+    enfocarLugar(place) {
+      focusedPlace = place; selectedPlace = place.id;
+      center = { lat: place.lat, lon: place.lon }; zoom = 16;
+      $("mapa-estado").textContent = "Ubicación consultada: " + place.nombre + ". Los resultados conservan sus filtros.";
+      scheduleRender();
+    },
     seleccionarLugar(id) {
       const place = nearbyPlaces.find(item => item.id === id);
       if (!place) return;

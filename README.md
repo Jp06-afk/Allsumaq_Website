@@ -7,6 +7,15 @@ y acceso con Google respaldado por un Cloudflare Worker.
 **Activación de Google y actualización del mapa:** consulta
 [`docs/GOOGLE-Y-MAPA.md`](docs/GOOGLE-Y-MAPA.md).
 
+Recorrido principal: universidad → establecimiento (MK-05) → alimento (MK-06).
+El mapa y la lista comparten opciones y filtros; el catálogo de 52 ubicaciones
+guardadas aparece sin consultar Overpass. «Buscar más» usa la red opcionalmente.
+Para ver locales cargados a 500 m, selecciona Oficinas Administrativas de la
+Universidad Nacional del Callao. Para probar los platos de referencia vinculados,
+selecciona Universidad Nacional de Ingeniería y amplía el radio a 3 km.
+Los mercados Ciudad y Campo están a más de 2 km de su punto de referencia.
+La simulación de pedido queda aparte como extra opcional; no pertenece a las HU core.
+
 ## Abrir la web
 
 Abre `index.html` con Chrome, Edge, Brave o Firefox actualizado. La portada,
